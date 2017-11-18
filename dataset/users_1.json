@@ -1,0 +1,80 @@
+[
+	{
+	"name": "user-create-1",
+	"endpoint": "/users",
+	"method": "POST",
+	"request": [
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u1\",\n  \"email\": \"e1@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u2\",\n  \"email\": \"e2@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u1\",\n  \"email\": \"e1@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u2\",\n  \"email\": \"e2@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",			
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u1\",\n  \"email\": \"e1@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u2\",\n  \"email\": \"e2@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u1\",\n  \"email\": \"e1@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u2\",\n  \"email\": \"e2@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",			
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u1\",\n  \"email\": \"e1@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u2\",\n  \"email\": \"e2@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u1\",\n  \"email\": \"e1@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u2\",\n  \"email\": \"e2@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",			
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u1\",\n  \"email\": \"e1@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u2\",\n  \"email\": \"e2@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u1\",\n  \"email\": \"e1@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u2\",\n  \"email\": \"e2@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",			
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u1\",\n  \"email\": \"e1@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u2\",\n  \"email\": \"e2@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u1\",\n  \"email\": \"e1@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u2\",\n  \"email\": \"e2@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",			
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u1\",\n  \"email\": \"e1@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u2\",\n  \"email\": \"e2@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u1\",\n  \"email\": \"e1@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u2\",\n  \"email\": \"e2@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u1\",\n  \"email\": \"e1@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u2\",\n  \"email\": \"e2@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u1\",\n  \"email\": \"e1@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u2\",\n  \"email\": \"e2@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",			
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u1\",\n  \"email\": \"e1@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u2\",\n  \"email\": \"e2@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u1\",\n  \"email\": \"e1@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u2\",\n  \"email\": \"e2@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",			
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u1\",\n  \"email\": \"e1@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u2\",\n  \"email\": \"e2@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u1\",\n  \"email\": \"e1@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u2\",\n  \"email\": \"e2@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",			
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u1\",\n  \"email\": \"e1@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u2\",\n  \"email\": \"e2@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u1\",\n  \"email\": \"e1@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u2\",\n  \"email\": \"e2@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",			
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u1\",\n  \"email\": \"e1@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u2\",\n  \"email\": \"e2@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u1\",\n  \"email\": \"e1@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u2\",\n  \"email\": \"e2@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",			
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u1\",\n  \"email\": \"e1@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u2\",\n  \"email\": \"e2@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u1\",\n  \"email\": \"e1@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u2\",\n  \"email\": \"e2@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",														
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u3\",\n  \"email\": \"e3@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}"
+	],
+	"assertions": 
+		[
+			"@StatusCode == 200"
+		],
+	"tags": ["V1"]
+},
+{
+	"name": "user-create-2",
+	"endpoint": "/users",
+	"method": "POST",
+	"request": [
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u2\",\n  \"email\": \"e2\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"\",\n  \"email\": \"e2@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",																
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"\",\n  \"email\": \"e2@fx.local\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": u2\"\",\n  \"email\": \"\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}",	
+		"{\n  \"name\": \"fn1 ln\",\n  \"username\": \"u2\",\n  \"email\": \"e2\",\n  \"company\": \"fx\",\n  \"jobTitle\": \"Engineer\"\n}"														
+	],
+	"assertions": 
+		[
+			"@StatusCode != 200"
+		],
+	"tags": ["V1"]
+	}
+]
