@@ -1,0 +1,24 @@
+
+---
+version: '1'
+
+# test app info
+testApp:
+  name: Fx-App-Users
+  # app environments
+  environments:
+    - name: Default
+      baseUrl: http://localhost:8080/api/v1
+      # app credentials
+      credentials:
+        - name: Default
+          authType: BASIC
+          username: user1
+          password: user1
+  # job profiles
+  jobProfiles:
+    - name: Default
+      environment: Default
+      tags: 
+        - V1
+      region: fx-default-queue

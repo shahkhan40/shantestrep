@@ -1,0 +1,24 @@
+
+endpoint: /users
+method: POST
+request:
+  - '{"name": "fn1 ln", "username": "u1", "email": "e1@fx.local", "company": "fx", "jobTitle": "Engineer"}'
+  - '{"name": "fn1 ln", "username": "u1", "email": "e1@fx.local", "company": "fx", "jobTitle": "Engineer"}'
+  # optional name
+  - '{"name": "", "username": "u1", "email": "e1@fx.local", "company": "fx", "jobTitle": "Engineer"}'
+  - '{"name": " ", "username": "u1", "email": "e1@fx.local", "company": "fx", "jobTitle": "Engineer"}'
+  # optional company
+  - '{"name": "", "username": "u1", "email": "e1@fx.local", "company": " ", "jobTitle": "Engineer"}'
+  - '{"name": " ", "username": "u1", "email": "e1@fx.local", "company": "", "jobTitle": "Engineer"}'  
+  - '{"name": "fn1 ln", "username": "u1", "email": "e1@fx.local", "company": " ", "jobTitle": "Engineer"}'
+  - '{"name": "fn1 ln", "username": "u1", "email": "e1@fx.local", "company": "", "jobTitle": "Engineer"}'  
+  # optional jobTitle
+  - '{"name": "", "username": "u1", "email": "e1@fx.local", "company": " ", "jobTitle": ""}'
+  - '{"name": " ", "username": "u1", "email": "e1@fx.local", "company": "", "jobTitle": " "}'  
+  - '{"name": "fn1 ln", "username": "u1", "email": "e1@fx.local", "company": " ", "jobTitle": ""}'
+  - '{"name": "fn1 ln", "username": "u1", "email": "e1@fx.local", "company": "", "jobTitle": " "}'  
+
+assertions:
+  - "@StatusCode == 200"    
+tags:
+  - V1  
