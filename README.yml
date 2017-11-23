@@ -1,5 +1,47 @@
 ---
-# Sample test-suit file
+
+# A typtical Fx project structure looks like this.
+  fx.properties # contains fx server connection info
+  project.yml   # contains test project details
+  test-suites   # this directory contains one or more test suite files.
+
+
+
+################ Sample fx.properties ################
+  fx.master.url = http://localhost:8080/ # fx server url
+  fx.master.accessKey = admin            # fx server accessKey/username
+  fx.master.secretKey = admin123         # fx server secretkey/password
+################ End of Sample fx.properties ################
+
+
+################ Sample project.yml ################
+  version: '1'            # fx schema version defaults to '1'.
+
+  # test app info
+  testApp:                # Test App information all goes inside this defination.
+    name: Fx-App-Users
+    # app environments
+    environments:         # environments - represents one or more instance of App (e.g. Dev, QE, Stg, Prod etc).
+      - name: Default     # App environment name (Always should have one 'Default')
+        baseUrl: http://localhost:8080/api/v1  # App environment Base URL
+        # app access credentials
+        auths:
+          - name: Default                      # Auth name (Always should have one 'Default')
+            authType: BASIC                    # Authorization type supported by the App (e.g. BASIC, OAuth etc)
+            username: user1                    # Username or accessKey
+            password: user1                    # Password or secretKey
+    # job profiles
+    jobProfiles:                               # JobProfile - represents the runnable configuration
+      - name: Default                          # JobProfile name (Always should have one 'Default')
+        environment: Default                   # environment name from the top
+        tags:                                  # tags - represents what kind of test suites you would like to run.
+          - V1
+        region: fx-default-queue               # region - represents the Fx Bot deployments (fx-default-queue is the default but other regions can easily be added.)
+
+################ End of Sample project.yml ################
+
+
+################ Sample test-suit file <test-suites/users_create_1.yml> ################
 
 # endpoint - represents the API Endpoint. The base-url value comes from the project.yml file
 endpoint: /users
@@ -42,3 +84,5 @@ assertions:
 # tags - when defining job-profile in the project.yml file user can pick any tags to be part of the profile.
 tags:
   - V1  
+
+################ End of Sample test-suit file ################  
