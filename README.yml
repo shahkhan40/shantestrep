@@ -1,0 +1,44 @@
+---
+# Sample test-suit file
+
+# endpoint - represents the API Endpoint. The base-url value comes from the project.yml file
+endpoint: /users
+
+# auth - refers to auth defined in the project.yml file
+# If not defined defaults to 'Default' auth.
+# If auth is set to 'NONE' then no auth is used when executing requests 
+auth: default
+
+# method - represents the API http method (GET, PUT, POST, DELETE etc)
+method: POST
+
+# headers - represents request headers - when missing these two headers are auto set ('Content-Type: application/json', 'Accept: application/json')
+headers:
+  - 'Content-Type: application/json'
+  - 'Accept: application/json'
+
+# requets - group one or more api requests data for type (POST, PUT, DELETE etc)
+request:
+  - '{"name": "fn1 ln", "username": "u1", "email": "e1@fx.local", "company": "fx", "jobTitle": "Engineer"}'
+  - '{"name": "fn1 ln", "username": "u1", "email": "e1@fx.local", "company": "fx", "jobTitle": "Engineer"}'
+  # optional name
+  - '{"name": "", "username": "u1", "email": "e1@fx.local", "company": "fx", "jobTitle": "Engineer"}'
+  - '{"name": " ", "username": "u1", "email": "e1@fx.local", "company": "fx", "jobTitle": "Engineer"}'
+  # optional company
+  - '{"name": "", "username": "u1", "email": "e1@fx.local", "company": " ", "jobTitle": "Engineer"}'
+  - '{"name": " ", "username": "u1", "email": "e1@fx.local", "company": "", "jobTitle": "Engineer"}'  
+  - '{"name": "fn1 ln", "username": "u1", "email": "e1@fx.local", "company": " ", "jobTitle": "Engineer"}'
+  - '{"name": "fn1 ln", "username": "u1", "email": "e1@fx.local", "company": "", "jobTitle": "Engineer"}'  
+  # optional jobTitle
+  - '{"name": "", "username": "u1", "email": "e1@fx.local", "company": " ", "jobTitle": ""}'
+  - '{"name": " ", "username": "u1", "email": "e1@fx.local", "company": "", "jobTitle": " "}'  
+  - '{"name": "fn1 ln", "username": "u1", "email": "e1@fx.local", "company": " ", "jobTitle": ""}'
+  - '{"name": "fn1 ln", "username": "u1", "email": "e1@fx.local", "company": "", "jobTitle": " "}'  
+
+# assertions - validate http response code, headers and body using variables like (@StatusCode, @Headers, @Body, @Body.id etc)
+assertions:
+  - "@StatusCode == 200"    
+
+# tags - when defining job-profile in the project.yml file user can pick any tags to be part of the profile.
+tags:
+  - V1  
