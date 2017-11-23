@@ -1,0 +1,20 @@
+---
+# Validates user creation with invalid data.
+endpoint: /users
+method: POST
+# If not defined defaults to 'Default' auth.
+# If auth is set to 'NONE' then no auth is used when executing requests 
+auth: NONE
+request:
+  # invalid emails
+  - '{"name": "fn1 ln", "username": "u1", "email": "e1", "company": "fx", "jobTitle": "Engineer"}'
+  - '{"name": "fn1 ln", "username": "u1", "email": "e1", "company": "fx", "jobTitle": "Engineer"}'
+  - '{"name": "fn1 ln", "username": "u1", "email": "", "company": "fx", "jobTitle": "Engineer"}'
+  - '{"name": "fn1 ln", "username": "u1", "email": " ", "company": "fx", "jobTitle": "Engineer"}'
+  # invalid username
+  - '{"name": "fn1 ln", "username": "", "email": "e1", "company": "fx", "jobTitle": "Engineer"}'
+  - '{"name": "fn1 ln", "username": " ", "email": "e1@fx", "company": "fx", "jobTitle": "Engineer"}'  
+assertions:
+  - "@StatusCode != 200"    
+tags:
+  - V1  
