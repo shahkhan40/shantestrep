@@ -1,7 +1,20 @@
 ---
-# Validates user creation with valid data.
+# Validates user creation with invalid data.
+
+developers:
+  - Foo Bar
+
 endpoint: /users
+
 method: POST
+
+# If not defined defaults to 'Default' auth.
+# If auth is set to 'NONE' then no auth is used when executing requests 
+auth: default
+
+headers:
+  - 'Content-Type: application/json'
+
 request:
   - '{"name": "fn1 ln", "username": "u1", "email": "e1@fx.local", "company": "fx", "jobTitle": "Engineer"}'
   - '{"name": "fn1 ln", "username": "u1", "email": "e1@fx.local", "company": "fx", "jobTitle": "Engineer"}'
@@ -17,15 +30,10 @@ request:
   - '{"name": "", "username": "u1", "email": "e1@fx.local", "company": " ", "jobTitle": ""}'
   - '{"name": " ", "username": "u1", "email": "e1@fx.local", "company": "", "jobTitle": " "}'  
   - '{"name": "fn1 ln", "username": "u1", "email": "e1@fx.local", "company": " ", "jobTitle": ""}'
-  - '{"name": "fn1 ln", "username": "u1", "email": "e1@fx.local", "company": "", "jobTitle": " "}'  
+  - '{"name": "fn1 ln", "username": "u1", "email": "e1@fx.local", "company": "", "jobTitle": " "}' 
 
 assertions:
-  - "@StatusCode == 200" 
+  - "@StatusCode == 200"    
 
 tags:
-  - V1
-authors:
-  - Foo Bar
-  - Fu Bar
-
-
+  - V1  

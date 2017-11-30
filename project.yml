@@ -8,6 +8,10 @@ name: Fx-App-Users
 # App description
 description: SD-Test example
 
+# license
+licenses: 
+  - APACHE LICENSE, VERSION 2.0
+
 # App environments
 environments:
   - name: Default
