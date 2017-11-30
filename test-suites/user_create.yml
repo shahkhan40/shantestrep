@@ -20,6 +20,12 @@ request:
   - '{"name": "fn1 ln", "username": "u1", "email": "e1@fx.local", "company": "", "jobTitle": " "}'  
 
 assertions:
-  - "@StatusCode == 200"    
+  - "@StatusCode == 200" 
+
 tags:
-  - V1  
+  - V1
+authors:
+  - Foo Bar
+  - Fu Bar
+
+
