@@ -28,6 +28,9 @@ request:
 
 assertions:
   - "@StatusCode == 200" 
+  #- "@Response != null"
+  #- "@Response.errors == false"
+  - "@Response.data.name == @Request.name"
 
 tags:
   - V1
