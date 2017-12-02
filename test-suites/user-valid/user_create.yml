@@ -29,8 +29,11 @@ request:
 assertions:
   - "@StatusCode == 200" 
   #- "@Response != null"
-  #- "@Response.errors == false"
+  - "@Response.errors == false"
   - "@Response.data.name == @Request.name"
+  - "@Response.data.username ==IgnoreCase @Request.username"
+  # - "@Response.data.salary >= 90000"
+  # - "@Response.data.age <= 40"
 
 tags:
   - V1
