@@ -32,6 +32,9 @@ assertions:
   - "@Response.errors == false"
   - "@Response.data.name == @Request.name"
   - "@Response.data.username ==IgnoreCase @Request.username"
+  - "@Response.data.email == @Request.email"
+  - "@Response.data.company == @Request.company"
+  - "@Response.data.jobTitle == @Request.jobTitle"
   # - "@Response.data.salary >= 90000"
   # - "@Response.data.age <= 40"
 
