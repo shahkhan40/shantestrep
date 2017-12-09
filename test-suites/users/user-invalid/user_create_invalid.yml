@@ -12,6 +12,6 @@ request:
   - '{"name": "fn1 ln", "username": "", "email": "e1", "company": "fx", "jobTitle": "Engineer"}'
   - '{"name": "fn1 ln", "username": " ", "email": "e1@fx", "company": "fx", "jobTitle": "Engineer"}'  
 assertions:
-  - "@StatusCode != 200"    
+  - "@Response.errors == true"
 tags:
   - V1  
