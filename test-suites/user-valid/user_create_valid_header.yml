@@ -35,5 +35,8 @@ request:
 assertions:
   - "@StatusCode == 200"    
 
+after:
+  - user_delete
+
 tags:
   - V1  
