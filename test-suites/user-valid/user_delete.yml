@@ -5,7 +5,7 @@ name: user_delete
 
 type: ABSTRACT
 
-developers:
+authors:
   - Foo Bar
   - Fu Bar
 

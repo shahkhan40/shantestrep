@@ -28,4 +28,4 @@ jobs:
     environment: Default
     tags: 
       - V1
-    region: fx-default-queue
+    region: fx-default-region

@@ -1,7 +1,7 @@
 ---
 # Validates user creation with valid data.
 
-developers:
+authors:
   - Foo Bar
   - Fu Bar
 
