@@ -1,0 +1,11 @@
+---
+# Validates project delete with parent id.
+
+type: ABSTRACT
+
+authors:
+  - Intesar Mohammed
+
+endpoint: /projects/{{@Response.data.id}}
+
+method: DELETE
