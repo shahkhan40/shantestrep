@@ -45,6 +45,10 @@
 # endpoint - represents the API Endpoint. The base-url value comes from the project.yml file
 endpoint: /users
 
+# Suite type - SUITE or ABSTRACT 
+#   ABSTRACT - is not directly excuted but can be injected into other suites as after elements.
+type: SUITE
+
 # auth - refers to auth defined in the project.yml file
 # If not defined defaults to 'Default' auth.
 # If auth is set to 'NONE' then no auth is used when executing requests 
@@ -78,7 +82,17 @@ request:
 
 # assertions - validate http response code, headers and body using variables like (@StatusCode, @Headers, @Body, @Body.id etc)
 assertions:
-  - "@StatusCode == 200"    
+  - "@StatusCode == 200"   
+  - "@Response.errors == false"
+  - "@Response.data.name == @Request.name"
+  - "@Response.data.username ==IgnoreCase @Request.username"
+  - "@Response.data.email == @Request.email"
+  - "@Response.data.company == @Request.company"
+  - "@Response.data.jobTitle == @Request.jobTitle" 
+
+# cleanup - excutes the below abstract suites for each request.
+after:
+  - user_delete  
 
 # tags - when defining job-profile in the project.yml file user can pick any tags to be part of the profile.
 tags:
