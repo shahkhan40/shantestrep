@@ -1,8 +1,6 @@
 ---
 # Validates user delete with parent id.
 
-name: user_delete
-
 type: ABSTRACT
 
 authors:
