@@ -2,8 +2,7 @@
 # Validates project creation with valid data.
 
 authors:
-  - Foo Bar
-  - Fu Bar
+  - Intesar Mohammed
 
 endpoint: /projects
 
