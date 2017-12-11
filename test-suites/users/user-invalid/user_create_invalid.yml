@@ -4,7 +4,7 @@ endpoint: /users
 method: POST
 request:
   # invalid emails
-  - '{"name": "fn1 ln", "username": "u1", "email": "e1", "company": "fx", "jobTitle": "Engineer"}'
+  - '{"name": "fn1 ln", "username": "u1", "email": "e", "company": "fx", "jobTitle": "Engineer"}'
   - '{"name": "fn1 ln", "username": "u1", "email": "e1", "company": "fx", "jobTitle": "Engineer"}'
   - '{"name": "fn1 ln", "username": "u1", "email": "", "company": "fx", "jobTitle": "Engineer"}'
   - '{"name": "fn1 ln", "username": "u1", "email": " ", "company": "fx", "jobTitle": "Engineer"}'

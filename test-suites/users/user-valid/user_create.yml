@@ -9,7 +9,7 @@ endpoint: /users
 method: POST
 
 request:
-  - '{"name": "fn1 ln", "username": "U1", "email": "e1@fx.local", "company": "fx", "jobTitle": "Engineer"}'
+  - '{"name": "fn ln", "username": "U1", "email": "e1@fx.local", "company": "fx", "jobTitle": "Engineer"}'
   - '{"name": "fn1 ln", "username": "U2", "email": "e1@fx.local", "company": "fx", "jobTitle": "Engineer"}'
   # optional name
   - '{"name": "", "username": "u1", "email": "e1@fx.local", "company": "fx", "jobTitle": "Engineer"}'
