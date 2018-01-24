@@ -37,8 +37,12 @@ assertions:
   # - "@Response.data.salary >= 90000"
   # - "@Response.data.age <= 40"
 
-after:
+cleanup:
   - user_delete  
+
+policies:
+  initExec: Request
+  cleanupExec: Request
 
 tags:
   - V1

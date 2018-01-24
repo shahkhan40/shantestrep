@@ -1,0 +1,195 @@
+
+                             Spring
+
+
+http status codes            statusCode
+response body                body
+response headers             headers
+
+
+
+@Response.body.errors == false
+@Response.statusCode == 200
+
+@StatusCode
+@Body
+@Headers
+
+@ParentResponse
+@ParentRequest
+
+
+config.yaml
+
+  version: '1'
+
+  fx_service:
+    ip:
+    accessKey:
+    secretkey:
+
+  
+  test_app:
+    name:
+    environments: []
+      name: Default
+      url:
+      auths: []
+        name: Default
+        type:
+        username:
+        password:
+    job_profiles: []
+      name: Default
+      environment:
+      tags:
+      region:
+
+    <===========--> 88% EXECUTING
+
+
+
+  
+     Hadoop
+      M --> Slaves
+
+
+     Data <> Hadoop
+          <> job run
+
+     Job  <> Fx  <> region <> bots
+
+
+     1. 4 hrs <> 30 seconds
+     2. No programming skills are needed.
+     3. Github data (check-in)
+     4. No maintaince
+
+     1yr (3 resources) 1000
+     100K --> 1000 tests
+          --> maintaince
+
+     1000 tests - 1mo
+     $5k/mo
+
+     Validate:
+       Seed Round: 5-10 (Startup)
+       find 10 such startups
+         1000
+         suites:
+           user create - valid/invalid
+           list 
+           items 
+           50 bugs (10 P0)
+           $1000/mo
+       Series A: 25 (10)
+          $5000/mo
+
+          5 * 1000/mo
+          5 * 5000/mo
+
+          30k/mo ==> 360K/yr
+
+        Series B: (100)
+          $10,000/mo * 5 $1M/yr
+
+
+        15M-20M
+        $5M (25%)
+
+        OpenSource
+        1yr --> $20m/yr --> $400m
+
+        2yrs --> 
+
+
+
+
+    
+
+
+     Assertions:
+       - "[Operand] [Operator] [Operand]"
+       - "[Operand] [Operator] [Operand]"
+
+       RunContext:
+         request
+         response
+         statusCode
+         headers
+         status: pass, fail, skip
+         logs
+
+       AssertionValidator
+         validate(assertions, context)
+         	forEach
+         		
+
+       ValidatorDelegate (Done)
+          EqualsValidator  (Done)
+         		NotEqualsValidator  (Done)
+
+       Validator  (Done)
+         validate(key, value, context) -- validate assertion & capture logs
+
+       OperandEvaluator
+       		eval(key, context) : value
+
+
+
+       Sample Operands - @StatusCode @Response @Request @Headers NULL/EMPTY
+       Sample Operator - == != 
+
+
+
+     How to test FxT?
+      - Components
+        - Users 
+        - Projects
+          - Environments
+            - Credentials
+          - Jobs
+            - Runs
+          - TestSuites
+
+      - Users [name, username, email, company, jobTitle]
+        - Register - 
+            positive: 
+            negative:
+        - Update - positive/negative
+        - Delete - positive/negative
+      - Projects
+        - Create
+        - Update
+        - Delete
+      - Runs
+        - /runs/run-job/{id} POST
+        - /runs/id (Aync validate) GET
+
+       
+    cleanup:
+      CleanSuite:
+        name:
+        type: Suite | AbstractSuite
+        endpoint:
+        method:
+        auth:
+        headers[]:
+        requests[]:
+        developers[]:
+        after[]:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

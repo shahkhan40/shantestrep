@@ -170,7 +170,7 @@ assertions:
   - "@Response.errors == false"
   - "@Response.data.name == @Request.name"
 
-after:
+cleanup:
   - project_delete  
 
 tags:

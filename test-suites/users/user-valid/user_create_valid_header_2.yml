@@ -31,7 +31,7 @@ request:
 assertions:
   - "@StatusCode == 200"    
 
-after:
+cleanup:
   - user_delete  
 
 tags:

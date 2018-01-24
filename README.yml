@@ -2,7 +2,7 @@
 
 # A typtical Fx project structure looks like this.
   fx.properties # contains fx server connection info
-  project.yml   # contains test project details
+  Fxfile        # contains test project details
   test-suites   # this directory contains one or more test suite files.
 
 
@@ -14,7 +14,7 @@
 ################ End of Sample fx.properties ################
 
 
-################ Sample project.yml ################
+################ Sample Fxfile ################
   version: '1'            # fx schema version defaults to '1'.
 
   # test app info
@@ -37,19 +37,19 @@
         - V1
       region: fx-default-queue               # region - represents the Fx Bot deployments (fx-default-queue is the default but other regions can easily be added.)
 
-################ End of Sample project.yml ################
+################ End of Sample Fxfile ################
 
 
 ################ Sample test-suit file <test-suites/users_create_1.yml> ################
 
-# endpoint - represents the API Endpoint. The base-url value comes from the project.yml file
+# endpoint - represents the API Endpoint. The base-url value comes from the Fxfile file
 endpoint: /users
 
 # Suite type - SUITE or ABSTRACT 
 #   ABSTRACT - is not directly excuted but can be injected into other suites as after elements.
 type: SUITE
 
-# auth - refers to auth defined in the project.yml file
+# auth - refers to auth defined in the Fxfile file
 # If not defined defaults to 'Default' auth.
 # If auth is set to 'NONE' then no auth is used when executing requests 
 auth: default
@@ -94,7 +94,7 @@ assertions:
 after:
   - user_delete  
 
-# tags - when defining job-profile in the project.yml file user can pick any tags to be part of the profile.
+# tags - when defining job-profile in the Fxfile file user can pick any tags to be part of the profile.
 tags:
   - V1  
 
