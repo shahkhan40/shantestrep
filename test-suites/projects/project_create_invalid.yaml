@@ -32,12 +32,12 @@ requests:
   - '{
         "name": "Test-{{@Random | 6}}",
         "description": "SD-Test example",
-        "org_id": "abc"
+        "orgId": "abc"
      }'
   - '{
         "name": "Test-{{@Random | 6}}",
         "description": "SD-Test example",
-        "org_id": "123"
+        "orgId": "123"
      }'
 
 
