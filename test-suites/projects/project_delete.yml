@@ -4,7 +4,7 @@
 type: ABSTRACT
 
 authors:
-  - Intesar Mohammed
+  - Intesar Shannan Mohammed
 
 endpoint: /projects/{{@Response.data.id}}
 
