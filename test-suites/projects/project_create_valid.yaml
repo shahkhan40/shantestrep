@@ -25,13 +25,14 @@ auth: Default
 requests:
   - '{
         "name": "Test-{{@Random | 6}}",
-        "description": "SD-Test example",
-        "orgId": "abc"
+        "description": "SD-Test example"
      }'
 
 assertions:
   - "@StatusCode == 200"
-  - "@Response.errors == true"
+  - "@Response.errors == false"
+  - "@Response.data.name == @Request.name"
+  - "@Response.data.description == @Request.description"
 
 cleanup:
   - project_delete
