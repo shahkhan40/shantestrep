@@ -1,0 +1,45 @@
+---
+# Validates enterprise-user sign-ups.
+
+authors:
+  - Intesar Shannan Mohammed
+
+endpoint: /users/enterprise-sign-up
+method: POST
+auth: NONE
+
+# Required-fields: name, email, password, company
+# Fields-Constraints
+# name: Nullable
+# email: valid email, unique
+# password: min 8 chars
+# company: min 3 chars, unique
+# @Response --> boolean
+
+requests:
+  # invalid company
+  - '{"name": "fn1 ln", "email": "test@fxlabs.io", "password": "12345678", "company": ""}'
+  - '{"name": "fn1 ln", "email": "test@fxlabs.io", "password": "12345678", "company": "1"}'
+  - '{"name": "fn1 ln", "email": "test@fxlabs.io", "password": "12345678", "company": "12"}'
+
+  # invalid email
+  - '{"name": "fn1 ln", "email": "", "password": "12345678", "company": "123"}'
+  - '{"name": "fn1 ln", "email": "test@", "password": "12345678", "company": "123"}'
+  - '{"name": "fn1 ln", "email": "test@fxlabs", "password": "12345678", "company": "123"}'
+  - '{"name": "fn1 ln", "email": "test@fxlabs_io", "password": "12345678", "company": "123"}'
+
+  # invalid password
+  - '{"name": "fn1 ln", "email": "test@fxlabs.io", "password": "", "company": "123"}'
+  - '{"name": "fn1 ln", "email": "test@fxlabs.io", "password": "1", "company": "123"}'
+  - '{"name": "fn1 ln", "email": "test@fxlabs.io", "password": "12", "company": "123"}'
+  - '{"name": "fn1 ln", "email": "test@fxlabs.io", "password": "123", "company": "123"}'
+  - '{"name": "fn1 ln", "email": "test@fxlabs.io", "password": "1234", "company": "123"}'
+  - '{"name": "fn1 ln", "email": "test@fxlabs.io", "password": "12345", "company": "123"}'
+  - '{"name": "fn1 ln", "email": "test@fxlabs.io", "password": "123456", "company": "123"}'
+  - '{"name": "fn1 ln", "email": "test@fxlabs.io", "password": "1234567", "company": "123"}'
+
+assertions:
+  - "@Response.errors == true"
+
+tags:
+  - V1

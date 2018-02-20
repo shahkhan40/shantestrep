@@ -1,0 +1,31 @@
+
+---
+version: '1'
+
+# App (Project) name
+name: Fx
+
+# App description
+description: Fx Dog fooding.
+
+# license
+licenses:
+  - APACHE LICENSE, VERSION 2.0
+
+# App environments
+environments:
+  - name: Stg
+    baseUrl: http://stg1.fxlabs.io/api/v1
+    # app access credentials
+    auths:
+      - name: Default
+        authType: BASIC
+        username: admin@fxlabs.io
+        password: apple123
+# Job profiles
+jobs:
+  - name: Stg
+    environment: Stg
+    tags:
+      - V1
+    regions: fx-default-region

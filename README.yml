@@ -1,9 +1,9 @@
 ---
 
 # A typtical Fx project structure looks like this.
-  fx.properties # contains fx server connection info
-  Fxfile        # contains test project details
+  Fxfile.yaml   # contains test project details
   test-suites   # this directory contains one or more test suite files.
+  fx.properties # Optional - contains fx server connection info
 
 
 
@@ -14,11 +14,11 @@
 ################ End of Sample fx.properties ################
 
 
-################ Sample Fxfile ################
+################ Sample Fxfile.yaml ################
   version: '1'            # fx schema version defaults to '1'.
 
   # test app info
-  name: Fx-App-Users
+  name: Fx
   # app environments
   environments:         # environments - represents one or more instance of App (e.g. Dev, QE, Stg, Prod etc).
     - name: Default     # App environment name (Always should have one 'Default')
@@ -45,13 +45,13 @@
 # endpoint - represents the API Endpoint. The base-url value comes from the Fxfile file
 endpoint: /users
 
-# Suite type - SUITE or ABSTRACT 
+# Suite type - SUITE or ABSTRACT
 #   ABSTRACT - is not directly excuted but can be injected into other suites as after elements.
 type: SUITE
 
 # auth - refers to auth defined in the Fxfile file
 # If not defined defaults to 'Default' auth.
-# If auth is set to 'NONE' then no auth is used when executing requests 
+# If auth is set to 'NONE' then no auth is used when executing requests
 auth: default
 
 # method - represents the API http method (GET, PUT, POST, DELETE etc)
@@ -71,31 +71,31 @@ request:
   - '{"name": " ", "username": "u1", "email": "e1@fx.local", "company": "fx", "jobTitle": "Engineer"}'
   # optional company
   - '{"name": "", "username": "u1", "email": "e1@fx.local", "company": " ", "jobTitle": "Engineer"}'
-  - '{"name": " ", "username": "u1", "email": "e1@fx.local", "company": "", "jobTitle": "Engineer"}'  
+  - '{"name": " ", "username": "u1", "email": "e1@fx.local", "company": "", "jobTitle": "Engineer"}'
   - '{"name": "fn1 ln", "username": "u1", "email": "e1@fx.local", "company": " ", "jobTitle": "Engineer"}'
-  - '{"name": "fn1 ln", "username": "u1", "email": "e1@fx.local", "company": "", "jobTitle": "Engineer"}'  
+  - '{"name": "fn1 ln", "username": "u1", "email": "e1@fx.local", "company": "", "jobTitle": "Engineer"}'
   # optional jobTitle
   - '{"name": "", "username": "u1", "email": "e1@fx.local", "company": " ", "jobTitle": ""}'
-  - '{"name": " ", "username": "u1", "email": "e1@fx.local", "company": "", "jobTitle": " "}'  
+  - '{"name": " ", "username": "u1", "email": "e1@fx.local", "company": "", "jobTitle": " "}'
   - '{"name": "fn1 ln", "username": "u1", "email": "e1@fx.local", "company": " ", "jobTitle": ""}'
-  - '{"name": "fn1 ln", "username": "u1", "email": "e1@fx.local", "company": "", "jobTitle": " "}'  
+  - '{"name": "fn1 ln", "username": "u1", "email": "e1@fx.local", "company": "", "jobTitle": " "}'
 
 # assertions - validate http response code, headers and body using variables like (@StatusCode, @Headers, @Body, @Body.id etc)
 assertions:
-  - "@StatusCode == 200"   
+  - "@StatusCode == 200"
   - "@Response.errors == false"
   - "@Response.data.name == @Request.name"
   - "@Response.data.username ==IgnoreCase @Request.username"
   - "@Response.data.email == @Request.email"
   - "@Response.data.company == @Request.company"
-  - "@Response.data.jobTitle == @Request.jobTitle" 
+  - "@Response.data.jobTitle == @Request.jobTitle"
 
 # cleanup - excutes the below abstract suites for each request.
 after:
-  - user_delete  
+  - user_delete
 
 # tags - when defining job-profile in the Fxfile file user can pick any tags to be part of the profile.
 tags:
-  - V1  
+  - V1
 
-################ End of Sample test-suit file ################  
+################ End of Sample test-suit file ################

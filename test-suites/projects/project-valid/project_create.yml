@@ -8,7 +8,7 @@ endpoint: /projects
 
 method: POST
 
-request:
+requests:
   - '{
         "name": "Fx-App1",
         "description": "SD-Test example",
@@ -166,13 +166,12 @@ request:
         ]
       }'
 assertions:
-  - "@StatusCode == 200" 
+  - "@StatusCode == 200"
   - "@Response.errors == false"
   - "@Response.data.name == @Request.name"
 
 cleanup:
-  - project_delete  
+  - project_delete
 
 tags:
-  - V1
-
+  - SANDBOX
