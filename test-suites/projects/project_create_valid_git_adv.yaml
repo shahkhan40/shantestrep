@@ -62,12 +62,10 @@ assertions:
   - "@Response.data.name == @Request.name"
   - "@Response.data.projectType == @Request.projectType"
   - "@Response.data.projectType == GIT"
-  - "@Response.data.url == @Request.url"
-  - "@Response.data.branch == @Request.branch"
-  - "@Response.data.username == @Request.username"
 
 
 cleanup:
+  - project_find_by_git
   - project_delete
 
 tags:

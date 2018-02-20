@@ -1,0 +1,21 @@
+---
+# Validates project delete with parent id.
+
+type: ABSTRACT
+
+authors:
+  - Intesar Shannan Mohammed
+
+endpoint: /projects/{{@Response.data.id}}/git-account
+
+method: GET
+
+auth: Default
+
+assertions:
+  - "@StatusCode == 200"
+  - "@Response.errors == false"
+  - "@Response.data.url == @Request.url"
+
+policies:
+  logger: DEBUG
