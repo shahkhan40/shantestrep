@@ -1,0 +1,40 @@
+---
+# Validates project creation with invalid data.
+
+authors:
+  - Intesar Shannan Mohammed
+
+endpoint: /projects
+method: POST
+auth: NONE
+# Auth required for this endpoint.
+
+# Try using random chars for unique constriants fields.
+# Required-fields: name, org_id, description, projectType, url, branch username, password
+# Unique Constraints Fields:
+# Fields-Constraints
+# name: Min 1 char, unique per org_id
+# org_id: optional or valid.
+# description: optional
+# projectType: Optional - LOCAL or GIT, Default: LOCAL
+# url - Required if GIT
+# branch - Optional
+# username - Optional
+# password: Optional
+# @Response --> {id, name, description, projectType, visibility etc}
+requests:
+  - '{
+        "name": "Fx-{{@Random | 6}}",
+        "description": "SD-Test example",
+      }'
+assertions:
+  - "@StatusCode != 200"
+
+cleanup:
+  #- project_delete
+
+tags:
+  - V1
+
+policies:
+  logger: DEBUG

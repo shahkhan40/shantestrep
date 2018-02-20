@@ -19,7 +19,7 @@ auth: NONE
 # @Response --> boolean
 
 requests:
-  # invalid company 
+  # invalid company
   - '{"name": "fn1 ln", "email": "test@fxlabs.io", "password": "12345678", "company": ""}'
   - '{"name": "fn1 ln", "email": "test@fxlabs.io", "password": "12345678", "company": "1"}'
   - '{"name": "fn1 ln", "email": "test@fxlabs.io", "password": "12345678", "company": "12"}'
@@ -45,7 +45,6 @@ assertions:
 
 tags:
   - V1
-
 
 policies:
   logger: DEBUG
