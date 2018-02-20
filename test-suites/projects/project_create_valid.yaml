@@ -1,5 +1,5 @@
 ---
-# Validates project creation with invalid data.
+# Validates project creation with valid data.
 
 authors:
   - Intesar Shannan Mohammed
@@ -23,33 +23,22 @@ auth: Default
 # password: Optional
 # @Response --> {id, name, description, projectType, visibility etc}
 requests:
-  # invalid name
-  - '{
-        "name": "",
-        "description": "SD-Test example"
-     }'
-  # invalid org_id
   - '{
         "name": "Test-{{@Random | 6}}",
         "description": "SD-Test example",
         "orgId": "abc"
      }'
-  - '{
-        "name": "Test-{{@Random | 6}}",
-        "description": "SD-Test example",
-        "orgId": "123"
-     }'
-
 
 assertions:
   - "@StatusCode == 200"
   - "@Response.errors == true"
 
 cleanup:
-  #- project_delete
+  - project_delete
 
 tags:
   - V1
+  - SANDBOX
 
 policies:
   logger: DEBUG

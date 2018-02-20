@@ -9,3 +9,12 @@ authors:
 endpoint: /projects/{{@Response.data.id}}
 
 method: DELETE
+
+auth: Default
+
+assertions:
+  - "@StatusCode == 200"
+  - "@Response.errors == false"
+
+policies:
+  logger: DEBUG
