@@ -29,8 +29,7 @@ requests:
         "url": "https://github.com/intesar/Fx-Test-Data.git",
         "branch": "",
         "username": "",
-        "password": "",
-
+        "password": ""
      }'
   - '{
         "name": "Test-{{@Random | 6}}",
@@ -38,8 +37,7 @@ requests:
         "url": "https://github.com/intesar/Fx-Test-Data.git",
         "branch": "master",
         "username": "",
-        "password": "",
-
+        "password": ""
      }'
   - '{
         "name": "Test-{{@Random | 6}}",
@@ -47,8 +45,7 @@ requests:
         "url": "https://github.com/intesar/Fx-Test-Data.git",
         "branch": "master",
         "username": "test",
-        "password": "",
-
+        "password": ""
      }'
   - '{
         "name": "Test-{{@Random | 6}}",
@@ -56,8 +53,7 @@ requests:
         "url": "https://github.com/intesar/Fx-Test-Data.git",
         "branch": "master",
         "username": "test",
-        "password": "test",
-
+        "password": "test"
      }'
 
 assertions:

@@ -32,9 +32,6 @@ assertions:
   - "@StatusCode == 200"
   - "@Response.errors == true"
 
-cleanup:
-  - project_delete
-
 tags:
   - V1
   - SANDBOX
