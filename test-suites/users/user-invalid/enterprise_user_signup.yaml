@@ -8,7 +8,9 @@ endpoint: /users/enterprise-sign-up
 method: POST
 auth: NONE
 
+# Try using random chars for unique constriants fields.
 # Required-fields: name, email, password, company
+# Unique Constraints Fields: email, company
 # Fields-Constraints
 # name: Nullable
 # email: valid email, unique
