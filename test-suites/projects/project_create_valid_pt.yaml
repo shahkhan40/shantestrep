@@ -39,7 +39,6 @@ cleanup:
 
 tags:
   - V1
-  - SANDBOX
 
 policies:
   logger: DEBUG

@@ -24,37 +24,20 @@ auth: Default
 # @Response --> {id, name, description, projectType, visibility etc}
 requests:
   - '{
-        "name": "Test-{{@Random | 1}}",
-        "description": "SD-Test example"
-     }'
-  - '{
-        "name": "Test-{{@Random | 2}}",
-        "description": "SD-Test example"
-     }'
-  - '{
         "name": "Test-{{@Random | 6}}",
-        "description": "SD-Test example"
-     }'
-  - '{
-        "name": "Test-{{@Random | 24}}",
-        "description": "SD-Test example"
-     }'
-  - '{
-        "name": "Test-{{@Random | 6}}",
-        "description": ""
+        "projectType": "GIT"
      }'
 
 assertions:
   - "@StatusCode == 200"
-  - "@Response.errors == false"
-  - "@Response.data.name == @Request.name"
-  - "@Response.data.description == @Request.description"
+  - "@Response.errors == true"
 
 cleanup:
   - project_delete
 
 tags:
   - V1
+  - SANDBOX
 
 policies:
   logger: DEBUG

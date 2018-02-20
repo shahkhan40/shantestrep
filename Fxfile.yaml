@@ -42,7 +42,7 @@ jobs:
     tags:
       - V1
     regions: FxLabs/US_WEST_1
-  - name: Local2
+  - name: SANDBOX
     environment: Local
     tags:
       - SANDBOX

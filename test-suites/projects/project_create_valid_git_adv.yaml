@@ -27,6 +27,37 @@ requests:
         "name": "Test-{{@Random | 6}}",
         "projectType": "GIT",
         "url": "https://github.com/intesar/Fx-Test-Data.git",
+        "branch": "",
+        "username": "",
+        "password": "",
+
+     }'
+  - '{
+        "name": "Test-{{@Random | 6}}",
+        "projectType": "GIT",
+        "url": "https://github.com/intesar/Fx-Test-Data.git",
+        "branch": "master",
+        "username": "",
+        "password": "",
+
+     }'
+  - '{
+        "name": "Test-{{@Random | 6}}",
+        "projectType": "GIT",
+        "url": "https://github.com/intesar/Fx-Test-Data.git",
+        "branch": "master",
+        "username": "test",
+        "password": "",
+
+     }'
+  - '{
+        "name": "Test-{{@Random | 6}}",
+        "projectType": "GIT",
+        "url": "https://github.com/intesar/Fx-Test-Data.git",
+        "branch": "master",
+        "username": "test",
+        "password": "test",
+
      }'
 
 assertions:
@@ -36,12 +67,16 @@ assertions:
   - "@Response.data.projectType == @Request.projectType"
   - "@Response.data.projectType == GIT"
   - "@Response.data.url == @Request.url"
+  - "@Response.data.branch == @Request.branch"
+  - "@Response.data.username == @Request.username"
+
 
 cleanup:
   - project_delete
 
 tags:
   - V1
+  - SANDBOX
 
 policies:
   logger: DEBUG
