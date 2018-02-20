@@ -15,7 +15,7 @@ auth: Default
 assertions:
   - "@StatusCode == 200"
   - "@Response.errors == false"
-  - "@Response.data.url == @Request.url"
+  - "@Response.data.url != NULL"
 
 policies:
   logger: DEBUG
