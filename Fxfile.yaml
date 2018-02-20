@@ -28,4 +28,4 @@ jobs:
     environment: Stg
     tags:
       - V1
-    regions: fx-default-region
+    regions: FxLabs/US_WEST_1
