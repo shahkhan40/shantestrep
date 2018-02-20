@@ -1,0 +1,45 @@
+---
+# Validates enterprise-user sign-ups.
+
+authors:
+  - Intesar Shannan Mohammed
+
+endpoint: /users/personal-sign-up
+method: POST
+auth: NONE
+
+# Required-fields: name, email, password, company
+# Fields-Constraints
+# name: Nullable
+# email: valid email, unique
+# password: min 8 chars
+# company: min 3 chars, unique
+# @Response --> boolean
+
+requests:
+  # valid email
+  - '{"name": "fn1 ln", "email": "{{@randomAlphanumeric | 3}}@fxlabs.io", "password": "12345678", "company": "{{@randomAlphanumeric | 3}}"}'
+  - '{"name": "fn1 ln", "email": "{{@randomAlphanumeric | 5}}@fxlabs.io", "password": "12345678", "company": "{{@randomAlphanumeric | 3}}"}'
+  - '{"name": "fn1 ln", "email": "{{@randomAlphanumeric | 12}}@fxlabs.io", "password": "12345678", "company": "{{@randomAlphanumeric | 3}}"}'
+  - '{"name": "fn1 ln", "email": "{{@randomAlphanumeric | 24}}@fxlabs.io", "password": "12345678", "company": "{{@randomAlphanumeric | 3}}"}'
+  # valid name
+  - '{"name": "", "email": "{{@randomAlphanumeric | 3}}@fxlabs.io", "password": "12345678", "company": "{{@randomAlphanumeric | 3}}"}'
+  - '{"name": "1", "email": "{{@randomAlphanumeric | 3}}@fxlabs.io", "password": "12345678", "company": "{{@randomAlphanumeric | 3}}"}'
+  - '{"name": "3", "email": "{{@randomAlphanumeric | 3}}@fxlabs.io", "password": "12345678", "company": "{{@randomAlphanumeric | 3}}"}'
+  - '{"name": "first name", "email": "{{@randomAlphanumeric | 3}}@fxlabs.io", "password": "12345678", "company": "{{@randomAlphanumeric | 3}}"}'
+  - '{"name": "first1 name2", "email": "{{@randomAlphanumeric | 3}}@fxlabs.io", "password": "12345678", "company": "{{@randomAlphanumeric | 3}}"}'
+  - '{"name": "Jr. first name", "email": "{{@randomAlphanumeric | 3}}@fxlabs.io", "password": "12345678", "company": "{{@randomAlphanumeric | 3}}"}'
+  - '{"name": "{{@randomAlphanumeric | 24}}", "email": "{{@randomAlphanumeric | 3}}@fxlabs.io", "password": "12345678", "company": "{{@randomAlphanumeric | 3}}"}'
+  # valid Password
+  - '{"name": "fn1 ln", "email": "{{@randomAlphanumeric | 3}}@fxlabs.io", "password": "12345678", "company": "{{@randomAlphanumeric | 3}}"}'
+  - '{"name": "fn1 ln", "email": "{{@randomAlphanumeric | 3}}@fxlabs.io", "password": "{{@randomAlphanumeric | 24}}", "company": "{{@randomAlphanumeric | 3}}"}'
+  # valid company
+  - '{"name": "fn1 ln", "email": "{{@randomAlphanumeric | 3}}@fxlabs.io", "password": "12345678", "company": "{{@randomAlphanumeric | 12}}"}'
+  - '{"name": "fn1 ln", "email": "{{@randomAlphanumeric | 3}}@fxlabs.io", "password": "12345678", "company": "{{@randomAlphanumeric | 24}}"}'
+
+assertions:
+  - "@StatusCode == 200"
+  - "@Response.errors == false"
+
+tags:
+  - V1
