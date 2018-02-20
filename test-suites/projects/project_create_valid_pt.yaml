@@ -24,31 +24,19 @@ auth: Default
 # @Response --> {id, name, description, projectType, visibility etc}
 requests:
   - '{
-        "name": "Test-{{@Random | 1}}",
-        "description": "SD-Test example"
-     }'
-  - '{
-        "name": "Test-{{@Random | 2}}",
-        "description": "SD-Test example"
+        "name": "Test-{{@Random | 6}}",
+        "projectType": "LOCAL"
      }'
   - '{
         "name": "Test-{{@Random | 6}}",
-        "description": "SD-Test example"
-     }'
-  - '{
-        "name": "Test-{{@Random | 24}}",
-        "description": "SD-Test example"
-     }'
-  - '{
-        "name": "Test-{{@Random | 6}}",
-        "description": ""
+        "projectType": ""
      }'
 
 assertions:
   - "@StatusCode == 200"
   - "@Response.errors == false"
   - "@Response.data.name == @Request.name"
-  - "@Response.data.description == @Request.description"
+  - "@Response.data.projectType == LOCAL"
 
 cleanup:
   - project_delete
