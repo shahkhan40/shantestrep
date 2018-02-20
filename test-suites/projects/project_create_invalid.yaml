@@ -27,28 +27,28 @@ requests:
   - '{
         "name": "",
         "description": "SD-Test example"
-     }',
+     }'
   - '{
         "name": " ",
         "description": "SD-Test example"
-    }',
+    }'
   # invalid org_id
   - '{
         "name": "Test-{{@Random | 6}}",
         "description": "SD-Test example",
         "org_id": " "
-     }',
+     }'
   - '{
         "name": "Test-{{@Random | 6}}",
         "description": "SD-Test example",
         "org_id": "123"
-     }',
+     }'
   # invalid projectType
   - '{
         "name": "Test-{{@Random | 6}}",
         "description": "SD-Test example",
         "projectType": " "
-     }',
+     }'
   - '{
         "name": "Test-{{@Random | 6}}",
         "description": "SD-Test example",
