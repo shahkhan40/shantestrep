@@ -27,10 +27,6 @@ requests:
         "name": "Test-{{@Random | 6}}",
         "projectType": "LOCAL"
      }'
-  - '{
-        "name": "Test-{{@Random | 6}}",
-        "projectType": ""
-     }'
 
 assertions:
   - "@StatusCode == 200"

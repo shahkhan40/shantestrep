@@ -26,6 +26,10 @@ requests:
   # invalid projectType
   - '{
         "name": "Test-{{@Random | 6}}",
+        "projectType": ""
+     }'
+  - '{
+        "name": "Test-{{@Random | 6}}",
         "description": "SD-Test example",
         "projectType": " "
      }'
