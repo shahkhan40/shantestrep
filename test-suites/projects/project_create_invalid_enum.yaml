@@ -23,34 +23,26 @@ auth: Default
 # password: Optional
 # @Response --> {id, name, description, projectType, visibility etc}
 requests:
-  # invalid name
-  - '{
-        "name": "",
-        "description": "SD-Test example"
-     }'
-  # invalid org_id
+  # invalid projectType
   - '{
         "name": "Test-{{@Random | 6}}",
         "description": "SD-Test example",
-        "org_id": "abc"
+        "projectType": " "
      }'
   - '{
         "name": "Test-{{@Random | 6}}",
         "description": "SD-Test example",
-        "org_id": "123"
+        "projectType": "XYZ"
      }'
-
 
 assertions:
-  - "@StatusCode == 200"
-  - "@Response.errors == true"
+  - "@StatusCode == 405"
 
 cleanup:
   #- project_delete
 
 tags:
   - V1
-  - SANDBOX
 
 policies:
   logger: DEBUG
