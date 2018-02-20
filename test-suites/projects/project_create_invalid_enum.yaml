@@ -36,7 +36,7 @@ requests:
      }'
 
 assertions:
-  - "@StatusCode == 405"
+  - "@StatusCode != 200"
 
 cleanup:
   #- project_delete
