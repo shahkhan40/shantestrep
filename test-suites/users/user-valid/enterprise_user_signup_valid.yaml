@@ -45,3 +45,6 @@ assertions:
 
 tags:
   - V1
+
+policies:
+  logger: DEBUG
