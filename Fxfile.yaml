@@ -22,10 +22,23 @@ environments:
         authType: BASIC
         username: admin@fxlabs.io
         password: apple123
+  - name: Local
+    baseUrl: http://localhost:8080/api/v1
+    # app access credentials
+    auths:
+      - name: Default
+        authType: BASIC
+        username: admin@fxlabs.io
+        password: apple123
 # Job profiles
 jobs:
   - name: Stg
     environment: Stg
+    tags:
+      - V1
+    regions: FxLabs/US_WEST_1
+  - name: Local
+    environment: Local
     tags:
       - V1
     regions: FxLabs/US_WEST_1
