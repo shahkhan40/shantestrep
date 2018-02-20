@@ -17,7 +17,7 @@ auth: NONE
 # @Response --> boolean
 
 requests:
-  # invalid company - if set then minimum 3 chars
+  # invalid company - if set then minimum 3 chars 
   - '{"name": "fn1 ln", "email": "test@fxlabs.io", "password": "12345678", "company": "ab"}'
   - '{"name": "fn1 ln", "email": "test@fxlabs.io", "password": "12345678", "company": "1"}'
   - '{"name": "fn1 ln", "email": "test@fxlabs.io", "password": "12345678", "company": "12"}'
