@@ -4,7 +4,7 @@
 authors:
   - Intesar Shannan Mohammed
 
-endpoint: /projects
+endpoint: /projects/add
 method: POST
 auth: NONE
 # Auth required for this endpoint.
