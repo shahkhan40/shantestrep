@@ -17,7 +17,7 @@ auth: NONE
 # @Response --> boolean
 
 requests:
-  # valid email 
+  # valid email
   - '{"name": "fn1 ln", "email": "{{@RandomAlphanumeric | 3}}@fxlabs.io", "password": "12345678", "company": "{{@RandomAlphanumeric | 3}}"}'
   - '{"name": "fn1 ln", "email": "{{@RandomAlphanumeric | 5}}@fxlabs.io", "password": "12345678", "company": "{{@RandomAlphanumeric | 3}}"}'
   - '{"name": "fn1 ln", "email": "{{@RandomAlphanumeric | 12}}@fxlabs.io", "password": "12345678", "company": "{{@RandomAlphanumeric | 3}}"}'
@@ -43,7 +43,6 @@ assertions:
 
 tags:
   - V1
-
 
 policies:
   logger: DEBUG
