@@ -1,0 +1,15 @@
+
+Coverage:
+  # Add Project
+  - Invalid Project Add
+  - Valid Project Add
+  - Delete Project
+  - Find Project's Git-Account Details
+
+  # TODO
+  # Update Project
+  # Project Actions
+  - Add User with Role
+  - Remove User from Project
+  - Make Project PUBLIC
+  - Make Project ORG PUBLIC

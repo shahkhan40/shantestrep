@@ -1,0 +1,24 @@
+
+Cluster:
+  fields:
+    org: optional or valid
+    name: required unique per org
+    region: optional - label
+    key: optional or unique per system or auto-generated
+
+    visibility: PRIVATE, ORG_PUBLIC, PUBLIC
+    driver: MANUAL, KUBERNETES
+    status: ACTIVE, INACTIVE
+    cloudType: OTHER, AWS, DIGITAL_OCEAN, GCP, AZURE, PRIVATE_CLOUD, VMWARE, OPENSTACK
+
+Create Region:
+  name, org, location, visibility, [driver, cloudType, status - Not supported]
+View Regions:
+  Name  Location  Status Visibility
+  # PUBLIC - everyone
+  # PRIVATE - OWNER
+  # ORG_PUBLIC - Org
+Edit Regions:
+  name, location, visibility
+Delete Region:
+  owner can delete
