@@ -35,7 +35,6 @@ assertions:
   - "@Response.data.name == @Request.name"
   - "@Response.data.projectType == @Request.projectType"
   - "@Response.data.projectType == GIT"
-  - "@Response.data.url == @Request.url"
 
 cleanup:
   - project_delete
