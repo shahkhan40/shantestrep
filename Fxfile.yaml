@@ -21,7 +21,7 @@ environments:
       - name: Default
         authType: BASIC
         username: admin@fxlabs.io
-        password: apple123
+        password: admin123$
   - name: Local
     baseUrl: http://localhost:8080/api/v1
     # app access credentials
