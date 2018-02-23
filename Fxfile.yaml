@@ -37,6 +37,7 @@ jobs:
     tags:
       - V1
     regions: FxLabs/US_WEST_1
+    cron: '0 30 * ? * *'
   - name: Local
     environment: Local
     tags:
