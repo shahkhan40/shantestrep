@@ -45,6 +45,8 @@
 # endpoint - represents the API Endpoint. The base-url value comes from the Fxfile file
 endpoint: /users
 
+description:
+
 # Suite type - SUITE or ABSTRACT
 #   ABSTRACT - is not directly excuted but can be injected into other suites as after elements.
 type: SUITE
@@ -63,22 +65,34 @@ headers:
   - 'Accept: application/json'
 
 # requets - group one or more api requests data for type (POST, PUT, DELETE etc)
-request:
-  - '{"name": "fn1 ln", "username": "u1", "email": "e1@fx.local", "company": "fx", "jobTitle": "Engineer"}'
-  - '{"name": "fn1 ln", "username": "u1", "email": "e1@fx.local", "company": "fx", "jobTitle": "Engineer"}'
+testCases:
+  - id: 1
+    body: '{"name": "fn1 ln", "username": "u1", "email": "e1@fx.local", "company": "fx", "jobTitle": "Engineer"}'
+  -  id: 1
+    body: '{"name": "fn1 ln", "username": "u1", "email": "e1@fx.local", "company": "fx", "jobTitle": "Engineer"}'
   # optional name
-  - '{"name": "", "username": "u1", "email": "e1@fx.local", "company": "fx", "jobTitle": "Engineer"}'
-  - '{"name": " ", "username": "u1", "email": "e1@fx.local", "company": "fx", "jobTitle": "Engineer"}'
+  -  id: 1
+    body: '{"name": "", "username": "u1", "email": "e1@fx.local", "company": "fx", "jobTitle": "Engineer"}'
+  -  id: 1
+    body: '{"name": " ", "username": "u1", "email": "e1@fx.local", "company": "fx", "jobTitle": "Engineer"}'
   # optional company
-  - '{"name": "", "username": "u1", "email": "e1@fx.local", "company": " ", "jobTitle": "Engineer"}'
-  - '{"name": " ", "username": "u1", "email": "e1@fx.local", "company": "", "jobTitle": "Engineer"}'
-  - '{"name": "fn1 ln", "username": "u1", "email": "e1@fx.local", "company": " ", "jobTitle": "Engineer"}'
-  - '{"name": "fn1 ln", "username": "u1", "email": "e1@fx.local", "company": "", "jobTitle": "Engineer"}'
+  -  id: 1
+    body: '{"name": "", "username": "u1", "email": "e1@fx.local", "company": " ", "jobTitle": "Engineer"}'
+  -  id: 1
+    body: '{"name": " ", "username": "u1", "email": "e1@fx.local", "company": "", "jobTitle": "Engineer"}'
+  -  id: 1
+    body: '{"name": "fn1 ln", "username": "u1", "email": "e1@fx.local", "company": " ", "jobTitle": "Engineer"}'
+  -  id: 1
+    body: '{"name": "fn1 ln", "username": "u1", "email": "e1@fx.local", "company": "", "jobTitle": "Engineer"}'
   # optional jobTitle
-  - '{"name": "", "username": "u1", "email": "e1@fx.local", "company": " ", "jobTitle": ""}'
-  - '{"name": " ", "username": "u1", "email": "e1@fx.local", "company": "", "jobTitle": " "}'
-  - '{"name": "fn1 ln", "username": "u1", "email": "e1@fx.local", "company": " ", "jobTitle": ""}'
-  - '{"name": "fn1 ln", "username": "u1", "email": "e1@fx.local", "company": "", "jobTitle": " "}'
+  -  id: 1
+    body: '{"name": "", "username": "u1", "email": "e1@fx.local", "company": " ", "jobTitle": ""}'
+  -  id: 1
+    body: '{"name": " ", "username": "u1", "email": "e1@fx.local", "company": "", "jobTitle": " "}'
+  -  id: 1
+    body: '{"name": "fn1 ln", "username": "u1", "email": "e1@fx.local", "company": " ", "jobTitle": ""}'
+  -  id: 1
+    body: '{"name": "fn1 ln", "username": "u1", "email": "e1@fx.local", "company": "", "jobTitle": " "}'
 
 # assertions - validate http response code, headers and body using variables like (@StatusCode, @Headers, @Body, @Body.id etc)
 assertions:
