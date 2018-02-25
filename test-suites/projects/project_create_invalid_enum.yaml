@@ -22,18 +22,21 @@ auth: Default
 # username - Optional
 # password: Optional
 # @Response --> {id, name, description, projectType, visibility etc}
-requests:
+testCases:
   # invalid projectType
-  - '{
+  - id: 1
+    body: '{
         "name": "Test-{{@Random | 6}}",
         "projectType": ""
      }'
-  - '{
+  - id: 2
+    body: '{
         "name": "Test-{{@Random | 6}}",
         "description": "SD-Test example",
         "projectType": " "
      }'
-  - '{
+  - id: 3
+    body: '{
         "name": "Test-{{@Random | 6}}",
         "description": "SD-Test example",
         "projectType": "XYZ"

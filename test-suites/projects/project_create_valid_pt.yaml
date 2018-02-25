@@ -22,8 +22,9 @@ auth: Default
 # username - Optional
 # password: Optional
 # @Response --> {id, name, description, projectType, visibility etc}
-requests:
-  - '{
+testCases:
+  - id: 1
+    body: '{
         "name": "Test-{{@Random | 6}}",
         "projectType": "LOCAL"
      }'

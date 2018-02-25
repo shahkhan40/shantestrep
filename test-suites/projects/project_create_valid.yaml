@@ -22,24 +22,29 @@ auth: Default
 # username - Optional
 # password: Optional
 # @Response --> {id, name, description, projectType, visibility etc}
-requests:
-  - '{
+testCases:
+  - id: 1
+    body: '{
         "name": "Test-{{@Random | 1}}",
         "description": "SD-Test example"
      }'
-  - '{
+  - id: 2
+    body: '{
         "name": "Test-{{@Random | 2}}",
         "description": "SD-Test example"
      }'
-  - '{
+  - id: 3
+    body: '{
         "name": "Test-{{@Random | 6}}",
         "description": "SD-Test example"
      }'
-  - '{
+  - id: 4
+    body: '{
         "name": "Test-{{@Random | 24}}",
         "description": "SD-Test example"
      }'
-  - '{
+  - id: 5
+    body: '{
         "name": "Test-{{@Random | 6}}",
         "description": ""
      }'

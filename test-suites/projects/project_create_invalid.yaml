@@ -22,24 +22,26 @@ auth: Default
 # username - Optional
 # password: Optional
 # @Response --> {id, name, description, projectType, visibility etc}
-requests:
+testCases:
   # invalid name
-  - '{
+  - id: 1
+    body: '{
         "name": "",
         "description": "SD-Test example"
      }'
   # invalid org_id
-  - '{
+  - id: 2
+    body: '{
         "name": "Test-{{@Random | 6}}",
         "description": "SD-Test example",
         "orgId": "abc"
      }'
-  - '{
+  -  id: 3
+    body: '{
         "name": "Test-{{@Random | 6}}",
         "description": "SD-Test example",
         "orgId": "123"
      }'
-
 
 assertions:
   - "@StatusCode == 200"

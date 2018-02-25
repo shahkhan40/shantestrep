@@ -16,27 +16,42 @@ auth: NONE
 # company: min 3 chars, unique
 # @Response --> boolean
 
-requests:
+testCases:
   # invalid company
-  - '{"name": "fn1 ln", "email": "test@fxlabs.io", "password": "12345678", "company": ""}'
-  - '{"name": "fn1 ln", "email": "test@fxlabs.io", "password": "12345678", "company": "1"}'
-  - '{"name": "fn1 ln", "email": "test@fxlabs.io", "password": "12345678", "company": "12"}'
+  - id: 1
+    body: '{"name": "fn1 ln", "email": "test@fxlabs.io", "password": "12345678", "company": ""}'
+  - id: 2
+    body: '{"name": "fn1 ln", "email": "test@fxlabs.io", "password": "12345678", "company": "1"}'
+  - id: 3
+    body: '{"name": "fn1 ln", "email": "test@fxlabs.io", "password": "12345678", "company": "12"}'
 
   # invalid email
-  - '{"name": "fn1 ln", "email": "", "password": "12345678", "company": "123"}'
-  - '{"name": "fn1 ln", "email": "test@", "password": "12345678", "company": "123"}'
-  - '{"name": "fn1 ln", "email": "test@fxlabs", "password": "12345678", "company": "123"}'
-  - '{"name": "fn1 ln", "email": "test@fxlabs_io", "password": "12345678", "company": "123"}'
+  - id: 4
+    body: '{"name": "fn1 ln", "email": "", "password": "12345678", "company": "123"}'
+  - id: 5
+    body: '{"name": "fn1 ln", "email": "test@", "password": "12345678", "company": "123"}'
+  - id: 6
+    body: '{"name": "fn1 ln", "email": "test@fxlabs", "password": "12345678", "company": "123"}'
+  - id: 7
+    body: '{"name": "fn1 ln", "email": "test@fxlabs_io", "password": "12345678", "company": "123"}'
 
   # invalid password
-  - '{"name": "fn1 ln", "email": "test@fxlabs.io", "password": "", "company": "123"}'
-  - '{"name": "fn1 ln", "email": "test@fxlabs.io", "password": "1", "company": "123"}'
-  - '{"name": "fn1 ln", "email": "test@fxlabs.io", "password": "12", "company": "123"}'
-  - '{"name": "fn1 ln", "email": "test@fxlabs.io", "password": "123", "company": "123"}'
-  - '{"name": "fn1 ln", "email": "test@fxlabs.io", "password": "1234", "company": "123"}'
-  - '{"name": "fn1 ln", "email": "test@fxlabs.io", "password": "12345", "company": "123"}'
-  - '{"name": "fn1 ln", "email": "test@fxlabs.io", "password": "123456", "company": "123"}'
-  - '{"name": "fn1 ln", "email": "test@fxlabs.io", "password": "1234567", "company": "123"}'
+  - id: 8
+    body: '{"name": "fn1 ln", "email": "test@fxlabs.io", "password": "", "company": "123"}'
+  - id: 9
+    body: '{"name": "fn1 ln", "email": "test@fxlabs.io", "password": "1", "company": "123"}'
+  - id: 10
+    body: '{"name": "fn1 ln", "email": "test@fxlabs.io", "password": "12", "company": "123"}'
+  - id: 11
+    body: '{"name": "fn1 ln", "email": "test@fxlabs.io", "password": "123", "company": "123"}'
+  - id: 12
+    body: '{"name": "fn1 ln", "email": "test@fxlabs.io", "password": "1234", "company": "123"}'
+  - id: 13
+    body: '{"name": "fn1 ln", "email": "test@fxlabs.io", "password": "12345", "company": "123"}'
+  - id: 14
+    body: '{"name": "fn1 ln", "email": "test@fxlabs.io", "password": "123456", "company": "123"}'
+  - id: 15
+    body: '{"name": "fn1 ln", "email": "test@fxlabs.io", "password": "1234567", "company": "123"}'
 
 assertions:
   - "@Response.errors == true"

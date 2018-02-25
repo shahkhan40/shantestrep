@@ -22,8 +22,10 @@ auth: NONE
 # username - Optional
 # password: Optional
 # @Response --> {id, name, description, projectType, visibility etc}
-requests:
-  - '{
+testCases:
+  - id: 1
+    body:
+      '{
         "name": "Fx-{{@Random | 6}}",
         "description": "SD-Test example",
       }'
