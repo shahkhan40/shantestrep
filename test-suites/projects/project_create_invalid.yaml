@@ -36,7 +36,7 @@ testCases:
         "description": "SD-Test example",
         "orgId": "abc"
      }'
-  -  id: 3
+  - id: 3
     body: '{
         "name": "Test-{{@Random | 6}}",
         "description": "SD-Test example",
