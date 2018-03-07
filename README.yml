@@ -129,12 +129,12 @@ policies:
 ################ End  ################
 
 
-################ Expalan test-suites/users_create.yml ################
+################ Explanation test-suites/users_create.yml ################
 
 
 # Note - Order is not important.
 
-# endpoint - represents the API Endpoint. The base-url value comes from the Fxfile file
+# endpoint - represents the API Endpoint. The base-url value comes from the Fxfile
 endpoint: /users
 
 description:
@@ -143,7 +143,7 @@ description:
 #   ABSTRACT - is not directly excuted but can be injected into other suites 'init' & 'cleanup' sections.
 type: SUITE
 
-# auth - refers to auth defined in the Fxfile file
+# auth - refers to auth defined in the Fxfile
 # If not defined defaults to 'Default' auth.
 # If auth is set to 'NONE' then no auth is used when executing requests
 auth: default
@@ -379,55 +379,87 @@ policies:
   @ResponseSize <= 1024
 
 ## Transformation support examples ##
+
   # - trim - removes leading and trailing whitespace
   {{@Request.username | trim}}
+
   # - trimToNull - removes leading and trailing whitespace and may return null
   {{@Request.username | trimToNull}}
+
   # - trimToEmpty - removes leading and trailing whitespace and may return ''
   {{@Request.username | trimToEmpty}}
+
   # - truncate - Truncates '1234567890' to '12345'
   {{@Request.username | truncate 5}}
+
   # - strip
   # - indexOf - Returns the index within seq of the first occurrence
   {{@Request.email | indexOf @}}
+
   # - indexOfIgnoreCase
   # - lastIndexOf - Returns the index within seq of the last occurrence
   {{@Request.email | lastIndexOf @}}
+
   # - left - Gets the leftmost len characters of a String.
   {{@Request.email | left 5}}
+
   # - right - Gets the rightmost len characters of a String.
   {{@Request.email | right 5}}
+
   # - substringBefore - Gets the substring before the first occurrence of a separator
   {{@Request.email | substringBefore @}}
+
   # - substringAfter - Gets the substring after the first occurrence of a separator
   {{@Request.email | substringBefore @}}
+
   # - substringBeforeLast
+
   # - substringAfterLast
+
   # - substringBetween
+
   # - removeStart - Removes a substring only if it is at the beginning of a source string
+
   # - removeStartIgnoreCase
+
   # - removeEnd
+
   # - removeEndIgnoreCase
+
   # - remove - Removes all occurrences of a substring from within the source string
   {{@Request.username | remove @}}
+
   # - removeIgnoreCase
+
   # - removeAll
+
   # - removeFirst
+
   # - removePattern
+
   # - chomp
+
   # - chop
+
   # - repeat - Repeat a String repeat times to form a new String
   {{@Request.username | repeat 2}}
+
   # - rightPad - Right pad a String with spaces
   {{@Request.username | rightPad 10}}
+
   # - leftPad - Left pad a String with spaces
   {{@Request.username | leftPad 10}}
+
   # - upperCase - Converts a String to upper case
   {{@Request.username | upperCase}}
+
   # - lowerCase - Converts a String to lower case
   {{@Request.username | lowerCase}}
+
   # - capitalize
+
   # - uncapitalize
+
   # - reverse - Reverses a String
   {{@Request.username | reverse}}
 
