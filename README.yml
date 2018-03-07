@@ -3,23 +3,14 @@
 # A typtical Fx project structure looks like this.
   Fxfile.yaml   # contains test project details
   test-suites   # this directory contains one or more test suite files.
-  fx.properties # Optional - contains fx server connection info
-
-
-
-################ Sample fx.properties ################
-  fx.master.url = http://localhost:8080/ # fx server url
-  fx.master.accessKey = admin            # fx server accessKey/username
-  fx.master.secretKey = admin123         # fx server secretkey/password
-################ End of Sample fx.properties ################
 
 
 ################ Sample Fxfile.yaml ################
   version: '1'            # fx schema version defaults to '1'.
 
-  # test app info
+  # App name
   name: Fx
-  # app environments
+  # Environments
   environments:         # environments - represents one or more instance of App (e.g. Dev, QE, Stg, Prod etc).
     - name: Default     # App environment name (Always should have one 'Default')
       baseUrl: http://localhost:8080/api/v1  # App environment Base URL
@@ -30,17 +21,26 @@
           username: user1                    # Username or accessKey
           password: user1                    # Password or secretKey
   # job profiles
-  jobs:                               # JobProfile - represents the runnable configuration
-    - name: Default                          # JobProfile name (Always should have one 'Default')
-      environment: Default                   # environment name from the top
-      tags:                                  # tags - represents what kind of test suites you would like to run.
+  jobs:                                      # Job - represents the runnable configuration
+    - name: Default                          # Job name
+      environment: Default                   # environment name from the environments list.
+      tags:                                  # tags - filters test-suites by tag.
         - V1
-      region: fx-default-queue               # region - represents the Fx Bot deployments (fx-default-queue is the default but other regions can easily be added.)
+      region: fx-default-queue               # region - represents the Fx Bot region
+                                             #        - check 'Bot Hub' service for available regions on the Control-Plane (UI).
 
 ################ End of Sample Fxfile ################
 
 
 ################ Sample test-suit file <test-suites/users_create_1.yml> ################
+# Note - Order is not important.
+
+# Reserved keywords -
+# @StatusCode, @Headers, @Request, @Response
+# @NULL @EMPTY @ResponseTime @ResponseSize
+# @Random @Date @RandomUUID
+# e.g. usage
+# {{@Headers.Location | substringAfterLast /}}
 
 # endpoint - represents the API Endpoint. The base-url value comes from the Fxfile file
 endpoint: /users
@@ -48,7 +48,7 @@ endpoint: /users
 description:
 
 # Suite type - SUITE or ABSTRACT
-#   ABSTRACT - is not directly excuted but can be injected into other suites as after elements.
+#   ABSTRACT - is not directly excuted but can be injected into other suites 'init' & 'cleanup' sections.
 type: SUITE
 
 # auth - refers to auth defined in the Fxfile file
@@ -64,7 +64,7 @@ headers:
   - 'Content-Type: application/json'
   - 'Accept: application/json'
 
-# requets - group one or more api requests data for type (POST, PUT, DELETE etc)
+# testCases - group one or more api requests.
 testCases:
   - id: 1
     body: '{"name": "fn1 ln", "username": "u1", "email": "e1@fx.local", "company": "fx", "jobTitle": "Engineer"}'
@@ -94,7 +94,8 @@ testCases:
   -  id: 1
     body: '{"name": "fn1 ln", "username": "u1", "email": "e1@fx.local", "company": "", "jobTitle": " "}'
 
-# assertions - validate http response code, headers and body using variables like (@StatusCode, @Headers, @Body, @Body.id etc)
+# assertions - One or more assertions.
+# All needs to be true for the test-case to pass.
 assertions:
   - "@StatusCode == 200"
   - "@Response.errors == false"
@@ -104,12 +105,16 @@ assertions:
   - "@Response.data.company == @Request.company"
   - "@Response.data.jobTitle == @Request.jobTitle"
 
-# cleanup - excutes the below abstract suites for each request.
-after:
+# cleanup - excutes one or more abstract suites per request or per suite.
+cleanup:
   - user_delete
 
-# tags - when defining job-profile in the Fxfile file user can pick any tags to be part of the profile.
+# tags - jobs can filter test-suites based on the tags.
 tags:
   - V1
+  - DEV3
+
+policies:
+  logger: DEBUG
 
 ################ End of Sample test-suit file ################
