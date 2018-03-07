@@ -222,14 +222,14 @@ policies:
 
 
 ## 1. Data Injection - Keywords
-@Request
-@StatusCode
-@ResponseHeaders
-@Response
-# @NULL
-# @EMPTY
-# @ResponseTime
-# @ResponseSize
+  - @Request
+  - @StatusCode
+  - @ResponseHeaders
+  - @Response
+  - @NULL
+  - @EMPTY
+  - @ResponseTime
+  - @ResponseSize
 # @Random
 # @RandomAlphabetic
 # @RandomAlphanumeric
