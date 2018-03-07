@@ -1,23 +1,119 @@
 ---
 
-# A typtical Fx project structure looks like this.
-  Fxfile.yaml   # contains test project details
-  test-suites   # this directory contains one or more test suite files.
+# A typtical Fx project has two components.
+  Fxfile.yaml   # Contains Job & Environment details.
+  test-suites   # This directory contains one or more test suite files.
 
 
 ################ Sample Fxfile.yaml ################
+
+  version: '1'
+
+  name: Fx
+  environments:
+    - name: Default
+      baseUrl: http://dev.fxlabs.io/api/v1
+      auths:
+        - name: Default
+          authType: BASIC
+          username: user1
+          password: user1
+  jobs:
+    - name: Default
+      environment: Default
+      tags:
+        - V1
+      region: fx-default-queue
+
+################ End of Fxfile.yaml ################
+
+
+################ Sample test-suit - test-suites/users_create.yml ############
+
+endpoint: /users
+
+description:
+
+type: SUITE
+
+auth: default
+
+method: POST
+
+headers:
+  - 'Content-Type: application/json'
+  - 'Accept: application/json'
+
+testCases:
+  - id: 1
+    body: '{"name": "fn1 ln", "username": "u1", "email": "e1@fx.local", "company": "fx", "jobTitle": "Engineer"}'
+  -  id: 1
+    body: '{"name": "fn1 ln", "username": "u1", "email": "e1@fx.local", "company": "fx", "jobTitle": "Engineer"}'
+  # optional name
+  -  id: 1
+    body: '{"name": "", "username": "u1", "email": "e1@fx.local", "company": "fx", "jobTitle": "Engineer"}'
+  -  id: 1
+    body: '{"name": " ", "username": "u1", "email": "e1@fx.local", "company": "fx", "jobTitle": "Engineer"}'
+  # optional company
+  -  id: 1
+    body: '{"name": "", "username": "u1", "email": "e1@fx.local", "company": " ", "jobTitle": "Engineer"}'
+  -  id: 1
+    body: '{"name": " ", "username": "u1", "email": "e1@fx.local", "company": "", "jobTitle": "Engineer"}'
+  -  id: 1
+    body: '{"name": "fn1 ln", "username": "u1", "email": "e1@fx.local", "company": " ", "jobTitle": "Engineer"}'
+  -  id: 1
+    body: '{"name": "fn1 ln", "username": "u1", "email": "e1@fx.local", "company": "", "jobTitle": "Engineer"}'
+  # optional jobTitle
+  -  id: 1
+    body: '{"name": "", "username": "u1", "email": "e1@fx.local", "company": " ", "jobTitle": ""}'
+  -  id: 1
+    body: '{"name": " ", "username": "u1", "email": "e1@fx.local", "company": "", "jobTitle": " "}'
+  -  id: 1
+    body: '{"name": "fn1 ln", "username": "u1", "email": "e1@fx.local", "company": " ", "jobTitle": ""}'
+  -  id: 1
+    body: '{"name": "fn1 ln", "username": "u1", "email": "e1@fx.local", "company": "", "jobTitle": " "}'
+
+assertions:
+  - "@StatusCode == 200"
+  - "@Response.errors == false"
+  - "@Response.data.name == @Request.name"
+  - "@Response.data.username ==IgnoreCase @Request.username"
+  - "@Response.data.email == @Request.email"
+  - "@Response.data.company == @Request.company"
+  - "@Response.data.jobTitle == @Request.jobTitle"
+
+cleanup:
+  - user_delete
+
+tags:
+  - V1
+  - DEV3
+
+policies:
+  logger: DEBUG
+  repeatOnFailure: 0
+  repeat: 0
+  repeatDelay: 3000
+  timeoutSeconds: 5
+  initExec: Request
+  cleanupExec: Request
+
+################ End ############
+
+################ Explanation of Fxfile.yaml ################
   version: '1'            # fx schema version defaults to '1'.
 
   # App name
   name: Fx
-  # Environments
-  environments:         # environments - represents one or more instance of App (e.g. Dev, QE, Stg, Prod etc).
+  # Environments - represents one or more instance of App (e.g. Dev, QE, Stg, Prod etc).
+  environments:
     - name: Default     # App environment name (Always should have one 'Default')
       baseUrl: http://localhost:8080/api/v1  # App environment Base URL
       # app access credentials
       auths:
         - name: Default                      # Auth name (Always should have one 'Default')
-          authType: BASIC                    # Authorization type supported by the App (e.g. BASIC, OAuth etc)
+          authType: BASIC                    # Authorization type supported by the App
+                                             #  (e.g. BASIC, OAuth etc)
           username: user1                    # Username or accessKey
           password: user1                    # Password or secretKey
   # job profiles
@@ -27,20 +123,16 @@
       tags:                                  # tags - filters test-suites by tag.
         - V1
       region: fx-default-queue               # region - represents the Fx Bot region
-                                             #        - check 'Bot Hub' service for available regions on the Control-Plane (UI).
+                                             # check 'Bot Hub' service for available
+                                             # regions on the Control-Plane (UI).
 
-################ End of Sample Fxfile ################
+################ End  ################
 
 
-################ Sample test-suit file <test-suites/users_create_1.yml> ################
+################ Expalan test-suites/users_create.yml ################
+
+
 # Note - Order is not important.
-
-# Reserved keywords -
-# @StatusCode, @Headers, @Request, @Response
-# @NULL @EMPTY @ResponseTime @ResponseSize
-# @Random @Date @RandomUUID
-# e.g. usage
-# {{@Headers.Location | substringAfterLast /}}
 
 # endpoint - represents the API Endpoint. The base-url value comes from the Fxfile file
 endpoint: /users
@@ -63,6 +155,7 @@ method: POST
 headers:
   - 'Content-Type: application/json'
   - 'Accept: application/json'
+
 
 # testCases - group one or more api requests.
 testCases:
@@ -114,7 +207,92 @@ tags:
   - V1
   - DEV3
 
+# Optional policies
 policies:
-  logger: DEBUG
+  logger: DEBUG # DEBUG | ERROR
+  repeatOnFailure: 0
+  repeat: 0
+  repeatDelay: 3000
+  timeoutSeconds: 5
+  initExec: Request # Request | Suite
+  cleanupExec: Request # Request | Suite
 
 ################ End of Sample test-suit file ################
+
+
+
+## 1. Data Injection - Keywords
+# @Request
+# @StatusCode
+# @ResponseHeaders
+# @Response
+# @NULL
+# @EMPTY
+# @ResponseTime
+# @ResponseSize
+# @Random
+# @RandomAlphabetic
+# @RandomAlphanumeric
+# @RandomNumeric
+# @Date
+# @RandomUUID
+
+## 2. Comparision - Keywords
+# ==
+# ==IgnoreCase
+# !=
+# >
+# <
+# >=
+# <=
+# =~
+# !=~
+# startsWith
+# startsWithIgnoreCase
+# endsWith
+# endsWithIgnoreCase
+
+## 3. Transformation - Keywords
+# trim
+# trimToNull
+# trimToEmpty
+# truncate
+# strip
+# indexOf
+# indexOfIgnoreCase
+# lastIndexOf
+# left
+# right
+# substringBefore
+# substringAfter
+# substringBeforeLast
+# substringAfterLast
+# substringBetween
+# removeStart
+# removeStartIgnoreCase
+# removeEnd
+# removeEndIgnoreCase
+# remove
+# removeIgnoreCase
+# removeAll
+# removeFirst
+# removePattern
+# chomp
+# chop
+# repeat
+# rightPad
+# leftPad
+# upperCase
+# lowerCase
+# capitalize
+# uncapitalize
+# reverse
+
+## 4. JsonPath support
+
+## Transformation support examples
+# {{@Headers.Location | substringAfterLast /}}
+
+## Customization support
+
+## Data Injection across suites support
