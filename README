@@ -36,6 +36,9 @@ description:
 
 type: SUITE
 
+init:
+  - data_init1
+
 auth: default
 
 method: POST
@@ -143,6 +146,11 @@ description:
 #   ABSTRACT - is not directly excuted but can be injected into other suites 'init' & 'cleanup' sections.
 type: SUITE
 
+init:
+  - data_init1
+  - data_init2
+
+
 # auth - refers to auth defined in the Fxfile
 # If not defined defaults to 'Default' auth.
 # If auth is set to 'NONE' then no auth is used when executing requests
@@ -201,6 +209,7 @@ assertions:
 # cleanup - excutes one or more abstract suites per request or per suite.
 cleanup:
   - user_delete
+  - org_delete
 
 # tags - jobs can filter test-suites based on the tags.
 tags:
@@ -463,4 +472,20 @@ policies:
   # - reverse - Reverses a String
   {{@Request.username | reverse}}
 
-## Data Injection across suites support
+## Data Injection examples across suites support
+
+  # In assertions
+  # Org_Create_Init - refers to the Init script item.
+  # Org_Create_Init_Request - refers to the Request json of the init script.
+  # Org_Create_Init_Request.name - JsonPath of name attribute on the request.
+  # @Response - refers to the Suite test-case response.
+  # @Response.org.name - refers to the JsonPath of response.
+  - "@Org_Create_Init_Request.name == @Response.org.name"
+
+  # Injection in endpoint attribute of the Suite.
+  # With transformations
+  # Org_Create_Init - refers to the Init script item.
+  # Org_Create_Init_Headers - refers to the response Headers of init script.
+  # Org_Create_Init_Headers.location - refers to the location attribute in Headers
+  # substringAfterLast / - extracts the value after the last '/' in location attribute
+  endpoint: /hotels/{{@Org_Create_Init_Headers.location | substringAfterLast /}}
