@@ -1,7 +1,7 @@
 ---
 
 # A typtical Fx project has two components.
-  Fxfile.yaml   # Contains Job & Environment details.
+  Fxfile.yaml   # Contains job & environment details.
   test-suites   # This directory contains one or more test suite files.
 
 
@@ -28,7 +28,7 @@
 ################ End of Fxfile.yaml ################
 
 
-################ Sample test-suit - test-suites/users_create.yml ############
+################ Sample test-suite -> test-suites/users_create.yml ############
 
 endpoint: /users
 
@@ -222,10 +222,10 @@ policies:
 
 
 ## 1. Data Injection - Keywords
-# @Request
-# @StatusCode
-# @ResponseHeaders
-# @Response
+@Request
+@StatusCode
+@ResponseHeaders
+@Response
 # @NULL
 # @EMPTY
 # @ResponseTime
