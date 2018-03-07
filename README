@@ -103,6 +103,8 @@ policies:
 
 ################ End ############
 
+
+
 ################ Explanation of Fxfile.yaml ################
   version: '1'            # fx schema version defaults to '1'.
 
@@ -130,6 +132,7 @@ policies:
                                              # regions on the Control-Plane (UI).
 
 ################ End  ################
+
 
 
 ################ Explanation test-suites/users_create.yml ################
@@ -305,22 +308,31 @@ policies:
 
 
 ## Data-Injection examples
+
   # Injects random 6 chars.
   {"name": "fn1 ln", "username": "{{@Random}}"}
+
   # Injects random 4 chars as prefix.
   {"name": "fn1 ln", "email": "{{@Random | 4}}@fx.local"}
+
   # Injects random 6 alphabet chars.
   {"name": "fn1 ln", "email": "{{@RandomAlphabetic}}@fx.local"}
+
   # Injects random 24 alphabet chars.
   {"name": "fn1 ln", "email": "{{@RandomAlphabetic | 24}}@fx.local"}
+
   # Injects random 6 numeric chars.
   {"name": "fn1 ln", "email": "{{@RandomAlphanumeric}}@fx.local"}
+
   # Injects random 8 numeric chars.
   {"name": "fn1 ln", "email": "{{@RandomAlphanumeric | 8}}@fx.local"}
+
   # Injects date.
   {"name": "fn1 ln", "dob": "{{@Date}}"}
+
   # Inject date in the format
   {"name": "fn1 ln", "dob": "{{@Date | yyMMddHHmmssZ}}"}
+
   # Injects UUID.
   {"name": "fn1 ln", "id": "{{@RandomUUID}}"}
 
