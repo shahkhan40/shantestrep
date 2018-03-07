@@ -230,63 +230,63 @@ policies:
   - @EMPTY
   - @ResponseTime
   - @ResponseSize
-# @Random
-# @RandomAlphabetic
-# @RandomAlphanumeric
-# @RandomNumeric
-# @Date
-# @RandomUUID
+  - @Random
+  - @RandomAlphabetic
+  - @RandomAlphanumeric
+  - @RandomNumeric
+  - @Date
+  - @RandomUUID
 
 ## 2. Comparision - Keywords
-# ==
-# ==IgnoreCase
-# !=
-# >
-# <
-# >=
-# <=
-# =~
-# !=~
-# startsWith
-# startsWithIgnoreCase
-# endsWith
-# endsWithIgnoreCase
+  - ==
+  - ==IgnoreCase
+  - !=
+  - >
+  - <
+  - >=
+  - <=
+  - =~
+  - !=~
+  - startsWith
+  - startsWithIgnoreCase
+  - endsWith
+  - endsWithIgnoreCase
 
 ## 3. Transformation - Keywords
-# trim
-# trimToNull
-# trimToEmpty
-# truncate
-# strip
-# indexOf
-# indexOfIgnoreCase
-# lastIndexOf
-# left
-# right
-# substringBefore
-# substringAfter
-# substringBeforeLast
-# substringAfterLast
-# substringBetween
-# removeStart
-# removeStartIgnoreCase
-# removeEnd
-# removeEndIgnoreCase
-# remove
-# removeIgnoreCase
-# removeAll
-# removeFirst
-# removePattern
-# chomp
-# chop
-# repeat
-# rightPad
-# leftPad
-# upperCase
-# lowerCase
-# capitalize
-# uncapitalize
-# reverse
+  - trim
+  - trimToNull
+  - trimToEmpty
+  - truncate
+  - strip
+  - indexOf
+  - indexOfIgnoreCase
+  - lastIndexOf
+  - left
+  - right
+  - substringBefore
+  - substringAfter
+  - substringBeforeLast
+  - substringAfterLast
+  - substringBetween
+  - removeStart
+  - removeStartIgnoreCase
+  - removeEnd
+  - removeEndIgnoreCase
+  - remove
+  - removeIgnoreCase
+  - removeAll
+  - removeFirst
+  - removePattern
+  - chomp
+  - chop
+  - repeat
+  - rightPad
+  - leftPad
+  - upperCase
+  - lowerCase
+  - capitalize
+  - uncapitalize
+  - reverse
 
 ## 4. JsonPath support
 
