@@ -30,7 +30,7 @@ testCases:
         "description": "SD-Test example",
       }'
 assertions:
-  - "@StatusCode != 200"
+  - "@StatusCode != 401"
 
 cleanup:
   #- project_delete
