@@ -30,6 +30,14 @@ environments:
         authType: BASIC
         username: admin@fxlabs.io
         password: apple123
+  - name: Dev
+    baseUrl: http://localhost:8080/api/v1
+    # app access credentials
+    auths:
+      - name: Default
+        authType: BASIC
+        username: admin@fxlabs.io
+        password: {{Vault.FxLabs/DevMachinePassword}}
 # Job profiles
 jobs:
   - name: Stg
@@ -45,7 +53,7 @@ jobs:
     regions: FxLabs/US_WEST_1
     issueTracker: My-Github-Bot
   - name: SANDBOX
-    environment: Local
+    environment: Dev
     tags:
       - SANDBOX
     regions: FxLabs/US_WEST_1
