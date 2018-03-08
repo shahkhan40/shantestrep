@@ -10,7 +10,7 @@ endpoint: /vault
 
 method: POST
 
-requests:
+testCases:
   # invalid visibility - PRIVATE | ORG_PUBLIC
   - id: 1
     body:

@@ -10,7 +10,7 @@ endpoint: /vault
 
 method: POST
 
-requests:
+testCases:
   # Optional - description, visibility
   - id: 1
     body:

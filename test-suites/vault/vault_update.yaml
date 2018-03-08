@@ -11,13 +11,15 @@ endpoint: /hotels/{{@vault_create_init_Response.id}}
 
 method: PUT
 
-requests:
-  - '{
+testCases:
+  - id: 1
+    body:
+    '{
       "id": "{{@vault_create_init_Response.id}}",
       "description": "",
       "val": "value",
       "visibility": "PRIVATE"
-  }'
+    }'
 
 assertions:
   - "@StatusCode == 200"

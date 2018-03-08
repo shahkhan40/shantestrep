@@ -10,7 +10,7 @@ endpoint: /vault
 
 method: POST
 
-requests:
+testCases:
   - id: 1
     body:
       '{

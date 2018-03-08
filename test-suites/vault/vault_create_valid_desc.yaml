@@ -10,7 +10,7 @@ endpoint: /vault
 
 method: POST
 
-requests:
+testCases:
   # Optional - description, visibility
   - id: 1
     body:
@@ -72,7 +72,7 @@ requests:
          "key": "{{@Random | 6}}"
          "val": "{{@Random | 24}}"
       }'1553
-  # PRIVATE-KEY     
+  # PRIVATE-KEY
   - id: 11
     body:
       '{

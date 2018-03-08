@@ -10,7 +10,7 @@ endpoint: /vault
 
 method: POST
 
-requests:
+testCases:
   # invalid key - empty, dup
   - id: 1
     body:
