@@ -28,7 +28,7 @@ assertions:
   - "@Response.data.visibility == @Request.visibility"
 
 tags:
-  - SANDBOX
+  - V1
 
 cleanup:
   - vault_delete

@@ -89,7 +89,7 @@ assertions:
 
 
 tags:
-  - SANDBOX
+  - V1
 
 cleanup:
   - vault_delete

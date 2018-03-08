@@ -33,7 +33,7 @@ assertions:
   - "@StatusCode != 200"
 
 tags:
-  - SANDBOX
+  - V1
 
 cleanup:
   - vault_delete

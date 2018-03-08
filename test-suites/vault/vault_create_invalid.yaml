@@ -44,7 +44,7 @@ assertions:
   - "@Response.errors == true"
 
 tags:
-  - SANDBOX
+  - V1
 
 cleanup:
   - vault_delete
