@@ -13,67 +13,67 @@ testCases:
   - id: 1
     body:
       '{
-         "key": "{{@Random | 4}}"
+         "key": "{{@Random | 4}}",
          "val": "value"
       }'
   - id: 2
     body:
       '{
-         "key": "{{@Random | 5}}"
+         "key": "{{@Random | 5}}",
          "val": "value"
       }'
   - id: 3
     body:
       '{
-         "key": "{{@Random | 6}}"
+         "key": "{{@Random | 6}}",
          "val": "value"
       }'
   - id: 4
     body:
       '{
-         "key": "{{@Random | 7}}"
+         "key": "{{@Random | 7}}",
          "val": "value"
       }'
   - id: 5
     body:
       '{
-         "key": "{{@Random | 8}}"
+         "key": "{{@Random | 8}}",
          "val": "value"
       }'
   - id: 6
     body:
       '{
-         "key": "{{@Random | 9}}"
+         "key": "{{@Random | 9}}",
          "val": "value"
       }'
   - id: 7
     body:
       '{
-         "key": "{{@Random | 10}}"
+         "key": "{{@Random | 10}}",
          "val": "value"
       }'
   - id: 8
     body:
       '{
-         "key": "{{@Random | 11}}"
+         "key": "{{@Random | 11}}",
          "val": "value"
       }'
   - id: 9
     body:
       '{
-         "key": "{{@Random | 12}}"
+         "key": "{{@Random | 12}}",
          "val": "value"
       }'
   - id: 10
     body:
       '{
-         "key": "{{@Random | 20}}"
+         "key": "{{@Random | 20}}",
          "val": "value"
       }'
   - id: 11
     body:
       '{
-         "key": "{{@Random | 24}}"
+         "key": "{{@Random | 24}}",
          "val": "value"
       }'
 
