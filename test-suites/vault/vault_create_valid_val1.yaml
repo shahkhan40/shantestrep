@@ -71,7 +71,7 @@ testCases:
       '{
          "key": "{{@Random | 6}}"
          "val": "{{@Random | 24}}"
-      }'1553
+      }'
   # PRIVATE-KEY
   - id: 11
     body:
