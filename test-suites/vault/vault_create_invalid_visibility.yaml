@@ -1,0 +1,39 @@
+---
+# Validates vault entry create.
+
+authors:
+  - Intesar Shannan Mohammed
+
+type: ABSTRACT
+
+endpoint: /vault
+
+method: POST
+
+requests:
+  # invalid visibility - PRIVATE | ORG_PUBLIC
+  - id: 1
+    body:
+      '{
+         "key": "{{@Random | 6}}",
+         "description": "",
+         "val": "value",
+         "visibility": ""
+      }'
+  - id: 2
+    body:
+      '{
+         "key": "{{@Random | 6}}",
+         "description": "",
+         "val": "value",
+         "visibility": "UNRECOGNIZED_VALUE"
+      }'
+
+assertions:
+  - "@StatusCode != 200"
+
+tags:
+  - SANDBOX
+
+cleanup:
+  - vault_delete

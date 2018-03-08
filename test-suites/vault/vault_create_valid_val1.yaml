@@ -1,0 +1,95 @@
+---
+# Validates vault entry create.
+
+authors:
+  - Intesar Shannan Mohammed
+
+type: ABSTRACT
+
+endpoint: /vault
+
+method: POST
+
+requests:
+  # Optional - description, visibility
+  - id: 1
+    body:
+      '{
+         "key": "{{@Random | 6}}"
+         "val": "{{@Random | 4}}"
+      }'
+  - id: 2
+    body:
+      '{
+         "key": "{{@Random | 6}}"
+         "val": "{{@Random | 5}}"
+      }'
+  - id: 3
+    body:
+      '{
+         "key": "{{@Random | 6}}"
+         "val": "{{@Random | 6}}"
+      }'
+  - id: 4
+    body:
+      '{
+         "key": "{{@Random | 6}}"
+         "val": "{{@Random | 7}}"
+      }'
+  - id: 5
+    body:
+      '{
+         "key": "{{@Random | 6}}"
+         "val": "{{@Random | 8}}"
+      }'
+  - id: 6
+    body:
+      '{
+         "key": "{{@Random | 6}}"
+         "val": "{{@Random | 9}}"
+      }'
+  - id: 7
+    body:
+      '{
+         "key": "{{@Random | 6}}"
+         "val": "{{@Random | 10}}"
+      }'
+  - id: 8
+    body:
+      '{
+         "key": "{{@Random | 6}}"
+         "val": "{{@Random | 12}}"
+      }'
+  - id: 9
+    body:
+      '{
+         "key": "{{@Random | 6}}"
+         "val": "{{@Random | 20}}"
+      }'
+  - id: 10
+    body:
+      '{
+         "key": "{{@Random | 6}}"
+         "val": "{{@Random | 24}}"
+      }'1553
+  # PRIVATE-KEY     
+  - id: 11
+    body:
+      '{
+         "key": "{{@Random | 6}}"
+         "val": "{{@Random | 1553}}"
+      }'
+
+
+assertions:
+  - "@StatusCode == 200"
+  - "@Response.data.errors == false"
+  - "@Response.data.key == @Request.key"
+  - "@Response.data.val == @Request.val"
+
+
+tags:
+  - SANDBOX
+
+cleanup:
+  - vault_delete

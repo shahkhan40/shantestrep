@@ -1,0 +1,16 @@
+---
+# Validates vault listings.
+
+authors:
+  - Intesar Shannan Mohammed
+
+endpoint: /vault
+
+method: GET
+
+assertions:
+  - "@StatusCode == 200"
+  - "@Response.errors == false"
+
+tags:
+  - V1

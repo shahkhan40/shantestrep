@@ -1,0 +1,21 @@
+---
+# Validates vault create.
+
+authors:
+  - Intesar Shannan Mohammed
+
+init:
+  - vault_create_init
+
+endpoint: /hotels/{{@Response.data.id}}
+
+method: GET
+
+assertions:
+  - "@StatusCode == 200"
+  - "@Response.errors == false"
+  - "@vault_create_init_Request.key == @Response.key"
+  - "@vault_create_init_Response.id == @Response.id"
+
+tags:
+  - V1

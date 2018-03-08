@@ -1,0 +1,15 @@
+---
+# Validates vault delete with parent id.
+
+type: ABSTRACT
+
+authors:
+  - Intesar Shannan Mohammed
+
+endpoint: /vault/{{@Response.data.id}}
+
+method: DELETE
+
+assertions:
+  - "@StatusCode == 200"
+  - "@Response.errors == false"

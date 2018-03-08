@@ -1,0 +1,29 @@
+---
+# Validates vault create.
+
+authors:
+  - Intesar Shannan Mohammed
+
+init:
+  - vault_create_init
+
+endpoint: /hotels/{{@vault_create_init_Response.id}}
+
+method: PUT
+
+requests:
+  - '{
+      "id": "{{@vault_create_init_Response.id}}",
+      "description": "",
+      "val": "value",
+      "visibility": "PRIVATE"
+  }'
+
+assertions:
+  - "@StatusCode == 200"
+  - "@Response.data.description == @Request.description"
+  - "@Response.data.value == @Request.value"
+  - "@Response.data.visibility == @Request.visibility"
+
+tags:
+  - V1

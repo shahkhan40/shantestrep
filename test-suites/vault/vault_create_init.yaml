@@ -1,0 +1,34 @@
+---
+# Validates vault entry create.
+
+authors:
+  - Intesar Shannan Mohammed
+
+type: ABSTRACT
+
+endpoint: /vault
+
+method: POST
+
+requests:
+  - id: 1
+    body:
+      '{
+        "key": "{{@Random | 6}}",
+    	  "description": "",
+    	  "val": "value",
+    	  "visibility": "PRIVATE"
+    	}'
+
+assertions:
+  - "@StatusCode == 200"
+  - "@Response.errors == false"
+  - "@Response.data.key == @Request.key"
+  - "@Response.data.val == @Request.val"
+  - "@Response.data.visibility == @Request.visibility"
+
+tags:
+  - SANDBOX
+
+cleanup:
+  - vault_delete
