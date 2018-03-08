@@ -81,7 +81,7 @@ testCases:
 
 assertions:
   - "@StatusCode == 200"
-  - "@Response.data.errors == false"
+  - "@Response.errors == false"
   - "@Response.data.key == @Request.key"
   - "@Response.data.val == @Request.val"
 
