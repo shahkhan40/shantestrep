@@ -4,8 +4,6 @@
 authors:
   - Intesar Shannan Mohammed
 
-type: ABSTRACT
-
 endpoint: /vault
 
 method: POST
