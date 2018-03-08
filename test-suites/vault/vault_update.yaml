@@ -13,8 +13,7 @@ method: PUT
 
 testCases:
   - id: 1
-    body:
-    '{
+    body: '{
       "id": "{{@vault_create_init_Response.id}}",
       "description": "",
       "val": "value",
