@@ -46,12 +46,12 @@ jobs:
       - V1
     regions: FxLabs/US_WEST_1
     cron: '0 30 * ? * *'
+    issueTracker: FxLabs/Stg-GitHub-Bot
   - name: Local
     environment: Local
     tags:
       - V1
     regions: FxLabs/US_WEST_1
-    issueTracker: My-Github-Bot
   - name: SANDBOX
     environment: Dev
     tags:
