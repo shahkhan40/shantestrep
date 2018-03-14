@@ -38,7 +38,7 @@ environments:
         authType: BASIC
         username: admin@fxlabs.io
         password: '{{@Vault.FxLabs/DevMachinePassword}}'
-# Job profiles -
+# Job profiles
 jobs:
   - name: Stg
     environment: Stg
