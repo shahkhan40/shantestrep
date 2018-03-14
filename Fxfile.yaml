@@ -52,7 +52,7 @@ jobs:
     tags:
       - V1
     regions: FxLabs/US_WEST_1
-    issueTracker: FxLabs/My-GitHub-Bot
+    issueTracker: FxLabs/Stg-GitHub-Bot
   - name: SANDBOX
     environment: Dev
     tags:
