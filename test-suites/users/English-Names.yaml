@@ -1,11 +1,13 @@
 ---
 
+authors:
+  - Intesar Shannan Mohammed
+
 type: DATASET
 
 publishToMarketplace: true
 
-authors:
-  - Intesar Shannan Mohammed
+description: US firstname, lastname dataset. Inject using '.firstname' & '.lastname' properties.
 
 testCases:
   - id: 1
