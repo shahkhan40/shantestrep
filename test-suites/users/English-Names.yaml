@@ -1,0 +1,23 @@
+---
+
+type: DATASET
+
+publishToMarketplace: true
+
+authors:
+  - Intesar Shannan Mohammed
+
+testCases:
+  - id: 1
+    body: '{"firstname": "Intesar", "lastname": "Mohammed"}'
+  - id: 2
+    body: '{"firstname": "Amjad", "lastname": "Afanah"}'
+  - id: 3
+    body: '{"firstname": "Kulsum", "lastname": "Shannan"}'
+  - id: 4
+    body: '{"firstname": "Zainab", "lastname": "Shannan"}'
+  - id: 5
+    body: '{"firstname": "Afrah", "lastname": "Shannan"}'
+
+tags:
+  - DATASET
