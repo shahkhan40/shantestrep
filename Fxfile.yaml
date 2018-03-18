@@ -6,15 +6,14 @@ version: '1'
 name: Fx-Control-Plane
 
 # App description
-description: Fx Dog fooding.
+description: Fx Testing.
 
 # license
 licenses:
-  - APACHE LICENSE, VERSION 2.0
+  - APACHE LICENSE, VERSION 2.
 
 imports:
   '@USName': FxLabs/Common/US-Names
-
 
 # App environments
 environments:
