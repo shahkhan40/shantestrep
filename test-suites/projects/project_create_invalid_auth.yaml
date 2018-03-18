@@ -27,7 +27,7 @@ testCases:
     body:
       '{
         "name": "Fx-{{@Random | 6}}",
-        "description": "SD-Test example",
+        "description": "SD-Test example"
       }'
 assertions:
   - "@StatusCode != 200"
