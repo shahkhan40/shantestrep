@@ -12,6 +12,9 @@ description: Fx Dog fooding.
 licenses:
   - APACHE LICENSE, VERSION 2.0
 
+imports:
+  - @USName: FxLabs/Common/US-Names
+
 # App environments
 environments:
   - name: Stg
