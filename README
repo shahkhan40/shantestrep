@@ -101,15 +101,21 @@ policies:
   initExec: Request
   cleanupExec: Request
 
-################ End ############
+########################## End ################################################
 
 
 
-################ Explanation of Fxfile.yaml ################
+######################## Explanation of Fxfile.yaml ###########################
   version: '1'            # fx schema version defaults to '1'.
 
   # App name
   name: Fx
+
+  # Marketplace injections.
+  # Usage - {{@USName | firstname}} inject into json requests
+  imports:
+    '@USName': FxLabs/Common/US-Names
+
   # Environments - represents one or more instance of App (e.g. Dev, QE, Stg, Prod etc).
   environments:
     - name: Default     # App environment name (Always should have one 'Default')
@@ -117,10 +123,31 @@ policies:
       # app access credentials
       auths:
         - name: Default                      # Auth name (Always should have one 'Default')
-          authType: BASIC                    # Authorization type supported by the App
-                                             #  (e.g. BASIC, OAuth etc)
+          # e.g. 1 (BASIC)
+          authType: BASIC                    # (e.g. BASIC, BasicAuth, OAuth_2_0 etc)
           username: user1                    # Username or accessKey
           password: user1                    # Password or secretKey
+          # e.g. 2 (OAuth 2.0)
+        - name: Stg
+          authType: OAuth_2_0
+          grantType: password                # (e.g. authorization_code, implicit, client_credentials, password)
+          username: peter@example.com        # Optional - Only applies if grantType == password
+          password: password                 # Optional - Only applies if grantType == password
+          clientId: gigy                     #
+          clientSecret: secret               #
+          id: some-id                        # Optional | unique random string
+          accessTokenUri: http://<>/token    #
+          userAuthorizationUri:              # Optional
+          clientAuthenticationScheme: form   # (e.g. form,header,none,query)
+          authorizationScheme: form          # (e.g. form,header,none,query)
+          scope: read,write
+          # e.g. 3 (Vault injection)
+        - name: Dev
+          authType: BASIC
+          username: admin@fxlabs.io
+          password: '{{@Vault.FxLabs/DevMachinePassword}}' # 'FxLabs/DevMachinePassword' is Vault Key (org/key).
+
+
   # job profiles
   jobs:                                      # Job - represents the runnable configuration
     - name: Default                          # Job name
@@ -130,8 +157,11 @@ policies:
       region: fx-default-queue               # region - represents the Fx Bot region
                                              # check 'Bot Hub' service for available
                                              # regions on the Control-Plane (UI).
+      cron: '0 30 * ? * *'                   # Optional cron expression
+      issueTracker: FxLabs/Stg-GitHub-Bot    # Launch a issueTracker bot and inject into a job.
+                                             # The bot will auto file/close bugs failed tests.
 
-################ End  ################
+################################ End  #########################################
 
 
 
@@ -250,6 +280,14 @@ policies:
   - @RandomNumeric
   - @Date
   - @RandomUUID
+  - @Vault                # Inject values from Vault e.g. {{@Vault.org/key}} {{@Vault.FxLabs/MyPass}}
+  - @*                    # Marketplace injections e.g. define the below 'imports' in Fxfile.yaml
+                          # imports:
+                          #  '@USName': FxLabs/Common/US-Names
+                          #  '@USCC': FxLabs/Common/US-CreditCards
+                          #
+                          #  e.g. usage {{@USName | firstname}} or {{@USName | lastname}}
+                          #  e.g. usage {{@USCC | type}} or {{@USCC | no}} {{@USCC | exp}} {{@USCC | cvv}}
 
 ## 3. Comparision - Keywords
   - ==
