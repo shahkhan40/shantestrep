@@ -7,7 +7,7 @@ authors:
 init:
   - vault_create_init
 
-endpoint: /hotels/{{@Response.data.id}}
+endpoint: /vault/{{@Response.data.id}}
 
 method: GET
 

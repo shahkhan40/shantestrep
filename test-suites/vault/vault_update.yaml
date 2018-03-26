@@ -7,7 +7,7 @@ authors:
 init:
   - vault_create_init
 
-endpoint: /hotels/{{@vault_create_init_Response.id}}
+endpoint: /vault/{{@vault_create_init_Response.id}}
 
 method: PUT
 
