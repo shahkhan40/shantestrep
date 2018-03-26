@@ -21,7 +21,7 @@ testCases:
   - id: 2
     body:
       '{
-         "key": "Duplicate-Key",
+         "key": "",
          "description": "",
          "val": "value",
          "visibility": "PRIVATE"
