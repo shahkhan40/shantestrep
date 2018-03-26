@@ -7,14 +7,14 @@ authors:
 init:
   - vault_create_init
 
-endpoint: /vault/{{@vault_create_init_Response.id}}
+endpoint: /vault/{{@vault_create_init_Response.data.id}}
 
 method: PUT
 
 testCases:
   - id: 1
     body: '{
-      "id": "{{@vault_create_init_Response.id}}",
+      "id": "{{@vault_create_init_Response.data.id}}",
       "description": "",
       "val": "value",
       "visibility": "PRIVATE"
