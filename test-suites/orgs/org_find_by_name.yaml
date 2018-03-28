@@ -1,0 +1,20 @@
+---
+# Validates project delete with parent id.
+
+type: ABSTRACT
+
+authors:
+  - Intesar Shannan Mohammed
+
+endpoint: /orgs/find-by-name/FxLabs
+
+method: GET
+
+auth: Default
+
+assertions:
+  - "@StatusCode == 200"
+  - "@Response.errors == false"
+
+policies:
+  logger: DEBUG

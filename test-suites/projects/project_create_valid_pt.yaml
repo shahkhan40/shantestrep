@@ -4,6 +4,9 @@
 authors:
   - Intesar Shannan Mohammed
 
+init:
+  - org_find_by_name
+
 endpoint: /projects/add
 method: POST
 auth: Default
@@ -26,14 +29,17 @@ testCases:
   - id: 1
     body: '{
         "name": "Test-{{@Random | 6}}",
-        "projectType": "LOCAL"
+        "projectType": "Local",
+        "org": {
+          "id": "{{@org_find_by_name_Response.data.org.id}}"
+          }
      }'
 
 assertions:
   - "@StatusCode == 200"
   - "@Response.errors == false"
   - "@Response.data.name == @Request.name"
-  - "@Response.data.projectType == LOCAL"
+  - "@Response.data.projectType == Local"
 
 cleanup:
   - project_delete
