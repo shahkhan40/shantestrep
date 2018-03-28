@@ -26,7 +26,7 @@ testCases:
   - id: 1
     body: '{
         "name": "Test-{{@Random | 6}}",
-        "projectType": "GIT"
+        "projectType": "Git"
      }'
 
 assertions:
