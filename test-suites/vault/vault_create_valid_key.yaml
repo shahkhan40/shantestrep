@@ -13,7 +13,7 @@ testCases:
   - id: 1
     body:
       '{
-         "key": "{{@Random | 4}}",
+         "key": "{{@Random | 7}}",
          "val": "value"
       }'
   - id: 2

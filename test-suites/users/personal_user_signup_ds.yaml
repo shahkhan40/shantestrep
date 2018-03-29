@@ -1,0 +1,39 @@
+---
+# Validates enterprise-user sign-ups.
+
+authors:
+  - Intesar Shannan Mohammed
+
+endpoint: /users/personal-sign-up
+method: POST
+auth: NONE
+
+# Required-fields: name, email, password, company
+# Fields-Constraints
+# name: Nullable
+# email: valid email, unique
+# password: min 8 chars
+# company: min 3 chars, unique
+# @Response --> boolean
+
+testCases:
+  # valid email
+  - id: 1
+    body: '{
+      "name": "{{@USName | firstname}} {{@USName | lastname}}",
+      "email": "{{@RandomAlphanumeric | 6}}@fxlabs.io",
+      "password": "12345678",
+      "company": "{{@RandomAlphanumeric | 9}}"
+    }'
+
+assertions:
+  - "@StatusCode == 200"
+  - "@Response.errors == false"
+
+tags:
+  - V1
+
+
+policies:
+  logger: DEBUG
+  repeat: 2
