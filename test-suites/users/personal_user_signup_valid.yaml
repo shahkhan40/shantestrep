@@ -62,4 +62,3 @@ tags:
 
 policies:
   logger: DEBUG
-  repeat: 10000
