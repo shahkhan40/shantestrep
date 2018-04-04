@@ -54,6 +54,8 @@ jobs:
     environment: Local
     tags:
       - V1
+    notifications:
+      - FxLabs/Slack
     regions: FxLabs/US_WEST_1
     issueTracker: FxLabs/IT-Test
   - name: SANDBOX
