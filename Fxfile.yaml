@@ -50,6 +50,8 @@ jobs:
     regions: FxLabs/US_WEST_1
     cron: '0 30 * ? * *'
     issueTracker: FxLabs/Stg-GitHub-Bot
+    notifications:
+      - FxLabs/TeamSlack
   - name: Local
     environment: Local
     tags:
