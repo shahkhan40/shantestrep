@@ -1,0 +1,20 @@
+---
+parent: "api_v1_orgs_find-by-name_name"
+name: "api_v1_orgs_find-by-name_name_get_query_param_sql_injection_oracle_page"
+description: null
+type: "SUITE"
+endpoint: "/api/v1/orgs/find-by-name/{name}?page={{@OracleSQLInjections | sample:all\
+  \ }}"
+method: "GET"
+auth: "BASIC"
+headers:
+- "Accept: application/json"
+- "Content-Type: application/json"
+testCases: []
+assertions:
+- "@StatusCode != 200"
+tags:
+- "V1"
+authors:
+- "FX Bot"
+inactive: false
