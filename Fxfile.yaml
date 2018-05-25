@@ -47,7 +47,7 @@ jobs:
   - name: Stg
     environment: Stg
     tags:
-      - V1
+      - V2
     regions: FXLabs/US_WEST_1
     cron: '0 0 12 * * ?'
     issueTracker: FXLabs/FX_Test_Automation
