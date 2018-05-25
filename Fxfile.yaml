@@ -3,17 +3,17 @@
 version: '1'
 
 # App (Project) name
-name: Fx-Control-Plane
+name: FX-Control-Plane
 
 # App description
-description: Fx Testing.
+description: FX Testing.
 
 # license
 licenses:
   - APACHE LICENSE, VERSION 2.
 
 imports:
-  '@USName': FxLabs/Common/US-Names
+  '@USName': FXLabs/Common/US-Names
 
 # App environments
 environments:
@@ -24,7 +24,7 @@ environments:
       - name: Default
         authType: BASIC
         username: admin@fxlabs.io
-        password: '{{@Vault.FxLabs/Stg-Admin-Pass}}'
+        password: '{{@Vault.FXLabs/Stg-Admin-Pass}}'
   - name: Local
     baseUrl: http://localhost:8080/api/v1
     # app access credentials
@@ -32,7 +32,7 @@ environments:
       - name: Default
         authType: BASIC
         username: admin@fxlabs.io
-        password: '{{@Vault.FxLabs/DevMachinePassword}}'
+        password: '{{@Vault.FXLabs/DevMachinePassword}}'
   - name: Dev
     baseUrl: http://localhost:8080/api/v1
     # app access credentials
@@ -40,29 +40,19 @@ environments:
       - name: Default
         authType: BASIC
         username: admin@fxlabs.io
-        password: '{{@Vault.FxLabs/DevMachinePassword}}'
+        password: '{{@Vault.FXLabs/DevMachinePassword}}'
+
 # Job profiles
 jobs:
   - name: Stg
     environment: Stg
     tags:
       - V1
-    regions: FxLabs/US_WEST_1
-    cron: '0 30 * ? * *'
-    issueTracker: FxLabs/Stg-GitHub-Bot
-    notifications:
-      - FxLabs/TeamSlack
-  - name: Local
-    environment: Local
-    tags:
-      - V1
-    notifications:
-      - FxLabs/Slack
-      - FxLabs/TeamSlack
-    regions: FxLabs/US_WEST_1
-    issueTracker: FxLabs/IT-Test
+    regions: FXLabs/US_WEST_1
+    cron: '0 0 12 * * ?'
+    issueTracker: FXLabs/FX_Test_Automation
   - name: SANDBOX
     environment: Dev
     tags:
       - SANDBOX
-    regions: FxLabs/US_WEST_1
+    regions: FXLabs/US_WEST_1
