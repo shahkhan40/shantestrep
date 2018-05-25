@@ -59,7 +59,7 @@ assertions:
   - "@Response.errors == true"
 
 tags:
-  - V1
+  - V2
 
 policies:
   logger: DEBUG
