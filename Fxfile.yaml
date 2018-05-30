@@ -54,5 +54,5 @@ jobs:
   - name: SANDBOX
     environment: Dev
     tags:
-      - SANDBOX
-    regions: FXLabs/US_WEST_1
+      - V2
+    regions: FXLabs/Localhost
