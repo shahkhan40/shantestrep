@@ -21,7 +21,7 @@ auth: NONE
 testCases:
   # valid email
   - id: 1
-    body: '{"name": "fn1 ln", "email": "{{@RandomAlphanumeric | 3}}@fxlabs.io", "password": "12345678", "company": "{{@RandomAlphanumeric | 9}}"}'
+    body: '{"name": "fn1 ln", "email": "{{@RandomAlphanumeric | 5}}@fxlabs.io", "password": "12345678", "company": "{{@RandomAlphanumeric | 9}}"}'
   - id: 2
     body: '{"name": "fn1 ln", "email": "{{@RandomAlphanumeric | 5}}@fxlabs.io", "password": "12345678", "company": "{{@RandomAlphanumeric | 9}}"}'
   - id: 3
@@ -30,29 +30,29 @@ testCases:
     body: '{"name": "fn1 ln", "email": "{{@RandomAlphanumeric | 24}}@fxlabs.io", "password": "12345678", "company": "{{@RandomAlphanumeric | 9}}"}'
   # valid name
   - id: 5
-    body: '{"name": "", "email": "{{@RandomAlphanumeric | 3}}@fxlabs.io", "password": "12345678", "company": "{{@RandomAlphanumeric | 9}}"}'
+    body: '{"name": "", "email": "{{@RandomAlphanumeric | 5}}@fxlabs.io", "password": "12345678", "company": "{{@RandomAlphanumeric | 9}}"}'
   - id: 6
-    body: '{"name": "1", "email": "{{@RandomAlphanumeric | 3}}@fxlabs.io", "password": "12345678", "company": "{{@RandomAlphanumeric | 9}}"}'
+    body: '{"name": "1", "email": "{{@RandomAlphanumeric | 5}}@fxlabs.io", "password": "12345678", "company": "{{@RandomAlphanumeric | 9}}"}'
   - id: 7
-    body: '{"name": "3", "email": "{{@RandomAlphanumeric | 3}}@fxlabs.io", "password": "12345678", "company": "{{@RandomAlphanumeric | 9}}"}'
+    body: '{"name": "3", "email": "{{@RandomAlphanumeric | 5}}@fxlabs.io", "password": "12345678", "company": "{{@RandomAlphanumeric | 9}}"}'
   - id: 8
-    body: '{"name": "first name", "email": "{{@RandomAlphanumeric | 3}}@fxlabs.io", "password": "12345678", "company": "{{@RandomAlphanumeric | 9}}"}'
+    body: '{"name": "first name", "email": "{{@RandomAlphanumeric | 5}}@fxlabs.io", "password": "12345678", "company": "{{@RandomAlphanumeric | 9}}"}'
   - id: 9
-    body: '{"name": "first1 name2", "email": "{{@RandomAlphanumeric | 3}}@fxlabs.io", "password": "12345678", "company": "{{@RandomAlphanumeric | 9}}"}'
+    body: '{"name": "first1 name2", "email": "{{@RandomAlphanumeric | 5}}@fxlabs.io", "password": "12345678", "company": "{{@RandomAlphanumeric | 9}}"}'
   - id: 10
-    body: '{"name": "Jr. first name", "email": "{{@RandomAlphanumeric | 3}}@fxlabs.io", "password": "12345678", "company": "{{@RandomAlphanumeric | 9}}"}'
+    body: '{"name": "Jr. first name", "email": "{{@RandomAlphanumeric | 5}}@fxlabs.io", "password": "12345678", "company": "{{@RandomAlphanumeric | 9}}"}'
   - id: 11
-    body: '{"name": "{{@RandomAlphanumeric | 24}}", "email": "{{@RandomAlphanumeric | 3}}@fxlabs.io", "password": "12345678", "company": "{{@RandomAlphanumeric | 9}}"}'
+    body: '{"name": "{{@RandomAlphanumeric | 24}}", "email": "{{@RandomAlphanumeric | 5}}@fxlabs.io", "password": "12345678", "company": "{{@RandomAlphanumeric | 9}}"}'
   # valid Password
   - id: 12
-    body: '{"name": "fn1 ln", "email": "{{@RandomAlphanumeric | 3}}@fxlabs.io", "password": "12345678", "company": "{{@RandomAlphanumeric | 9}}"}'
+    body: '{"name": "fn1 ln", "email": "{{@RandomAlphanumeric | 5}}@fxlabs.io", "password": "12345678", "company": "{{@RandomAlphanumeric | 9}}"}'
   - id: 13
-    body: '{"name": "fn1 ln", "email": "{{@RandomAlphanumeric | 3}}@fxlabs.io", "password": "{{@RandomAlphanumeric | 24}}", "company": "{{@RandomAlphanumeric | 9}}"}'
+    body: '{"name": "fn1 ln", "email": "{{@RandomAlphanumeric | 5}}@fxlabs.io", "password": "{{@RandomAlphanumeric | 24}}", "company": "{{@RandomAlphanumeric | 9}}"}'
   # valid company
   - id: 14
-    body: '{"name": "fn1 ln", "email": "{{@RandomAlphanumeric | 3}}@fxlabs.io", "password": "12345678", "company": "{{@RandomAlphanumeric | 12}}"}'
+    body: '{"name": "fn1 ln", "email": "{{@RandomAlphanumeric | 5}}@fxlabs.io", "password": "12345678", "company": "{{@RandomAlphanumeric | 12}}"}'
   - id: 15
-    body: '{"name": "fn1 ln", "email": "{{@RandomAlphanumeric | 3}}@fxlabs.io", "password": "12345678", "company": "{{@RandomAlphanumeric | 24}}"}'
+    body: '{"name": "fn1 ln", "email": "{{@RandomAlphanumeric | 5}}@fxlabs.io", "password": "12345678", "company": "{{@RandomAlphanumeric | 24}}"}'
 
 assertions:
   - "@StatusCode == 200"
