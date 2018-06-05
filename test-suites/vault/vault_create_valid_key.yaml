@@ -82,7 +82,7 @@ assertions:
   - "@StatusCode == 200"
   - "@Response.errors == false"
   - "@Response.data.key == @Request.key"
-  - "@Response.data.val == @Request.val"
+  - "@Response.data.val == PASSWORD-MASKED"
 
 
 tags:
