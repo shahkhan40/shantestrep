@@ -56,3 +56,5 @@ jobs:
     tags:
       - V2
     regions: FXLabs/Localhost
+    notifications:
+      - FXLabs/engineering
