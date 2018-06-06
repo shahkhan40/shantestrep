@@ -87,7 +87,7 @@ assertions:
 
 
 tags:
-  - V1
+  - V2
 
 cleanup:
   - vault_delete
