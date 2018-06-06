@@ -78,7 +78,6 @@ testCases:
          "val": "{{@Random | 1553}}"
       }'
 
-
 assertions:
   - "@StatusCode == 200"
   - "@Response.errors == false"
