@@ -26,8 +26,5 @@ assertions:
   - "@Response.data.key == @Request.key"
   - "@Response.data.val == PASSWORD-MASKED"
 
-tags:
-  - V1
-
 cleanup:
   - vault_delete
