@@ -23,8 +23,7 @@ testCases:
       "inactive": "{{@vault_create_init_Response.data.inactive}}",
       "description": "Updated",
       "key": "key",
-      "val": "value",
-      "visibility": "PRIVATE"
+      "val": "value"
     }'
 
 assertions:

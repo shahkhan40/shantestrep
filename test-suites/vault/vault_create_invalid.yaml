@@ -15,16 +15,14 @@ testCases:
       '{
          "key": "",
          "description": "",
-         "val": "value",
-         "visibility": "PRIVATE"
+         "val": "value"
       }'
   - id: 2
     body:
       '{
          "key": "",
          "description": "",
-         "val": "value",
-         "visibility": "PRIVATE"
+         "val": "value"
       }'
   # invalid val - empty
   - id: 3
@@ -32,8 +30,7 @@ testCases:
       '{
          "key": "{{@Random | 6}}",
          "description": "",
-         "val": "",
-         "visibility": "PRIVATE"
+         "val": ""
       }'
 
 
