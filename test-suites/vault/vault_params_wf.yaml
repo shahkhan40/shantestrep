@@ -17,4 +17,4 @@ assertions:
   - "@Response.data != EMPTY"
 
 tags:
-  - V1
+  - V2
