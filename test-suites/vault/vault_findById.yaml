@@ -18,4 +18,4 @@ assertions:
   - "@vault_create_init_Response.data.id == @Response.data.id"
 
 tags:
-  - V1
+  - V2

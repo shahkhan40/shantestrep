@@ -13,4 +13,4 @@ assertions:
   - "@Response.errors == false"
 
 tags:
-  - V1
+  - V2

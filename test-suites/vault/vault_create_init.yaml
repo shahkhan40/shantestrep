@@ -24,8 +24,7 @@ assertions:
   - "@StatusCode == 200"
   - "@Response.errors == false"
   - "@Response.data.key == @Request.key"
-  - "@Response.data.val == @Request.val"
-  - "@Response.data.visibility == @Request.visibility"
+  - "@Response.data.val == PASSWORD-MASKED"
 
 tags:
   - V1

@@ -71,23 +71,24 @@ testCases:
          "val": "{{@Random | 24}}"
       }'
   # PRIVATE-KEY
-  - id: 11
-    body:
-      '{
-         "key": "{{@Random | 6}}"
-         "val": "{{@Random | 1553}}"
-      }'
+  #- id: 11
+  #  inactive: true
+  #  body:
+  #    '{
+  #       "key": "{{@Random | 6}}",
+  #       "val": "{{@Random | 1553}}"
+  #    }'
 
 
 assertions:
   - "@StatusCode == 200"
   - "@Response.errors == false"
   - "@Response.data.key == @Request.key"
-  - "@Response.data.val == @Request.val"
+  - "@Response.data.val == PASSWORD-MASKED"
 
 
 tags:
-  - V1
+  - V2
 
 cleanup:
   - vault_delete

@@ -15,7 +15,14 @@ testCases:
   - id: 1
     body: '{
       "id": "{{@vault_create_init_Response.data.id}}",
-      "description": "",
+      "org": "{{@vault_create_init_Response.data.org}}",
+      "createdBy": "{{@vault_create_init_Response.data.createdBy}}",
+      "createdDate": "{{@vault_create_init_Response.data.createdDate}}",
+      "modifiedBy": "{{@vault_create_init_Response.data.modifiedBy}}",
+      "modifiedDate": "{{@vault_create_init_Response.data.modifiedDate}}",
+      "inactive": "{{@vault_create_init_Response.data.inactive}}",
+      "description": "Updated",
+      "key": "key",
       "val": "value",
       "visibility": "PRIVATE"
     }'
@@ -23,8 +30,11 @@ testCases:
 assertions:
   - "@StatusCode == 200"
   - "@Response.data.description == @Request.description"
-  - "@Response.data.value == @Request.value"
-  - "@Response.data.visibility == @Request.visibility"
+  - "@Response.data.key == @Request.key"
+  - "@Response.data.val == PASSWORD-MASKED"
+
+cleanup:
+  - vault_delete
 
 tags:
-  - V1
+  - V2
