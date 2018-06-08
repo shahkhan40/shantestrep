@@ -5,92 +5,47 @@ authors:
   - Intesar Shannan Mohammed
 
 init:
-  - org_find_by_name
+  - account_create_init
 
-endpoint: /projects/add
+endpoint: /projects
 method: POST
 auth: Default
+
 # Auth required for this endpoint.
 
 # Try using random chars for unique constriants fields.
-# Required-fields: name, org_id, description, projectType, url, branch username, password
-# Unique Constraints Fields:
+# Required-fields: name, url, account, genPolicy, openAPISpec
+# Unique Constraints Fields: name
 # Fields-Constraints
 # name: Min 1 char, unique per org_id
-# org_id: optional or valid.
 # description: optional
-# projectType: Optional - LOCAL or GIT, Default: LOCAL
-# url - Required if GIT
-# branch - Optional
-# username - Optional
-# password: Optional
-# @Response --> {id, name, description, projectType, visibility etc}
+# @Response --> {id, name, description etc}
 testCases:
   - id: 1
     body: '{
         "name": "Test-{{@Random | 6}}",
-        "projectType": "Git",
         "url": "https://github.com/intesar/Fx-Test-Data.git",
-        "branch": "",
-        "username": "",
-        "password": "",
-        "org": {
-          "id": "{{@org_find_by_name_Response.data.org.id}}"
-          }
-
-     }'
-  - id: 2
-    body: '{
-        "name": "Test-{{@Random | 6}}",
-        "projectType": "Git",
-        "url": "https://github.com/intesar/Fx-Test-Data.git",
-        "branch": "master",
-        "username": "",
-        "password": "",
-        "org": {
-          "id": "{{@org_find_by_name_Response.data.org.id}}"
-          }
-     }'
-  - id: 3
-    body: '{
-        "name": "Test-{{@Random | 6}}",
-        "projectType": "Git",
-        "url": "https://github.com/intesar/Fx-Test-Data.git",
-        "branch": "master",
-        "username": "test",
-        "password": "",
-        "org": {
-          "id": "{{@org_find_by_name_Response.data.org.id}}"
-          }
-     }'
-  - id: 4
-    body: '{
-        "name": "Test-{{@Random | 6}}",
-        "projectType": "Git",
-        "url": "https://github.com/intesar/Fx-Test-Data.git",
-        "branch": "master",
-        "username": "test",
-        "password": "test",
-        "org": {
-          "id": "{{@org_find_by_name_Response.data.org.id}}"
-          }
+        "account": {{@account_create_init_Response.data}},
+        "genPolicy": "Create",
+        "openAPISpec": "http://stg1.fxlabs.io/v1/api-doc",
+        "description": "SD-Test example"
      }'
 
 assertions:
   - "@StatusCode == 200"
   - "@Response.errors == false"
   - "@Response.data.name == @Request.name"
-  - "@Response.data.projectType == @Request.projectType"
-  - "@Response.data.projectType == Git"
-
+  - "@Response.data.url == @Request.url"
+  - "@Response.data.account.id == @Request.account.id"
+  - "@Response.data.genPolicy == @Request.genPolicy"
+  - "@Response.data.openAPISpec == @Request.openAPISpec"
+  - "@Response.data.description == @Request.description"
 
 cleanup:
-  - project_find_by_git
   - project_delete
 
 tags:
   - V1
-  - SANDBOX
 
 policies:
   logger: DEBUG

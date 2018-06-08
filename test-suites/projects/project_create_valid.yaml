@@ -19,12 +19,8 @@ auth: Default
 # name: Min 1 char, unique per org_id
 # org_id: optional or valid.
 # description: optional
-# projectType: Optional - LOCAL or GIT, Default: LOCAL
 # url - Required if GIT
-# branch - Optional
-# username - Optional
-# password: Optional
-# @Response --> {id, name, description, projectType, visibility etc}
+# @Response --> {id, name, description etc}
 testCases:
   - id: 1
     body: '{

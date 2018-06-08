@@ -10,18 +10,12 @@ auth: NONE
 # Auth required for this endpoint.
 
 # Try using random chars for unique constriants fields.
-# Required-fields: name, org_id, description, projectType, url, branch username, password
-# Unique Constraints Fields:
+# Required-fields: name, url, account, genPolicy, openAPISpec
+# Unique Constraints Fields: name
 # Fields-Constraints
 # name: Min 1 char, unique per org_id
-# org_id: optional or valid.
 # description: optional
-# projectType: Optional - LOCAL or GIT, Default: LOCAL
-# url - Required if GIT
-# branch - Optional
-# username - Optional
-# password: Optional
-# @Response --> {id, name, description, projectType, visibility etc}
+# @Response --> {id, name, description etc}
 testCases:
   - id: 1
     body:
@@ -32,11 +26,8 @@ testCases:
 assertions:
   - "@StatusCode != 200"
 
-cleanup:
-  #- project_delete
-
 tags:
-  - V1
+  - V2
 
 policies:
   logger: DEBUG

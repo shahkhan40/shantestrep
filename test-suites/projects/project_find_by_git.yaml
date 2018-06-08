@@ -6,7 +6,7 @@ type: ABSTRACT
 authors:
   - Intesar Shannan Mohammed
 
-endpoint: /projects/{{@Response.data.id}}/git-account
+endpoint: /projects/{{@Response.data.id}}
 
 method: GET
 
@@ -15,7 +15,6 @@ auth: Default
 assertions:
   - "@StatusCode == 200"
   - "@Response.errors == false"
-  - "@Response.data.url != NULL"
 
 policies:
   logger: DEBUG

@@ -4,24 +4,18 @@
 authors:
   - Intesar Shannan Mohammed
 
-endpoint: /projects/add
+endpoint: /projects
 method: POST
 auth: Default
 # Auth required for this endpoint.
 
 # Try using random chars for unique constriants fields.
-# Required-fields: name, org_id, description, projectType, url, branch username, password
-# Unique Constraints Fields:
+# Required-fields: name, url, account, genPolicy, openAPISpec
+# Unique Constraints Fields: name
 # Fields-Constraints
 # name: Min 1 char, unique per org_id
-# org_id: optional or valid.
 # description: optional
-# projectType: Optional - LOCAL or GIT, Default: LOCAL
-# url - Required if GIT
-# branch - Optional
-# username - Optional
-# password: Optional
-# @Response --> {id, name, description, projectType, visibility etc}
+# @Response --> {id, name, description etc}
 testCases:
   # invalid name
   - id: 1
@@ -29,18 +23,71 @@ testCases:
         "name": "",
         "description": "SD-Test example"
      }'
-  # invalid org_id
   - id: 2
     body: '{
-        "name": "Test-{{@Random | 6}}",
-        "description": "SD-Test example",
-        "orgId": "abc"
+        "name": " ",
+        "description": "SD-Test example"
      }'
+  # invalid url
   - id: 3
     body: '{
+        "name": "test",
+        "url": "",
+        "description": "SD-Test example"
+     }'
+  - id: 4
+    body: '{
+        "name": "test",
+        "url": " ",
+        "description": "SD-Test example"
+     }'
+  # invalid account
+  - id: 6
+    body: '{
         "name": "Test-{{@Random | 6}}",
+        "url": "https://github.com/intesar/Fx-Test-Data.git",
         "description": "SD-Test example",
-        "orgId": "123"
+        "account": {}
+     }'
+  - id: 7
+    body: '{
+        "name": "Test-{{@Random | 6}}",
+        "url": "https://github.com/intesar/Fx-Test-Data.git",
+        "description": "SD-Test example",
+        "account": {"id": ""}
+     }'
+  - id: 8
+    body: '{
+        "name": "Test-{{@Random | 6}}",
+        "url": "https://github.com/intesar/Fx-Test-Data.git",
+        "description": "SD-Test example",
+        "account": {"id": " "}
+     }'
+  - id: 8
+    body: '{
+        "name": "Test-{{@Random | 6}}",
+        "url": "https://github.com/intesar/Fx-Test-Data.git",
+        "description": "SD-Test example",
+        "account": {"id": "123"}
+     }'
+  # invalid openAPISpec
+  - id: 3
+    body: '{
+        "name": "test",
+        "url": "https://github.com/intesar/Fx-Test-Data.git",
+        "account": {"id": "0"},
+        "genPolicy": "Create",
+        "openAPISpec": "",
+        "description": "SD-Test example"
+     }'
+  - id: 4
+    body: '{
+        "name": "test",
+        "url": "https://github.com/intesar/Fx-Test-Data.git",
+        "account": {"id": "0"},
+        "genPolicy": "Create",
+        "openAPISpec": " ",
+        "description": "SD-Test example"
      }'
 
 assertions:
