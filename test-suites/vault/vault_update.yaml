@@ -32,8 +32,5 @@ assertions:
   - "@Response.data.key == @Request.key"
   - "@Response.data.val == PASSWORD-MASKED"
 
-cleanup:
-  - vault_delete
-
 tags:
   - V2

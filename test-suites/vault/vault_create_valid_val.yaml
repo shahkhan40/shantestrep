@@ -13,37 +13,37 @@ testCases:
   - id: 1
     body:
       '{
-         "key": "{{@Random | 6}}",
+         "key": "{{@Random | 2}}",
          "val": "{{@Random | 4}}"
       }'
   - id: 2
     body:
       '{
-         "key": "{{@Random | 6}}",
+         "key": "{{@Random | 2}}",
          "val": "{{@Random | 5}}"
       }'
   - id: 3
     body:
       '{
-         "key": "{{@Random | 6}}",
+         "key": "{{@Random | 2}}",
          "val": "{{@Random | 6}}"
       }'
   - id: 4
     body:
       '{
-         "key": "{{@Random | 6}}",
+         "key": "{{@Random | 3}}",
          "val": "{{@Random | 7}}"
       }'
   - id: 5
     body:
       '{
-         "key": "{{@Random | 6}}",
+         "key": "{{@Random | 4}}",
          "val": "{{@Random | 8}}"
       }'
   - id: 6
     body:
       '{
-         "key": "{{@Random | 6}}",
+         "key": "{{@Random | 5}}",
          "val": "{{@Random | 9}}"
       }'
   - id: 7
@@ -55,26 +55,26 @@ testCases:
   - id: 8
     body:
       '{
-         "key": "{{@Random | 6}}",
+         "key": "{{@Random | 7}}",
          "val": "{{@Random | 12}}"
       }'
   - id: 9
     body:
       '{
-         "key": "{{@Random | 6}}",
+         "key": "{{@Random | 8}}",
          "val": "{{@Random | 20}}"
       }'
   - id: 10
     body:
       '{
-         "key": "{{@Random | 6}}",
+         "key": "{{@Random | 8}}",
          "val": "{{@Random | 24}}"
       }'
   # PRIVATE-KEY
   - id: 11
     body:
       '{
-         "key": "{{@Random | 6}}",
+         "key": "{{@Random | 8}}",
          "val": "{{@Random | 1553}}"
       }'
 
@@ -85,9 +85,11 @@ assertions:
   - "@Response.data.key == @Request.key"
   - "@Response.data.val == PASSWORD-MASKED"
 
+cleanup:
+  - vault_delete
+
+policies:
+  cleanupExec: Request
 
 tags:
   - V2
-
-cleanup:
-  - vault_delete

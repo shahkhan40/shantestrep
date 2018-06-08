@@ -38,8 +38,11 @@ assertions:
   - "@StatusCode == 200"
   - "@Response.errors == true"
 
-tags:
-  - V2
-
 cleanup:
   - vault_delete
+
+policies:
+  cleanupExec: Request
+
+tags:
+  - V2

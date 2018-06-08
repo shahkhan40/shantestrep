@@ -70,14 +70,6 @@ testCases:
          "key": "{{@Random | 6}}",
          "val": "{{@Random | 24}}"
       }'
-  # PRIVATE-KEY
-  #- id: 11
-  #  inactive: true
-  #  body:
-  #    '{
-  #       "key": "{{@Random | 6}}",
-  #       "val": "{{@Random | 1553}}"
-  #    }'
 
 
 assertions:
@@ -86,9 +78,11 @@ assertions:
   - "@Response.data.key == @Request.key"
   - "@Response.data.val == PASSWORD-MASKED"
 
+cleanup:
+  - vault_delete
+
+policies:
+  cleanupExec: Request
 
 tags:
   - V2
-
-cleanup:
-  - vault_delete

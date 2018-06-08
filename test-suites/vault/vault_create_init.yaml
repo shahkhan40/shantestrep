@@ -14,7 +14,7 @@ testCases:
   - id: 1
     body:
       '{
-        "key": "{{@Random | 6}}",
+        "key": "init-{{@Random | 8}}",
     	  "description": "",
     	  "val": "value"
     	}'
