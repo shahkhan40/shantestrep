@@ -63,7 +63,7 @@ testCases:
         "description": "SD-Test example",
         "account": {"id": " "}
      }'
-  - id: 8
+  - id: 9
     body: '{
         "name": "Test-{{@Random | 6}}",
         "url": "https://github.com/intesar/Fx-Test-Data.git",
@@ -71,7 +71,7 @@ testCases:
         "account": {"id": "123"}
      }'
   # invalid openAPISpec
-  - id: 3
+  - id: 10
     body: '{
         "name": "test",
         "url": "https://github.com/intesar/Fx-Test-Data.git",
@@ -80,7 +80,7 @@ testCases:
         "openAPISpec": "",
         "description": "SD-Test example"
      }'
-  - id: 4
+  - id: 11
     body: '{
         "name": "test",
         "url": "https://github.com/intesar/Fx-Test-Data.git",
@@ -98,7 +98,7 @@ cleanup:
   #- project_delete
 
 tags:
-  - V1
+  - V2
 
 policies:
   logger: DEBUG
