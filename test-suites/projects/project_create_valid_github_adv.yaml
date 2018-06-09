@@ -5,7 +5,7 @@ authors:
   - Intesar Shannan Mohammed
 
 init:
-  - Git_create_init
+  - GitHub_create_init
 
 endpoint: /projects
 method: POST
@@ -25,7 +25,7 @@ testCases:
     body: '{
         "name": "Test-{{@Random | 6}}",
         "url": "https://github.com/intesar/Fx-Test-Data.git",
-        "account": "{{@Git_create_init_Response.data}}",
+        "account": "{{@GitHub_create_init_Response.data}}",
         "genPolicy": "Create",
         "openAPISpec": "http://stg1.fxlabs.io/v1/api-doc",
         "description": "SD-Test example"

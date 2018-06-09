@@ -1,0 +1,32 @@
+---
+# Validates vault entry create.
+
+authors:
+  - Intesar Shannan Mohammed
+
+type: ABSTRACT
+
+endpoint: /accounts
+
+method: POST
+
+testCases:
+  - id: 1
+    body:
+      '{
+        "name": "Init-{{@Random | 6}}",
+        "accountType": "Microsoft_VSTS_Git",
+        "accessKey": "test",
+        "secretKey": "test"
+      }'
+
+assertions:
+  - "@StatusCode == 200"
+  - "@Response.errors == false"
+  - "@Response.data.name == @Request.name"
+  - "@Response.data.accountType == @Request.accountType"
+  - "@Response.data.accessKey == @Request.accessKey"
+  - "@Response.data.secretKey == EMPTY"
+
+cleanup:
+  - account_delete

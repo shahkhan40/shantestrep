@@ -26,8 +26,7 @@ testCases:
         "name": "Test-{{@Random | 6}}",
         "url": "https://github.com/intesar/Fx-Test-Data.git",
         "account": "{{@Git_create_init_Response.data}}",
-        "genPolicy": "Create",
-        "openAPISpec": "http://stg1.fxlabs.io/v1/api-doc",
+        "genPolicy": "None",
         "description": "SD-Test example"
      }'
 
@@ -38,7 +37,6 @@ assertions:
   - "@Response.data.url == @Request.url"
   - "@Response.data.account.id == @Request.account.id"
   - "@Response.data.genPolicy == @Request.genPolicy"
-  - "@Response.data.openAPISpec == @Request.openAPISpec"
   - "@Response.data.description == @Request.description"
 
 cleanup:
