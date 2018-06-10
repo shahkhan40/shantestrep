@@ -22,7 +22,7 @@ testCases:
       "modifiedDate": "{{@vault_create_init_Response.data.modifiedDate}}",
       "inactive": "{{@vault_create_init_Response.data.inactive}}",
       "description": "Updated",
-      "key": "key",
+      "key": "key-{{@Random | 8}}",
       "val": "value"
     }'
 
