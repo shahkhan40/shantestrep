@@ -5,8 +5,8 @@ authors:
   - Intesar Shannan Mohammed
 
 init:
-  - GitHub_create_init
-  - project_create_valid_github_init
+  - Microsoft_VSTS_Git_create_init
+  - project_create_Microsoft_VSTS_Git_create_abstract
 
 endpoint: /projects?page=0&size=10
 
@@ -16,6 +16,9 @@ assertions:
   - "@StatusCode == 200"
   - "@Response.errors == false"
   - "@Response.data != EMPTY"
+
+severity: Major
+category: Functional
 
 tags:
   - V2

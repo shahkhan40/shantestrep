@@ -1,15 +1,42 @@
 
-Coverage:
-  # Add Project
-  - Invalid Project Add
-  - Valid Project Add
-  - Delete Project
-  - Find Project's Git-Account Details
+Endpoints:
+  - create
+  - update
+  - findById
+  - findAll
+  - delete
 
-  # TODO
-  # Update Project
-  # Project Actions
-  - Add User with Role
-  - Remove User from Project
-  - Make Project PUBLIC
-  - Make Project ORG PUBLIC
+Authentication:
+  - project_create_invalid_auth
+  - project_update_invalid_auth
+  - project_findById_invalid_auth
+  - project_findAll_invalid_auth
+  - project_delete_invalid_auth
+
+Fields -> [name, url, account, autoCode]
+         account [Git, BitBucket, GitHub, GitLab, TFS, VSTS]
+Abstract:
+  - project_create_abstract [account,autoCode]
+  - project_delete_abstract
+  - project_findById_abstract
+
+Negative:
+  - project_create_invalid
+  - project_update_invalid
+  - project_findById_invalid
+  - project_findAll_invalid
+  - project_delete_invalid
+
+Functional:
+  - PM registers a project.
+  - PM/User can view all registered projects.
+  - PM/user can view project details.
+  - PM can update a project.
+    - Org shouldn't change.
+    - Changed name shouldn't exists
+    - Name, Url, Account can change.
+    
+  - PM can delete a project.
+
+Positive (Functional):
+  -

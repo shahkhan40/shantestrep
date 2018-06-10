@@ -5,7 +5,7 @@ authors:
   - Intesar Shannan Mohammed
 
 init:
-  - BitBucket_create_init
+  - GitHub_create_init
 
 endpoint: /projects
 method: POST
@@ -25,9 +25,7 @@ testCases:
     body: '{
         "name": "{{@Random | 3}}",
         "url": "https://github.com/intesar/Fx-Test-Data.git",
-        "account": {
-          "id": "{{@BitBucket_create_init_Response.data.id}}"
-        },
+        "account": "{{@GitHub_create_init_Response.data}}",
         "genPolicy": "Create",
         "openAPISpec": "http://stg1.fxlabs.io/v1/api-doc",
         "description": "SD-Test example"
@@ -36,9 +34,7 @@ testCases:
     body: '{
         "name": "Test-{{@Random | 6}}",
         "url": "https://github.com/intesar/Fx-Test-Data.git",
-        "account": {
-          "id": "{{@BitBucket_create_init_Response.data.id}}"
-        },
+        "account": "{{@GitHub_create_init_Response.data}}",
         "genPolicy": "Create",
         "openAPISpec": "http://stg1.fxlabs.io/v1/api-doc",
         "description": "SD-Test example"
@@ -47,9 +43,7 @@ testCases:
     body: '{
         "name": "Test-{{@Random | 12}}",
         "url": "https://github.com/intesar/Fx-Test-Data.git",
-        "account": {
-          "id": "{{@BitBucket_create_init_Response.data.id}}"
-        },
+        "account": "{{@GitHub_create_init_Response.data}}",
         "genPolicy": "Create",
         "openAPISpec": "http://stg1.fxlabs.io/v1/api-doc",
         "description": "SD-Test example"
@@ -58,9 +52,7 @@ testCases:
     body: '{
         "name": "Test-{{@Random | 24}}",
         "url": "https://github.com/intesar/Fx-Test-Data.git",
-        "account": {
-          "id": "{{@BitBucket_create_init_Response.data.id}}"
-        },
+        "account": "{{@GitHub_create_init_Response.data}}",
         "genPolicy": "Create",
         "openAPISpec": "http://stg1.fxlabs.io/v1/api-doc",
         "description": "SD-Test example"

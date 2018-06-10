@@ -89,6 +89,16 @@ testCases:
         "openAPISpec": " ",
         "description": "SD-Test example"
      }'
+  # invalid genPolicy
+  - id: 12
+    body: '{
+        "name": "test",
+        "url": "https://github.com/intesar/Fx-Test-Data.git",
+        "account": {"id": "0"},
+        "genPolicy": null,
+        "openAPISpec": "",
+        "description": "SD-Test example"
+     }'
 
 assertions:
   - "@StatusCode == 200"
@@ -96,6 +106,9 @@ assertions:
 
 cleanup:
   #- project_delete
+
+severity: Minor
+category: Negative
 
 tags:
   - V2

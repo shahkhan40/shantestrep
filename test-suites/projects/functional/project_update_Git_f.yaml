@@ -1,32 +1,31 @@
 ---
-# Validates project creation with valid data.
+# Validates vault listings with params.
 
 authors:
   - Intesar Shannan Mohammed
 
+type: ABSTRACT
+
 init:
-  - BitBucket_create_init
+  - Git_create_init
+  - project_create_git_abstract
 
-endpoint: /projects
-method: POST
-auth: Default
+endpoint: /projects/{{@project_create_git_abstract_Response.data.id}}
 
-# Auth required for this endpoint.
+method: PUT
 
-# Try using random chars for unique constriants fields.
-# Required-fields: name, url, account, genPolicy, openAPISpec
-# Unique Constraints Fields: name
-# Fields-Constraints
-# name: Min 1 char, unique per org_id
-# description: optional
-# @Response --> {id, name, description etc}
 testCases:
   - id: 1
+    # Name, URL, account, genPolicy update
     body: '{
+        "id": "{{@project_create_git_abstract_Response.data.id}}",
+        "org": {
+          "id": "{{@project_create_git_abstract_Response_data.org.id}}"
+        },
         "name": "{{@Random | 3}}",
         "url": "https://github.com/intesar/Fx-Test-Data.git",
         "account": {
-          "id": "{{@BitBucket_create_init_Response.data.id}}"
+          "id": "{{@Git_create_init_Response.data.id}}"
         },
         "genPolicy": "Create",
         "openAPISpec": "http://stg1.fxlabs.io/v1/api-doc",
@@ -34,10 +33,14 @@ testCases:
      }'
   - id: 2
     body: '{
+        "id": "{{@project_create_git_abstract_Response.data.id}}",
+        "org": {
+          "id": "{{@project_create_git_abstract_Response.data.org.id}}"
+        },
         "name": "Test-{{@Random | 6}}",
         "url": "https://github.com/intesar/Fx-Test-Data.git",
         "account": {
-          "id": "{{@BitBucket_create_init_Response.data.id}}"
+          "id": "{{@Git_create_init_Response.data.id}}"
         },
         "genPolicy": "Create",
         "openAPISpec": "http://stg1.fxlabs.io/v1/api-doc",
@@ -45,10 +48,14 @@ testCases:
      }'
   - id: 3
     body: '{
+        "id": "{{@project_create_git_abstract_Response.data.id}}",
+        "org": {
+          "id": "{{@project_create_git_abstract_Response.data.org.id}}"
+        },
         "name": "Test-{{@Random | 12}}",
         "url": "https://github.com/intesar/Fx-Test-Data.git",
         "account": {
-          "id": "{{@BitBucket_create_init_Response.data.id}}"
+          "id": "{{@Git_create_init_Response.data.id}}"
         },
         "genPolicy": "Create",
         "openAPISpec": "http://stg1.fxlabs.io/v1/api-doc",
@@ -56,10 +63,14 @@ testCases:
      }'
   - id: 4
     body: '{
+        "id": "{{@project_create_git_abstract_Response.data.id}}",
+        "org": {
+          "id": "{{@project_create_git_abstract_Response.data.org.id}}"
+        },
         "name": "Test-{{@Random | 24}}",
         "url": "https://github.com/intesar/Fx-Test-Data.git",
         "account": {
-          "id": "{{@BitBucket_create_init_Response.data.id}}"
+          "id": "{{@Git_create_init_Response.data.id}}"
         },
         "genPolicy": "Create",
         "openAPISpec": "http://stg1.fxlabs.io/v1/api-doc",
@@ -69,21 +80,10 @@ testCases:
 assertions:
   - "@StatusCode == 200"
   - "@Response.errors == false"
-  - "@Response.data.name == @Request.name"
-  - "@Response.data.url == @Request.url"
-  - "@Response.data.account.id == @Request.account.id"
-  - "@Response.data.genPolicy == @Request.genPolicy"
-  - "@Response.data.openAPISpec == @Request.openAPISpec"
-  - "@Response.data.description == @Request.description"
-
-cleanup:
-  - project_delete
+  - "@Response.data != EMPTY"
 
 severity: Major
 category: Functional
 
 tags:
   - V2
-
-policies:
-  logger: DEBUG

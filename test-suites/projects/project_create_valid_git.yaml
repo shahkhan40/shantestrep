@@ -5,7 +5,7 @@ authors:
   - Intesar Shannan Mohammed
 
 init:
-  - Microsoft_TFS_Git_create_init
+  - Git_create_init
 
 endpoint: /projects
 method: POST
@@ -23,9 +23,36 @@ auth: Default
 testCases:
   - id: 1
     body: '{
+        "name": "{{@Random | 3}}",
+        "url": "https://github.com/intesar/Fx-Test-Data.git",
+        "account": "{{@Git_create_init_Response.data}}",
+        "genPolicy": "Create",
+        "openAPISpec": "http://stg1.fxlabs.io/v1/api-doc",
+        "description": "SD-Test example"
+     }'
+  - id: 2
+    body: '{
         "name": "Test-{{@Random | 6}}",
         "url": "https://github.com/intesar/Fx-Test-Data.git",
-        "account": "{{@Microsoft_TFS_Git_create_init_Response.data}}",
+        "account": "{{@Git_create_init_Response.data}}",
+        "genPolicy": "Create",
+        "openAPISpec": "http://stg1.fxlabs.io/v1/api-doc",
+        "description": "SD-Test example"
+     }'
+  - id: 3
+    body: '{
+        "name": "Test-{{@Random | 12}}",
+        "url": "https://github.com/intesar/Fx-Test-Data.git",
+        "account": "{{@Git_create_init_Response.data}}",
+        "genPolicy": "Create",
+        "openAPISpec": "http://stg1.fxlabs.io/v1/api-doc",
+        "description": "SD-Test example"
+     }'
+  - id: 4
+    body: '{
+        "name": "Test-{{@Random | 24}}",
+        "url": "https://github.com/intesar/Fx-Test-Data.git",
+        "account": "{{@Git_create_init_Response.data}}",
         "genPolicy": "Create",
         "openAPISpec": "http://stg1.fxlabs.io/v1/api-doc",
         "description": "SD-Test example"
@@ -43,6 +70,9 @@ assertions:
 
 cleanup:
   - project_delete
+
+severity: Major
+category: Functional
 
 tags:
   - V2

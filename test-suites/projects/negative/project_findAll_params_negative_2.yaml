@@ -12,5 +12,8 @@ assertions:
   - "@StatusCode == 200"
   - "@Response.errors == true"
 
+severity: Minor
+category: Negative
+
 tags:
   - V2
