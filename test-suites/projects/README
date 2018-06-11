@@ -1,5 +1,5 @@
 
-Endpoints:
+Project endpoints:
   - create
   - update
   - findById
@@ -16,7 +16,7 @@ Authentication:
 Fields -> [name, url, account, autoCode]
          account [Git, BitBucket, GitHub, GitLab, TFS, VSTS]
 Abstract:
-  - project_create_abstract [account,autoCode]
+  - project_create_abstract [account, autoCode]
   - project_delete_abstract
   - project_findById_abstract
 
@@ -35,7 +35,7 @@ Functional:
     - Org shouldn't change.
     - Changed name shouldn't exists
     - Name, Url, Account can change.
-    
+
   - PM can delete a project.
 
 Positive (Functional):
