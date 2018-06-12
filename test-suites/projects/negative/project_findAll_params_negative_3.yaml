@@ -4,7 +4,7 @@
 authors:
   - Intesar Shannan Mohammed
 
-endpoint: /projects?page=-1&size=-10
+endpoint: /projects?page=-1&pageSize=-10
 
 method: GET
 
