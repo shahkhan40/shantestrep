@@ -1,10 +1,9 @@
 ---
-# Validates vault listings with params.
 
 authors:
   - Intesar Shannan Mohammed
 
-endpoint: /vault?page=0&pageSize=21
+endpoint: /system-settings?page=0&pageSize=21
 
 method: GET
 
@@ -12,5 +11,8 @@ assertions:
   - "@StatusCode == 200"
   - "@Response.errors == true"
 
+severity: Minor
+category: Negative
+
 tags:
-  - V1
+  - V2
