@@ -1,0 +1,42 @@
+
+issue-tracker endpoints:
+  - create
+  - update
+  - findById
+  - findAll
+  - delete
+
+Authentication:
+  - issue-tracker_create_invalid_auth
+  - issue-tracker_update_invalid_auth
+  - issue-tracker_findById_invalid_auth
+  - issue-tracker_findAll_invalid_auth
+  - issue-tracker_delete_invalid_auth
+
+Fields -> [name, url, account]
+         account [Git, BitBucket]
+Abstract:
+  - issue-tracker_create_abstract [account, autoCode]
+  - issue-tracker_delete_abstract
+  - issue-tracker_findById_abstract
+
+Negative:
+  - issue-tracker_create_invalid
+  - issue-tracker_update_invalid
+  - issue-tracker_findById_invalid
+  - issue-tracker_findAll_invalid
+  - issue-tracker_delete_invalid
+
+Functional:
+  - PM registers a issue-tracker.
+  - PM/User can view all registered issue-trackers.
+  - PM/user can view issue-tracker details.
+  - PM can update a issue-tracker.
+    - Org shouldn't change.
+    - Changed name shouldn't exists
+    - Name, Url (prop1), Account can change.
+
+  - PM can delete a issue-tracker.
+
+Positive (Functional):
+  -

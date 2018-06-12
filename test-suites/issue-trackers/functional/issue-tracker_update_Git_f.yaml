@@ -1,0 +1,81 @@
+---
+# Validates issue-tracker listings with params.
+
+authors:
+  - Mohammed Luqman Shareef
+
+type: ABSTRACT
+
+init:
+  - Git_create_init
+  - issue-tracker_create_git_abstract
+
+endpoint: /issue-trackers/{{@issue-tracker_create_git_abstract_Response.data.id}}
+
+method: PUT
+
+testCases:
+  - id: 1
+    # Name, prop1, account update
+    body: '{
+        "id": "{{@issue-tracker_create_git_abstract_Response.data.id}}",
+        "org": {
+          "id": "{{@issue-tracker_create_git_abstract_Response_data.org.id}}"
+        },
+        "name": "{{@Random | 3}}",
+        "prop1": "https://github.com/intesar/Fx-Test-Data.git",
+        "account": {
+          "id": "{{@Git_create_init_Response.data.id}}"
+        },
+        "description": "SD-Test example"
+     }'
+  - id: 2
+    body: '{
+        "id": "{{@issue-tracker_create_git_abstract_Response.data.id}}",
+        "org": {
+          "id": "{{@issue-tracker_create_git_abstract_Response.data.org.id}}"
+        },
+        "name": "Test-{{@Random | 6}}",
+        "prop1": "https://github.com/intesar/Fx-Test-Data.git",
+        "account": {
+          "id": "{{@Git_create_init_Response.data.id}}"
+        },
+        "description": "SD-Test example"
+     }'
+  - id: 3
+    body: '{
+        "id": "{{@issue-tracker_create_git_abstract_Response.data.id}}",
+        "org": {
+          "id": "{{@issue-tracker_create_git_abstract_Response.data.org.id}}"
+        },
+        "name": "Test-{{@Random | 12}}",
+        "prop1": "https://github.com/intesar/Fx-Test-Data.git",
+        "account": {
+          "id": "{{@Git_create_init_Response.data.id}}"
+        },
+        "description": "SD-Test example"
+     }'
+  - id: 4
+    body: '{
+        "id": "{{@issue-tracker_create_git_abstract_Response.data.id}}",
+        "org": {
+          "id": "{{@issue-tracker_create_git_abstract_Response.data.org.id}}"
+        },
+        "name": "Test-{{@Random | 24}}",
+        "prop1": "https://github.com/intesar/Fx-Test-Data.git",
+        "account": {
+          "id": "{{@Git_create_init_Response.data.id}}"
+        },
+        "description": "SD-Test example"
+     }'
+
+assertions:
+  - "@StatusCode == 200"
+  - "@Response.errors == false"
+  - "@Response.data != EMPTY"
+
+severity: Major
+category: Functional
+
+tags:
+  - V2

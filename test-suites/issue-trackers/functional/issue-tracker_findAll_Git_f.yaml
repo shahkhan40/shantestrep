@@ -1,0 +1,24 @@
+---
+# Validates issue-tracker listings with params.
+
+authors:
+- Mohammed Luqman Shareef
+
+init:
+- Git_create_init
+- issue-tracker_create_git_abstract
+
+endpoint: /issue-trackers?page=0&pageSize=10
+
+method: GET
+
+assertions:
+- "@StatusCode == 200"
+- "@Response.errors == false"
+- "@Response.data != EMPTY"
+
+severity: Major
+category: Functional
+
+tags:
+- V2

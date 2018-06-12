@@ -1,0 +1,20 @@
+---
+# Validates project delete with parent id.
+
+type: ABSTRACT
+
+authors:
+  - Mohammed Luqman Shareef
+
+endpoint: /issue-trackers/{{@Response.data.id}}
+
+method: DELETE
+
+auth: Default
+
+assertions:
+  - "@StatusCode == 200"
+  - "@Response.errors == false"
+
+policies:
+  logger: DEBUG

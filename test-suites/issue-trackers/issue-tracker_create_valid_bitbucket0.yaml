@@ -1,0 +1,71 @@
+---
+# Validates issue-tracker creation with valid data.
+
+authors:
+  - Mohammed Luqman Shareef
+
+init:
+  - BitBucket_create_init
+
+endpoint: /issue-trackers/issue-tracker-bot
+method: POST
+auth: Default
+
+# Auth required for this endpoint.
+
+# Try using random chars for unique constriants fields.
+# Required-fields: name, prop1, account
+# Unique Constraints Fields: name
+# Fields-Constraints
+# name: Min 1 char, unique per org_id
+# description: optional
+# @Response --> {id, name, description etc}
+testCases:
+  - id: 1
+    body: '{
+        "name": "{{@Random | 3}}",
+        "prop1": "https://github.com/intesar/Fx-Test-Data.git",
+        "account": "{{@BitBucket_create_init_Response.data}}",
+        "description": "SD-Test example"
+     }'
+  - id: 2
+    body: '{
+        "name": "Test-{{@Random | 6}}",
+        "prop1": "https://github.com/intesar/Fx-Test-Data.git",
+        "account": "{{@BitBucket_create_init_Response.data}}",
+        "description": "SD-Test example"
+     }'
+  - id: 3
+    body: '{
+        "name": "Test-{{@Random | 12}}",
+        "prop1": "https://github.com/intesar/Fx-Test-Data.git",
+        "account": "{{@BitBucket_create_init_Response.data}}",
+        "description": "SD-Test example"
+     }'
+  - id: 4
+    body: '{
+        "name": "Test-{{@Random | 24}}",
+        "prop1": "https://github.com/intesar/Fx-Test-Data.git",
+        "account": "{{@BitBucket_create_init_Response.data}}",
+        "description": "SD-Test example"
+     }'
+
+assertions:
+  - "@StatusCode == 200"
+  - "@Response.errors == false"
+  - "@Response.data.name == @Request.name"
+  - "@Response.data.prop1 == @Request.prop1"
+  - "@Response.data.account.id == @Request.account.id"
+  - "@Response.data.description == @Request.description"
+
+cleanup:
+  - issue-tracker_delete
+
+severity: Major
+category: Functional
+
+tags:
+  - V2
+
+policies:
+  logger: DEBUG
