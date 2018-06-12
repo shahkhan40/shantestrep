@@ -1,0 +1,16 @@
+---
+# Validates vault listings with params.
+
+authors:
+  - Intesar Shannan Mohammed
+
+endpoint: /dashboard/count-tests?page=0&pageSize=-10
+
+method: GET
+
+assertions:
+  - "@StatusCode == 200"
+  - "@Response.errors == true"
+
+tags:
+  - V2
