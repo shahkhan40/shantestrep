@@ -3,7 +3,7 @@
 authors:
   - Intesar Shannan Mohammed
 
-endpoint: /system-settings?page=0&pageSize=21
+endpoint: /system-settings?page=0&pageSize=101
 
 method: GET
 
