@@ -8,7 +8,7 @@ init:
   - BitBucket_create_init
   - project_create_bitbucket_abstract
 
-endpoint: /projects?page=0&size=10
+endpoint: /projects?page=0&pageSize=10
 
 method: GET
 
