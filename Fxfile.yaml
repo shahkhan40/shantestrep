@@ -50,3 +50,7 @@ jobs:
     tags:
       - V2
     regions: FXLabs/Localhost
+  - name: Dev
+    environment: Dev
+    tags:
+      - V3
