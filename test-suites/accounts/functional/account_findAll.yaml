@@ -1,0 +1,25 @@
+---
+# Validates vault listings with params.
+
+authors:
+  - Mohammed Shoukath Ali
+
+init:
+  - BitBucket_create_init
+  - Account_Local_create_init
+  - Email_create_init
+
+endpoint: /accounts?page=0&pageSize=10
+
+method: GET
+
+assertions:
+  - "@StatusCode == 200"
+  - "@Response.errors == false"
+  - "@Response.data != EMPTY"
+
+severity: Major
+category: Functional
+
+tags:
+  - V2
