@@ -1,5 +1,5 @@
 ---
-# Validates project creation with valid data.
+# Validates Account creation with valid data.
 
 authors:
   - Mohammed Shoukath Ali
@@ -21,31 +21,54 @@ testCases:
   - id: 1
     body: '{
         "name": "{{@Random | 3}}",
-        "accountType": "GitHub",
+        "accountType": "AWS",
         "accessKey": "testing accessKey",
-        "secretKey": "testing secretKey"
+        "secretKey": "testing secretKey",
+        "prop2": "launch",
+        "prop3": "fx-subnet1",
+        "allowedRegions": ["us-east-2", "us-east-1", "us-west-2"]
      }'
   - id: 2
     body: '{
         "name": "Test-{{@Random | 6}}",
-        "accountType": "GitHub",
+        "accountType": "AWS",
         "accessKey": "testing accessKey",
-        "secretKey": "testing secretKey"
+        "secretKey": "testing secretKey",
+        "prop2": "launch-wizard-3",
+        "prop3": "fx-subnet1",
+        "allowedRegions": ["us-east-1", "us-east-2", "us-west-1"]
      }'
   - id: 3
     body: '{
         "name": "Test-{{@Random | 12}}",
-        "accountType": "GitHub",
+        "accountType": "AWS",
         "accessKey": "testing accessKey",
-        "secretKey": "testing secretKey"
+        "secretKey": "testing secretKey",
+        "prop2": "launch-wizard45",
+        "prop3": "fx-subnet1",
+        "allowedRegions": ["us-east-1", "us-east-2", "us-west-1"]
      }'
   - id: 4
     body: '{
         "name": "Test-{{@Random | 24}}",
-        "accountType": "GitHub",
+        "accountType": "AWS",
         "accessKey": "testing accessKey",
-        "secretKey": "testing secretKey"
+        "secretKey": "testing secretKey",
+        "prop2": "launch-wizard-4",
+        "prop3": "fx-subnet1",
+        "allowedRegions": ["us-east-1", "us-east-2", "us-west-1"]
      }'
+  - id: 5
+    body: '{
+        "name": "Test-{{@Random | 24}}",
+        "accountType": "AWS",
+        "accessKey": "testing accessKey",
+        "secretKey": "testing secretKey",
+        "prop2": "launch-wizard-3",
+        "prop3": "fx-subnet1",
+        "allowedRegions": ["us-east-1", "us-east-2", "us-west-1"]
+     }'
+
 
 assertions:
   - "@StatusCode == 200"
@@ -54,6 +77,9 @@ assertions:
   - "@Response.data.accountType == @Request.accountType"
   - "@Response.data.accessKey == @Request.accessKey"
   - "@Response.data.secretKey != @Request.secretKey"
+  - "@Response.data.allowedRegions != NULL"
+  - "@Response.data.prop2 == @Request.prop2"
+  - "@Response.data.prop3 == @Request.prop3"
 
 
 
