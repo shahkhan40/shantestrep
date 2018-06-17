@@ -6,7 +6,7 @@ type: ABSTRACT
 authors:
   - Mohammed Luqman Shareef
 
-endpoint: /issue-trackers/{{@Response.data.id}}
+endpoint: /issue-trackers/issue-tracker-bot/{{@Response.data.id}}
 
 method: DELETE
 
