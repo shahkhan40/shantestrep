@@ -24,33 +24,25 @@ testCases:
     body: '{
         "name": "Test-EM-{{@Random | 3}}",
         "channel": "test@fxlabs.io",
-        "account": {
-            {{@Email_create_init_Response.data}}
-            }
+        "account": "{{@Email_create_init_Response.data}}"
      }'
   - id: 2
     body: '{
         "name": "Test-EM-{{@Random | 6}}",
         "channel": "test@fxlabs.io",
-        "account": {
-            {{@Email_create_init_Response.data}}
-            }
+        "account": "{{@Email_create_init_Response.data}}"
      }'
   - id: 3
     body: '{
         "name": "Test-EM-{{@Random | 12}}",
         "channel": "test@fxlabs.io",
-        "account": {
-            {{@Email_create_init_Response.data}}
-            }
+        "account": "{{@Email_create_init_Response.data}}"
      }'
   - id: 4
     body: '{
         "name": "Test-EM-{{@Random | 24}}",
         "channel": "test@fxlabs.io",
-        "account": {
-            {{@Email_create_init_Response.data}}
-            }
+        "account": "{{@Email_create_init_Response.data}}"
      }'
 
 assertions:
