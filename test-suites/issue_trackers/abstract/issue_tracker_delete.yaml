@@ -1,5 +1,5 @@
 ---
-# Validates project delete with parent id.
+# Validates Issue tracker delete with parent id.
 
 type: ABSTRACT
 
@@ -15,6 +15,9 @@ auth: Default
 assertions:
   - "@StatusCode == 200"
   - "@Response.errors == false"
+
+tags:
+  - V2
 
 policies:
   logger: DEBUG

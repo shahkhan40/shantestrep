@@ -1,5 +1,5 @@
 ---
-# Validates issue-tracker creation
+# Validates issue-tracker creation failure with invalid Data
 
 authors:
   - Mohammed Luqman Shareef

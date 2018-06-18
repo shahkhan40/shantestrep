@@ -1,5 +1,5 @@
 ---
-# Validates issue-tracker findAll.
+# Validates issue-tracker findAll with invalid authentication.
 
 authors:
   - Mohammed Luqman Shareef

@@ -1,5 +1,5 @@
 ---
-# Validates issue-tracker update with invalid data.
+# Validates issue-tracker update with invalid authentication.
 
 authors:
   - Mohammed Luqman Shareef

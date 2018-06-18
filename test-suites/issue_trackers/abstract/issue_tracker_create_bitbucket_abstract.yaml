@@ -1,5 +1,5 @@
 ---
-# Validates project creation with valid data.
+# Validates issue tracker creation with valid data.
 
 authors:
   - Mohammed Luqman Shareef
@@ -13,7 +13,7 @@ auth: Default
 # Auth required for this endpoint.
 
 # Try using random chars for unique constriants fields.
-# Required-fields: name, prop1, account, genPolicy, openAPISpec
+# Required-fields: name, prop1, account
 # Unique Constraints Fields: name
 # Fields-Constraints
 # name: Min 1 char, unique per org_id
@@ -39,7 +39,7 @@ assertions:
   - "@Response.data.description == @Request.description"
 
 cleanup:
-  - issue-tracker_delete
+  - issue_tracker_delete
 
 tags:
   - V2

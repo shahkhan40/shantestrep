@@ -1,5 +1,5 @@
 ---
-# Validates issue-tracker delete.
+# Validates issue-tracker delete with invalid authentication.
 
 authors:
   - Mohammed Luqman Shareef

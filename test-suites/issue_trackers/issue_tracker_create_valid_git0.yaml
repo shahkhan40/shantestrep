@@ -59,7 +59,7 @@ assertions:
   - "@Response.data.description == @Request.description"
 
 cleanup:
-  - issue-tracker_delete
+  - issue_tracker_delete
 
 severity: Major
 category: Functional

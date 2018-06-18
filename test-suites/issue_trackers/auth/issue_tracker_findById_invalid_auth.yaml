@@ -1,5 +1,5 @@
 ---
-# Validates issue-tracker findById.
+# Validates issue-tracker findById with invalid authentication.
 
 authors:
   - Mohammed Luqman Shareef
