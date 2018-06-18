@@ -1,0 +1,82 @@
+---
+# Validates notification creation with invalid data.
+
+authors:
+  - Mohammed Luqman Shareef
+
+endpoint: /notifications
+method: POST
+auth: Default
+# Auth required for this endpoint.
+
+# Try using random chars for unique constriants fields.
+# Required-fields: name, channel, account
+# Unique Constraints Fields: name
+# Fields-Constraints
+# name: Min 1 char, unique per org_id
+# description: optional
+# @Response --> {id, name, channel etc}
+testCases:
+  # invalid name
+  - id: 1
+    body: '{
+        "name": "",
+        "channel": "SD-Test example"
+     }'
+  - id: 2
+    body: '{
+        "name": " ",
+        "channel": "SD-Test example"
+     }'
+  # invalid channel
+  - id: 3
+    body: '{
+        "name": "test",
+        "channel": ""
+     }'
+  - id: 4
+    body: '{
+        "name": "test",
+        "channel": " "
+     }'
+  # invalid account
+  - id: 6
+    body: '{
+        "name": "Test-{{@Random | 6}}",
+        "channel": "SD-Test example",
+        "account": {}
+     }'
+  - id: 7
+    body: '{
+        "name": "Test-{{@Random | 6}}",
+        "channel": "SD-Test example",
+        "account": {"id": ""}
+     }'
+  - id: 8
+    body: '{
+        "name": "Test-{{@Random | 6}}",
+        "channel": "SD-Test example",
+        "account": {"id": " "}
+     }'
+  - id: 9
+    body: '{
+        "name": "Test-{{@Random | 6}}",
+        "channel": "SD-Test example",
+        "account": {"id": "123"}
+     }'
+
+assertions:
+  - "@StatusCode == 200"
+  - "@Response.errors == true"
+
+cleanup:
+  #- notification_delete
+
+severity: Minor
+category: Negative
+
+tags:
+  - V2
+
+policies:
+  logger: DEBUG

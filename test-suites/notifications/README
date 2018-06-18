@@ -1,0 +1,42 @@
+
+notification endpoints:
+  - create
+  - update
+  - findById
+  - findAll
+  - delete
+
+Authentication:
+  - notification_create_invalid_auth
+  - notification_update_invalid_auth
+  - notification_findById_invalid_auth
+  - notification_findAll_invalid_auth
+  - notification_delete_invalid_auth
+
+Fields -> [name, channel, account]
+         account [Email, Slack]
+Abstract:
+  - notification_create_abstract [account, channel]
+  - notification_delete_abstract
+  - notification_findById_abstract
+
+Negative:
+  - notification_create_invalid
+  - notification_update_invalid
+  - notification_findById_invalid
+  - notification_findAll_invalid
+  - notification_delete_invalid
+
+Functional:
+  - PM registers a notification.
+  - PM/User can view all registered notifications.
+  - PM/user can view notification details.
+  - PM can update a notification.
+    - Org shouldn't change.
+    - Name shouldn't Change
+    - Channel, Account can change.
+
+  - PM can delete a notification.
+
+Positive (Functional):
+  -

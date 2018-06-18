@@ -1,0 +1,77 @@
+---
+# Validates notification listings with params.
+
+authors:
+  - Mohammed Luqman Shareef
+
+type: ABSTRACT
+
+init:
+  - Email_create_init
+  - notification_create_email_abstract
+
+endpoint: /notifications/{{@notification_create_email_abstract_Response.data.id}}
+
+method: PUT
+
+testCases:
+  - id: 1
+    # Name, prop1, account update
+    body: '{
+        "id": "{{@notification_create_email_abstract_Response.data.id}}",
+        "org": {
+          "id": "{{@notification_create_email_abstract_Response_data.org.id}}"
+        },
+        "name": "{{@Random | 3}}",
+        "account": {
+          "id": "{{@Email_create_init_Response.data.id}}"
+        },
+        "channel": "SD-Test channel "
+     }'
+  - id: 2
+    body: '{
+        "id": "{{@notification_create_email_abstract_Response.data.id}}",
+        "org": {
+          "id": "{{@notification_create_email_abstract_Response.data.org.id}}"
+        },
+        "name": "Test-{{@Random | 6}}",
+        "account": {
+          "id": "{{@Email_create_init_Response.data.id}}"
+        },
+        "channel": "SD-Test channel example"
+     }'
+  - id: 3
+    body: '{
+        "id": "{{@notification_create_email_abstract_Response.data.id}}",
+        "org": {
+          "id": "{{@notification_create_email_abstract_Response.data.org.id}}"
+        },
+        "name": "Test-{{@Random | 12}}",
+        "account": {
+          "id": "{{@Email_create_init_Response.data.id}}"
+        },
+        "channel": "SD-Test channel example"
+     }'
+  - id: 4
+    body: '{
+        "id": "{{@notification_create_email_abstract_Response.data.id}}",
+        "org": {
+          "id": "{{@notification_create_email_abstract_Response.data.org.id}}"
+        },
+        "name": "Test-{{@Random | 24}}",
+        "account": {
+          "id": "{{@Email_create_init_Response.data.id}}"
+        },
+        "channel": "SD-Test channel example"
+     }'
+
+assertions:
+  - "@StatusCode == 200"
+  - "@Response.errors == false"
+  - "@Response.data != EMPTY"
+
+severity: Major
+category: Functional
+
+tags:
+  - V2

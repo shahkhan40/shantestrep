@@ -1,0 +1,66 @@
+---
+# Validates notification creation with valid data.
+
+authors:
+  - Mohammed Luqman Shareef
+
+init:
+  - Slack_create_init
+
+endpoint: /notifications
+method: POST
+auth: Default
+
+# Auth required for this endpoint.
+
+# Try using random chars for unique constriants fields.
+# Required-fields: name, channel, account
+# Unique Constraints Fields: name
+# Fields-Constraints
+# name: Min 1 char, unique per org_id
+# @Response --> {id, name, channel etc}
+testCases:
+  - id: 1
+    body: '{
+        "name": "{{@Random | 3}}",
+        "channel": "Test-Slack-Channel",
+        "account": "{{@Slack_create_init_Response.data}}"
+    }'
+  - id: 2
+    body: '{
+        "name": "{{@Random | 6}}",
+        "channel": "Test-Slack-Channel",
+        "account": "{{@Slack_create_init_Response.data}}"
+    }'
+  - id: 3
+    body: '{
+        "name": "{{@Random | 12}}",
+        "channel": "Test-Slack-Channel",
+        "account": "{{@Slack_create_init_Response.data}}"
+    }'
+  - id: 4
+    body: '{
+        "name": "{{@Random | 24}}",
+        "channel": "Test-Slack-Channel",
+        "account": "{{@Slack_create_init_Response.data}}"
+    }'
+
+
+assertions:
+  - "@StatusCode == 200"
+  - "@Response.errors == false"
+  - "@Response.data.name == @Request.name"
+  - "@Response.data.channel == @Request.channel"
+  - "@Response.data.account.id == @Request.account.id"
+
+cleanup:
+  - notification_delete
+
+severity: Major
+category: Functional
+
+tags:
+  - V2
+
+policies:
+  logger: DEBUG

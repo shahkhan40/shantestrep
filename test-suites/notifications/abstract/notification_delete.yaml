@@ -1,0 +1,23 @@
+---
+# Validates notification delete with parent id.
+
+type: ABSTRACT
+
+authors:
+  - Mohammed Luqman Shareef
+
+endpoint: /notifications/{{@Response.data.id}}
+
+method: DELETE
+
+auth: Default
+
+assertions:
+  - "@StatusCode == 200"
+  - "@Response.errors == false"
+
+tags:
+  - V2
+
+policies:
+  logger: DEBUG

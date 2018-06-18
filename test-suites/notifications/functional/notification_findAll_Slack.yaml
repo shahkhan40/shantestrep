@@ -1,0 +1,24 @@
+---
+# Validates notification listings with params.
+
+authors:
+- Mohammed Luqman Shareef
+
+init:
+- Slack_create_init
+- notification_create_slack_abstract
+
+endpoint: /notifications?page=0&pageSize=10
+
+method: GET
+
+assertions:
+- "@StatusCode == 200"
+- "@Response.errors == false"
+- "@Response.data != EMPTY"
+
+severity: Major
+category: Functional
+
+tags:
+- V2
