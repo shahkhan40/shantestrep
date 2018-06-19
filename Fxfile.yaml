@@ -45,6 +45,7 @@ jobs:
     issueTracker: FXLabs/FX_Test_Automation
     notifications:
       - FXLabs/engineering
+      - FXLabs/shahnotification
   - name: SANDBOX
     environment: Dev
     tags:
