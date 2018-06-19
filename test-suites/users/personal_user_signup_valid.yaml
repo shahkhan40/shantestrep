@@ -52,6 +52,28 @@ testCases:
   - id: 15
     body: '{"name": "fn1 ln", "email": "{{@RandomAlphanumeric | 6}}@fxlabs.io", "password": "12345678", "company": "{{@RandomAlphanumeric | 24}}"}'
 
+  # Name from Faker
+  - id: 16
+    body: '{"name": "{{@Faker.name.fullName}}", "email": "{{@RandomAlphanumeric | 6}}@fxlabs.io", "password": "12345678", "company": "{{@RandomAlphanumeric | 12}}"}'
+  - id: 17
+    body: '{"name": "{{@Faker.name.firstName}} {{@Faker.name.lastName}}", "email": "{{@RandomAlphanumeric | 6}}@fxlabs.io", "password": "12345678", "company": "{{@RandomAlphanumeric | 12}}"}'
+  - id: 18
+    body: '{"name": "{{@Faker.name.nameWithMiddle}}", "email": "{{@RandomAlphanumeric | 6}}@fxlabs.io", "password": "12345678", "company": "{{@RandomAlphanumeric | 24}}"}'
+
+  # email from Faker
+  - id: 19
+    body: '{"name": "fn1 ln", "email": "{{@Faker.internet.emailAddress}}", "password": "12345678", "company": "{{@RandomAlphanumeric | 12}}"}'
+  - id: 20
+    body: '{"name": "fn1 ln", "email": "{{@Faker.internet.safeEmailAddress}}", "password": "12345678", "company": "{{@RandomAlphanumeric | 24}}"}'
+
+  # company from Faker
+  - id: 21
+    body: '{"name": "fn1 ln", "email": "{{@RandomAlphanumeric | 6}}@fxlabs.io", "password": "12345678", "company": "{{@Faker.company.name}}"}'
+  - id: 22
+    body: '{"name": "fn1 ln", "email": "{{@RandomAlphanumeric | 6}}@fxlabs.io", "password": "12345678", "company": "{{@Faker.company.industry}}"}'
+
+    
+    
 assertions:
   - "@StatusCode == 200"
   - "@Response.errors == false"

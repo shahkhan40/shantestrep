@@ -44,6 +44,18 @@ testCases:
         "channel": "test@fxlabs.io",
         "account": "{{@Email_create_init_Response.data}}"
      }'
+  - id: 5
+    body: '{
+        "name": "Test-EM-{{@Random | 24}}",
+        "channel": "{{@Faker.internet.emailAddress}}",
+        "account": "{{@Email_create_init_Response.data}}"
+     }'
+  - id: 6
+    body: '{
+        "name": "Test-EM-{{@Random | 24}}",
+        "channel": "{{@Faker.internet.safeEmailAddress}}",
+        "account": "{{@Email_create_init_Response.data}}"
+     }'
 
 assertions:
   - "@StatusCode == 200"
