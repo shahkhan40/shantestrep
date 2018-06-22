@@ -1,0 +1,70 @@
+---
+# Validates enterprise-user sign-ups.
+
+authors:
+  - Intesar Shannan Mohammed
+
+endpoint: /users/personal-sign-up
+method: POST
+auth: NONE
+
+# Required-fields: name, email, password, company
+# Fields-Constraints
+# name: Nullable
+# email: valid email, unique
+# password: min 8 chars
+# company: min 3 chars, unique
+# @Response --> boolean
+
+testCases:
+  # Faker Name values
+  - id: 1
+    body: '{"name": "{{@Faker.name.fullName}}", "email": "{{@Faker.internet.emailAddress}}", "password": "{{@RandomAlphanumeric | 8}}", "company": "{{@Faker.company.name}}"}'
+  - id: 2
+    body: '{"name": "{{@Faker.name.prefix}} {{@Faker.name.fullName}}", "email": "{{@Faker.internet.emailAddress}}", "password": "{{@RandomAlphanumeric | 8}}", "company": "{{@Faker.company.name}}"}'
+  - id: 3
+    body: '{"name": "{{@Faker.name.fullName}} {{@Faker.name.suffix}}", "email": "{{@Faker.internet.emailAddress}}", "password": "{{@RandomAlphanumeric | 8}}", "company": "{{@Faker.company.name}}"}'
+  - id: 4
+    body: '{"name": "{{@Faker.name.firstName}}", "email": "{{@Faker.internet.emailAddress}}", "password": "{{@RandomAlphanumeric | 8}}", "company": "{{@Faker.company.name}}"}'
+  - id: 5
+    body: '{"name": "{{@Faker.name.prefix}} {{@Faker.name.firstName}}", "email": "{{@Faker.internet.emailAddress}}", "password": "{{@RandomAlphanumeric | 8}}", "company": "{{@Faker.company.name}}"}'
+  - id: 6
+    body: '{"name": "{{@Faker.name.fullName}} {{@Faker.name.suffix}}", "email": "{{@Faker.internet.emailAddress}}", "password": "{{@RandomAlphanumeric | 8}}", "company": "{{@Faker.company.name}}"}'
+  - id: 7
+    body: '{"name": "{{@Faker.name.firstName}} {{@Faker.name.lastName}}", "email": "{{@Faker.internet.emailAddress}}", "password": "{{@RandomAlphanumeric | 8}}", "company": "{{@Faker.company.name}}"}'
+
+  # Faker Job Title 
+  - id: 8
+    body: '{"name": "{{@Faker.name.title}}", "email": "{{@Faker.internet.emailAddress}}", "password": "{{@RandomAlphanumeric | 8}}", "company": "{{@Faker.company.name}}"}'
+
+  # Faker Random email 
+  - id: 9
+    body: '{"name": "{{@Faker.name.fullName}}", "email": "{{@Faker.internet.emailAddress}}", "password": "{{@RandomAlphanumeric | 8}}", "company": "{{@Faker.company.name}}"}'
+
+  # Faker safe email 
+  - id: 10
+    body: '{"name": "{{@Faker.name.fullName}}", "email": "{{@Faker.internet.safeEmailAddress}}", "password": "{{@RandomAlphanumeric | 8}}", "company": "{{@Faker.company.name}}"}'
+
+  # Faker Company Name 
+  - id: 11
+    body: '{"name": "{{@Faker.name.fullName}}", "email": "{{@Faker.internet.emailAddress}}", "password": "{{@RandomAlphanumeric | 8}}", "company": "{{@Faker.company.name}}"}'
+
+  # Faker University name in place of Company 
+  - id: 12
+    body: '{"name": "{{@Faker.name.fullName}}", "email": "{{@Faker.internet.emailAddress}}", "password": "{{@RandomAlphanumeric | 8}}", "company": "{{@Faker.university.prefix}} {{@Faker.university.name}}"}'
+  - id: 13
+    body: '{"name": "{{@Faker.name.fullName}} ", "email": "{{@Faker.internet.safeEmailAddress}}", "password": "{{@RandomAlphanumeric | 8}}", "company": "{{@Faker.university.name}} {{@Faker.university.suffix}}"}'
+  - id: 14
+    body: '{"name": "{{@Faker.name.fullName}}", "email": "{{@Faker.internet.emailAddress}}", "password": "{{@RandomAlphanumeric | 8}}", "company": "{{@Faker.university.prefix}} {{@Faker.university.name}} {{@Faker.university.suffix}}"}'
+    
+    
+assertions:
+  - "@StatusCode == 200"
+  - "@Response.errors == false"
+
+tags:
+  - V2
+
+
+policies:
+  logger: DEBUG
