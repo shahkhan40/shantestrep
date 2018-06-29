@@ -1,0 +1,25 @@
+#Auto Code Configuration
+
+databases:
+  - name: Postgres
+    version: 10.4
+    description: test
+    inactive: false
+  - name: MySQL
+    version: 5.7
+    description: test
+    inactive: false
+  - name: SQLServer
+    version: 12
+    description: test
+    inactive: false
+  - name: Oracle
+    version: 12c
+    description: test
+    inactive: false
+  - name: MongoDB
+    version: 3.6
+    description: test
+    inactive: false
+
+    
