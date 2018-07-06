@@ -22,4 +22,7 @@ databases:
     description: test
     inactive: false
 
-    
+logForgingPatterns:
+  - "INFO: (a-z|A-Z|0-9|.|!|@|#|$|%|&|)+"
+  - "DEBUG: (a-z|A-Z|0-9|.|!|@|#|$|%|&|)+"
+  - "ERROR: (a-z|A-Z|0-9|.|!|@|#|$|%|&|)+"    
