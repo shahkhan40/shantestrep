@@ -1,28 +1,52 @@
 #Auto Code Configuration
 
 databases:
-  - name: Postgres
-    version: 10.4
-    description: test
-    inactive: false
   - name: MySQL
-    version: 5.7
+    version: 5.0
     description: test
     inactive: false
-  - name: SQLServer
-    version: 12
-    description: test
-    inactive: false
+  
   - name: Oracle
-    version: 12c
+    version: 5.0
     description: test
-    inactive: false
-  - name: MongoDB
-    version: 3.6
+    inactive: true
+  
+  - name: Postgres
+    version: 5.0
     description: test
-    inactive: false
-
+    inactive: true
+  
+  - name: SQLServer
+    version: 5.0
+    description: test
+    inactive: true
+    
 logForgingPatterns:
-  - "INFO: [a-z|A-Z|0-9|.|!|@|#|$|%|&]*"
-  - "DEBUG: [a-z|A-Z|0-9|.|!|@|#|$|%|&]*"
-  - "ERROR: [a-z|A-Z|0-9|.|!|@|#|$|%|&]*"    
+  - "INFO:(a-z|A-Z|0-9|.|!|@|#|$|%|&)+"
+  - "DEBUG:(a-z|A-Z|0-9|.|!|@|#|$|%|&)+"
+  - "ERROR:"
+  
+testSuites:
+  - postfix: anonymous_invalid
+    assertions:
+      - "@StatusCode == 504"
+      - "@Response.data.errors == true"
+  - postfix: auth_invalid
+    assertions:
+      - "@StatusCode == 504"
+      - "@Response.data.errors == true"
+  - postfix: DDOS
+    assertions:
+      - "@StatusCode != 200"
+  - postfix: XSS_Injection
+    assertions:
+      - "@StatusCode != 200"
+  - postfix: sql_injection
+    assertions:
+      - "@StatusCode != 200"
+  - postfix: negative
+    assertions:
+      - "@StatusCode != 200"
+  - postfix: create
+    assertions:
+      - "@StatusCode != 200"
