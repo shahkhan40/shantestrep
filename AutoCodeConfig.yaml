@@ -31,22 +31,48 @@ testSuites:
     assertions:
       - "@StatusCode == 504"
       - "@Response.data.errors == true"
+      
   - postfix: auth_invalid
     assertions:
       - "@StatusCode == 504"
       - "@Response.data.errors == true"
+      
   - postfix: DDOS
     assertions:
       - "@StatusCode != 200"
+      
   - postfix: XSS_Injection
     assertions:
       - "@StatusCode != 200"
+      
   - postfix: sql_injection
     assertions:
       - "@StatusCode != 200"
+
+  - postfix: log_forging
+    assertions:
+      - "@StatusCode != 200"
+
+  - postfix: invalid_datatype
+    assertions:
+      - "@StatusCode != 200"
+
+  - postfix: special_chars
+    assertions:
+      - "@StatusCode != 200"
+
   - postfix: negative
     assertions:
       - "@StatusCode != 200"
-  - postfix: create
+      
+  - postfix: null_value
     assertions:
       - "@StatusCode != 200"
+
+  - postfix: empty_value
+    assertions:
+      - "@StatusCode != 200"
+
+  - postfix: create
+    assertions:
+      - "@StatusCode == 200"
