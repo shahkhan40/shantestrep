@@ -42,10 +42,19 @@ jobs:
       - V2
     regions: FXLabs/US_WEST_1
     cron: '0 0 12 * * ?'
-    issueTracker: FXLabs/FX_Test_Automation
-    notifications:
-      - FXLabs/engineering
-      - FXLabs/shahnotification
+    issueTracker: 
+      name: Dev-IssueTracker
+      # e.g. https://github.com/shoukathmd/courseapo
+      url: <<changeme>>
+      account: Default_GitHub
+    notifications: 
+      - name: Dev-Slack-Notification
+        channel: <<changeme>>
+        account: Default_Slack
+      - name: Dev-Email-Notification
+        # enter your email
+        to: <<changeme>>
+        account: Default_Email
   - name: SANDBOX
     environment: Dev
     tags:
