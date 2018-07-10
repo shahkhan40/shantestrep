@@ -43,15 +43,15 @@ jobs:
     regions: FXLabs/US_WEST_1
     cron: '0 0 12 * * ?'
     issueTracker: 
-      name: Dev-IssueTracker
+      name: FXLabs/Dev-IssueTracker
       # e.g. https://github.com/shoukathmd/courseapo
       url: <<changeme>>
       account: Default_GitHub
     notifications: 
-      - name: Dev-Slack-Notification
+      - name: FXLabs/Dev-Slack-Notification
         channel: <<changeme>>
         account: Default_Slack
-      - name: Dev-Email-Notification
+      - name: FXLabs/Dev-Email-Notification
         # enter your email
         to: <<changeme>>
         account: Default_Email
