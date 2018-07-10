@@ -29,13 +29,11 @@ logForgingPatterns:
 testSuites:
   - postfix: anonymous_invalid
     assertions:
-      - "@StatusCode == 504"
-      - "@Response.data.errors == true"
+      - "@StatusCode != 200"
       
   - postfix: auth_invalid
     assertions:
-      - "@StatusCode == 504"
-      - "@Response.data.errors == true"
+      - "@StatusCode != 200"
       
   - postfix: DDOS
     assertions:
