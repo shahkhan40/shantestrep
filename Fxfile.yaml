@@ -18,12 +18,12 @@ imports:
 # App environments
 environments:
   - name: Stg
-    baseUrl: http://stg1.fxlabs.io/api/v1
+    baseUrl: http://13.57.51.56/api/v1
     # app access credentials
     auths:
       - name: Default
         authType: BASIC
-        username: admin@fxlabs.io
+        username: admin@fxlabs.local
         password: '{{@Vault.FXLabs/Stg-Admin-Pass}}'
   - name: Dev
     baseUrl: http://localhost:8080/api/v1
