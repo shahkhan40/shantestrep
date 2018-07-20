@@ -33,15 +33,7 @@ environments:
         authType: BASIC
         username: admin@fxlabs.io
         password: '{{@Vault.FXLabs/DevMachinePassword}}'
-        
-  -  name: Prod
-    baseUrl: https://cloud.fxlabs.io/api/v1
-    # app access credentials
-    auths:
-      - name: Default
-        authType: BASIC
-        username: admin@fxlabs.io
-        password: '{{@Vault.FXLabs/DevMachinePassword}}'
+       
 
 # Job profiles
 jobs:
