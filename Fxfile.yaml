@@ -24,7 +24,7 @@ environments:
       - name: Default
         authType: BASIC
         username: admin@fxlabs.local
-        password: '{{@Vault.FXLabs/Stg-Admin-Pass}}'
+        password: '{{@Vault.FXLabs_QA/Stg-Admin-Pass}}'
   - name: Dev
     baseUrl: http://localhost:8080/api/v1
     # app access credentials
