@@ -2,7 +2,7 @@
 # Validates Account creation with valid data.
 
 authors:
-  - Mohammed Shoukath Ali
+  - shahanawaz ali
 
 endpoint: /accounts
 method: POST
