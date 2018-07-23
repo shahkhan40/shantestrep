@@ -28,7 +28,7 @@ testCases:
   - id: 2
     body: '{
         "name": "Test-{{@Random | 6}}",
-        "accountType": "BitBucket",
+        "accountType": "Jira",
         "accessKey": "testing accessKey",
         "secretKey": "testing secretKey"
      }'
