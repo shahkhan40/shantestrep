@@ -67,14 +67,14 @@ testCases:
   - id: 3
     body: '{
         "name": "Test-{{@Random | 12}}",
-        "accountType": " ",
+        "accountType": "GitHub",
         "accessKey": "accessKey",
         "secretKey": " "
      }'
   - id: 4
     body: '{
         "name": "Test-{{@Random | 24}}",
-        "accountType": " ",
+        "accountType": "GitHub",
         "accessKey": "testing accessKey",
         "secretKey": " "
      }'
@@ -86,7 +86,7 @@ assertions:
 
 
 cleanup:
-  #- project_delete
+  #- account_delete
 
 severity: Minor
 category: Negative
