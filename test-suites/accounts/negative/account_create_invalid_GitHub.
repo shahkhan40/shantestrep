@@ -1,5 +1,5 @@
 ---
-# Validates Account creation with valid data.
+# Validates Account creation with invalid data.
 
 authors:
   - shahanawaz ali
