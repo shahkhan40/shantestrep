@@ -1,25 +1,9 @@
-Skip to content
- 
-Search or jump to…
 
-Pull requests
-Issues
-Marketplace
-Explore
- @shahkhan40 Sign out
-5
-0 0 fxlabsinc/FX_Test-Automation Private
- Code  Issues 1,449  Pull requests 0  Projects 1  Wiki  Insights
-FX_Test-Automation/test-suites/accounts/negative/account_create_invalid_BitBucket
-750fab4  4 minutes ago
-@shahkhan40 shahkhan40 Create account_create_invalid_BitBucket
-     
-99 lines (87 sloc)  2.17 KB
----
 # Validates Account creation with invalid data.
 
-authors:BitBucket
+authors:
   - shahanawaz ali
+   
 
 endpoint: /accounts
 method: POST
