@@ -1,0 +1,115 @@
+Skip to content
+ 
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ @shahkhan40 Sign out
+5
+0 0 fxlabsinc/FX_Test-Automation Private
+ Code  Issues 1,449  Pull requests 0  Projects 1  Wiki  Insights
+FX_Test-Automation/test-suites/accounts/negative/account_create_invalid_BitBucket
+750fab4  4 minutes ago
+@shahkhan40 shahkhan40 Create account_create_invalid_BitBucket
+     
+99 lines (87 sloc)  2.17 KB
+---
+# Validates Account creation with invalid data.
+
+authors:BitBucket
+  - shahanawaz ali
+
+endpoint: /accounts
+method: POST
+auth: Default
+
+# Auth required for this endpoint.
+
+# Try using random chars for unique constriants fields.
+# Required-fields: name, username/access-key and secret-key/password
+# Unique Constraints Fields: nameaccount_create_valid_Jira.yaml
+# Fields-Constraints
+# name: Min 1 char, unique per org_id
+# accounttype: required
+# @Response --> {id, name, accounttype, access-key/username secret-key/password should be masked etc}
+testCases:
+  # invalid name
+  - id: 1
+    body: '{
+        "name": " ",
+        "accountType": "Microsoft_TFS_Git",
+        "accessKey": "testing accessKey",
+        "secretKey": "testing secretKey"
+     }'
+  - id: 2
+    body: '{
+        "name": " ",
+        "accountType": "Microsoft_TFS_Git",
+        "accessKey": "testing accessKey",
+        "secretKey": "testing secretKey"
+     }'
+    # invalid accountType
+  - id: 3
+    body: '{
+        "name": "Test-{{@Random | 12}}",
+        "accountType": " ",
+        "accessKey": "accessKey",
+        "secretKey": "testing secretKey"
+     }'
+  - id: 4
+    body: '{
+        "name": "Test-{{@Random | 24}}",
+        "accountType": " ",
+        "accessKey": "testing accessKey",
+        "secretKey": "testing secretKey"
+     }'
+     #invalid accessKey
+  - id: 3
+    body: '{
+        "name": "Test-{{@Random | 12}}",
+        "accountType": "Microsoft_TFS_Git",
+        "accessKey": " ",
+        "secretKey": "testing secretKey"
+     }'
+  - id: 4
+    body: '{
+        "name": "Test-{{@Random | 24}}",
+        "accountType": "Microsoft_TFS_Git",
+        "accessKey": " ",
+        "secretKey": "testing secretKey"
+     }'
+         #invalid secretKey
+  - id: 3
+    body: '{
+        "name": "Test-{{@Random | 12}}",
+        "accountType": "Microsoft_TFS_Git",
+        "accessKey": "accessKey",
+        "secretKey": " "
+     }'
+  - id: 4
+    body: '{
+        "name": "Test-{{@Random | 24}}",
+        "accountType": "Microsoft_TFS_Git",
+        "accessKey": "testing accessKey",
+        "secretKey": " "
+     }'
+
+assertions:
+  - "@StatusCode == 200"
+  - "@Response.errors == true"
+  
+
+
+cleanup:
+  #- account_delete
+
+severity: Minor
+category: Negative
+
+tags:
+  - V2
+
+policies:
+  logger: DEBUG
