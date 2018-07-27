@@ -2,7 +2,7 @@
 # Validates project creation with valid data.
 
 authors:
-  - Mohammed Shoukath Ali
+  - Shahanawaz Ali
 
 endpoint: /accounts
 method: POST
