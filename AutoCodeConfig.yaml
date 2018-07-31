@@ -14,7 +14,7 @@ generators:
   - "@StatusCode != 200"
   severity: "Critical"
   database: null
-  inactive: true
+  inactive: false
   autoCodeGeneratorMatches: null
 - type: "ddos"
   assertions:
@@ -30,7 +30,7 @@ generators:
   - "@StatusCode != 401\n@StatusCode != 404\n@StatusCode != 500"
   severity: "Critical"
   database: null
-  inactive: true
+  inactive: false
   autoCodeGeneratorMatches: null
 - type: "sql_injection"
   assertions:
@@ -50,7 +50,7 @@ generators:
   database:
     name: "MySQL"
     version: "5.7"
-  inactive: true
+  inactive: false
   autoCodeGeneratorMatches: []
 - type: "log_Forging"
   assertions:
@@ -82,7 +82,7 @@ generators:
   - "@StatusCode != 401\n@StatusCode != 404\n@StatusCode != 500"
   severity: "Critical"
   database: null
-  inactive: true
+  inactive: false
   autoCodeGeneratorMatches: null
 - type: "anonymous_invalid"
   assertions:
