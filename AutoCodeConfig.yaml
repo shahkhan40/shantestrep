@@ -2,6 +2,22 @@
 genPolicy: "Create"
 openAPISpec: "http://18.144.38.115:8090/v2/api-docs"
 generators:
+- type: "XSS_Injection"
+  assertions:
+  - "@StatusCode != 200"
+  - "@StatusCode != 401\n@StatusCode != 404\n@StatusCode != 500"
+  severity: "Critical"
+  database: null
+  inactive: false
+  autoCodeGeneratorMatches: []
+- type: "create"
+  assertions:
+  - "@StatusCode != 200"
+  - "@StatusCode != 401\n@StatusCode != 404\n@StatusCode != 500"
+  severity: "Critical"
+  database: null
+  inactive: false
+  autoCodeGeneratorMatches: []
 - type: "anonymous_invalid"
   assertions:
   - "@StatusCode != 200"
@@ -23,14 +39,6 @@ generators:
   severity: "Critical"
   database: null
   inactive: true
-  autoCodeGeneratorMatches: []
-- type: "XSS_Injection"
-  assertions:
-  - "@StatusCode != 200"
-  - "@StatusCode != 401\n@StatusCode != 404\n@StatusCode != 500"
-  severity: "Critical"
-  database: null
-  inactive: false
   autoCodeGeneratorMatches: []
 - type: "sql_injection"
   assertions:
@@ -99,12 +107,4 @@ generators:
   severity: "Critical"
   database: null
   inactive: true
-  autoCodeGeneratorMatches: []
-- type: "create"
-  assertions:
-  - "@StatusCode != 200"
-  - "@StatusCode != 401\n@StatusCode != 404\n@StatusCode != 500"
-  severity: "Critical"
-  database: null
-  inactive: false
   autoCodeGeneratorMatches: []
