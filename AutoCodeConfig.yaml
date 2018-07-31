@@ -7,23 +7,23 @@ generators:
   - "@StatusCode != 200"
   severity: "Critical"
   database: null
-  inactive: false
-  autoCodeGeneratorMatches: null
+  inactive: true
+  autoCodeGeneratorMatches: []
 - type: "auth_invalid"
   assertions:
   - "@StatusCode != 200"
   severity: "Critical"
   database: null
-  inactive: false
-  autoCodeGeneratorMatches: null
+  inactive: true
+  autoCodeGeneratorMatches: []
 - type: "ddos"
   assertions:
   - "@StatusCode != 200"
   - "@StatusCode != 401\n@StatusCode != 404\n@StatusCode != 500"
   severity: "Critical"
   database: null
-  inactive: false
-  autoCodeGeneratorMatches: null
+  inactive: true
+  autoCodeGeneratorMatches: []
 - type: "XSS_Injection"
   assertions:
   - "@StatusCode != 200"
@@ -31,7 +31,7 @@ generators:
   severity: "Critical"
   database: null
   inactive: false
-  autoCodeGeneratorMatches: null
+  autoCodeGeneratorMatches: []
 - type: "sql_injection"
   assertions:
   - "@StatusCode != 200"
@@ -40,8 +40,8 @@ generators:
   database:
     name: "MySQL"
     version: "5.7"
-  inactive: false
-  autoCodeGeneratorMatches: null
+  inactive: true
+  autoCodeGeneratorMatches: []
 - type: "sql_injection_timebound"
   assertions:
   - "@ResponseTime >= 5000"
@@ -50,7 +50,7 @@ generators:
   database:
     name: "MySQL"
     version: "5.7"
-  inactive: false
+  inactive: true
   autoCodeGeneratorMatches: []
 - type: "log_Forging"
   assertions:
@@ -58,48 +58,48 @@ generators:
   - "@StatusCode != 401\n@StatusCode != 404\n@StatusCode != 500"
   severity: "Critical"
   database: null
-  inactive: false
-  autoCodeGeneratorMatches: null
+  inactive: true
+  autoCodeGeneratorMatches: []
 - type: "rbac"
   assertions:
   - "@StatusCode != 200"
   - "@StatusCode != 401\n@StatusCode != 404\n@StatusCode != 500"
   severity: "Critical"
   database: null
-  inactive: false
-  autoCodeGeneratorMatches: null
+  inactive: true
+  autoCodeGeneratorMatches: []
 - type: "invalid_datatype"
   assertions:
   - "@StatusCode != 200"
   - "@StatusCode != 401\n@StatusCode != 404\n@StatusCode != 500"
   severity: "Critical"
   database: null
-  inactive: false
-  autoCodeGeneratorMatches: null
+  inactive: true
+  autoCodeGeneratorMatches: []
 - type: "special_chars "
   assertions:
   - "@StatusCode != 200"
   - "@StatusCode != 401\n@StatusCode != 404\n@StatusCode != 500"
   severity: "Critical"
   database: null
-  inactive: false
-  autoCodeGeneratorMatches: null
+  inactive: true
+  autoCodeGeneratorMatches: []
 - type: "anonymous_invalid"
   assertions:
   - "@StatusCode != 200"
   - "@StatusCode != 401\n@StatusCode != 404\n@StatusCode != 500"
   severity: "Critical"
   database: null
-  inactive: false
-  autoCodeGeneratorMatches: null
+  inactive: true
+  autoCodeGeneratorMatches: []
 - type: "empty_value"
   assertions:
   - "@StatusCode != 200"
   - "@StatusCode != 401\n@StatusCode != 404\n@StatusCode != 500"
   severity: "Critical"
   database: null
-  inactive: false
-  autoCodeGeneratorMatches: null
+  inactive: true
+  autoCodeGeneratorMatches: []
 - type: "create"
   assertions:
   - "@StatusCode != 200"
@@ -107,4 +107,4 @@ generators:
   severity: "Critical"
   database: null
   inactive: false
-  autoCodeGeneratorMatches: null
+  autoCodeGeneratorMatches: []
