@@ -1,0 +1,115 @@
+---
+# Validates Account creation with invalid auth
+
+authors:
+  - Asiya Shaji
+
+endpoint: /accounts
+method: POST
+auth: NONE
+severity: Critical
+category: Security_UnSecured
+
+testCases:
+#version control
+  - id: 1
+    body:
+      '{
+        "name": "{{@Random | 3}}",
+        "accountType": "github",
+        "accessKey": "testing accessKey",
+        "secretKey": "testing secretKey"
+     }'
+  - id: 3
+    body:
+      '{
+        "name": "{{@Random | 3}}",
+        "accountType": "bitbucket",
+        "accessKey": "testing accessKey",
+        "secretKey": "testing secretKey"
+     }'
+  - id: 4
+    body:
+      '{
+        "name": "{{@Random | 3}}",
+        "accountType": "gitlab",
+        "accessKey": "testing accessKey",
+        "secretKey": "testing secretKey"
+     }'
+  - id: 5
+    body:
+      '{
+        "name": "{{@Random | 3}}",
+        "accountType": "Microsoft_TFS_Git",
+        "accessKey": "testing accessKey",
+        "secretKey": "testing secretKey"
+     }'
+  - id: 6
+    body:
+      '{
+        "name": "{{@Random | 3}}",
+        "accountType": "Microsoft_VSTS_Git",
+        "accessKey": "testing accessKey",
+        "secretKey": "testing secretKey"
+     }'
+  - id: 7
+    body:
+      '{
+        "name": "{{@Random | 3}}",
+        "accountType": "local"
+     }'
+     #Bot Deployment
+  - id: 8
+    body:
+      '{
+        "name": "{{@Random | 3}}",
+        "accountType": "aws",
+        "accessKey": "testing accessKey",
+        "secretKey": "testing secretKey"
+     }'
+  - id: 9
+    body:
+      '{
+        "name": "{{@Random | 3}}",
+        "accountType": "self_hosted",
+        "accessKey": "testing accessKey",
+        "secretKey": "testing secretKey"
+     }'
+     #Issue Tracker
+  - id: 10
+    body:
+      '{
+        "name": "{{@Random | 3}}",
+        "accountType": "jira",
+        "accessKey": "testing accessKey",
+        "secretKey": "testing secretKey"
+     }'
+     #Notifications
+  - id: 11
+    body:
+      '{
+        "name": "{{@Random | 3}}",
+        "accountType": "slack",
+        "accessKey": "testing accessKey",
+        "secretKey": "testing secretKey"
+     }'
+  - id: 12
+    body:
+      '{
+        "name": "{{@Random | 3}}",
+        "accountType": "email",
+        "accessKey": "testing accessKey",
+        "secretKey": "testing secretKey"
+     }'
+   
+     
+assertions:
+- "@StatusCode == 401"
+ 
+
+
+tags:
+  - V2
+
+policies:
+  logger: DEBUG
