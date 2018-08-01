@@ -51,7 +51,7 @@ generators:
     name: "MySQL"
     version: "5.7"
   inactive: false
-  autoCodeGeneratorMatches: []
+  autoCodeGeneratorMatches: null
 - type: "log_Forging"
   assertions:
   - "@StatusCode != 200"
