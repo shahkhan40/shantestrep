@@ -5,10 +5,6 @@
 authors:
 - shahanawaz ali
 
-init:
-- Git_create_init
-- job_create_git_abstract
-
 endpoint: /jobs
 
 method: GET
