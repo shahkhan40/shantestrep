@@ -9,7 +9,7 @@ init:
 - Git_create_init
 - job_create_git_abstract
 
-endpoint: /jobs?page=0&pageSize=10
+endpoint: /jobs
 
 method: GET
 
