@@ -4,11 +4,7 @@
 authors:
 - shahanawaz ali
 
-init:
-- Git_create_init
-- job_create_git_abstract
-
-endpoint: /jobs/{id}
+endpoint: /jobs/id
 method: GET
 
 assertions:
