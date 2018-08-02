@@ -5,8 +5,7 @@
 authors:
 - shahanawaz ali
 
-endpoint: /jobs
-
+endpoint: /jobs?page=0&pageSize=10
 method: GET
 
 assertions:
