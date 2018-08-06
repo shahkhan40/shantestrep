@@ -1,0 +1,20 @@
+# Validates Account findById with invalid auth
+
+authors:
+  - Asiya Shaji
+
+endpoint: /accounts/1
+method: GET
+auth: NONE
+severity: Critical
+category: Security_UnSecured
+# Auth required for this endpoint.
+
+assertions:
+  - "@StatusCode == 401"
+
+tags:
+  - V2
+
+policies:
+  logger: DEBUG

@@ -1,0 +1,28 @@
+# Validates Account update with invalid auth
+
+authors:
+  - Asiya Shaji
+
+endpoint: /accounts/1
+method: PUT
+auth: NONE
+severity: Critical
+category: Security_UnSecured
+# Auth required for this endpoint.
+
+testCases:
+  - id: 1
+    body:
+      '{
+        "name": "Fx-Acc-{{@Random | 6}}",
+        "accessKey": "testing accessKey",
+        "secretKey": "testing secretKey"
+     }'
+assertions:
+  - "@StatusCode == 401"
+
+tags:
+  - V2
+
+policies:
+  logger: DEBUG
