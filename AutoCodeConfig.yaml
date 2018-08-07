@@ -1,6 +1,6 @@
 ---
 genPolicy: "Create"
-openAPISpec: "http://13.56.210.25/v2/api-docs"
+openAPISpec: " /api/v1/projects"
 generators:
 - type: "anonymous_invalid"
   assertions:
@@ -14,9 +14,9 @@ generators:
   - "@StatusCode != 200"
   severity: "Critical"
   database: null
-  inactive: false
+  inactive: true
   autoCodeGeneratorMatches: null
-- type: "ddos"
+- type: "DDOS"
   assertions:
   - "@StatusCode != 200"
   - "@StatusCode != 401"
@@ -24,7 +24,7 @@ generators:
   - "@StatusCode != 500"
   severity: "Critical"
   database: null
-  inactive: false
+  inactive: true
   autoCodeGeneratorMatches: null
 - type: "XSS_Injection"
   assertions:
@@ -34,11 +34,11 @@ generators:
   - "@StatusCode != 500"
   severity: "Critical"
   database: null
-  inactive: false
+  inactive: true
   autoCodeGeneratorMatches: null
-- type: "sql_injection"
+- type: "sql_injection_timebound"
   assertions:
-  - "@ResponseTime >= 5000"
+  - "@ResponseTime < 7000"
   - "@StatusCode != 401"
   - "@StatusCode != 404"
   - "@StatusCode != 500"
@@ -46,7 +46,7 @@ generators:
   database:
     name: "MySQL"
     version: "5.7"
-  inactive: false
+  inactive: true
   autoCodeGeneratorMatches: null
 - type: "log_Forging"
   assertions:
@@ -104,6 +104,16 @@ generators:
   severity: "Critical"
   database: null
   inactive: false
+  autoCodeGeneratorMatches: null
+- type: "negative_number"
+  assertions:
+  - "@StatusCode != 200"
+  - "@StatusCode != 401"
+  - "@StatusCode != 404"
+  - "@StatusCode != 500"
+  severity: "Critical"
+  database: null
+  inactive: true
   autoCodeGeneratorMatches: null
 - type: "create"
   assertions:
