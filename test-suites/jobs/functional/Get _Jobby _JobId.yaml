@@ -4,7 +4,7 @@
 authors:
 - shahanawaz ali
 
-endpoint: /jobs/id
+endpoint: api/v1/jobs/id
 method: GET
 
 assertions:
