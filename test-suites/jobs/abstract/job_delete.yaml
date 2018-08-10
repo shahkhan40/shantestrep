@@ -1,0 +1,23 @@
+---
+# Validates job delete with parent id.
+
+type: ABSTRACT
+
+authors:
+  - Asiya Shaji
+
+endpoint: /jobs/{{@Response.data.id}}
+
+method: DELETE
+
+auth: Default
+
+assertions:
+  - "@StatusCode == 200"
+  - "@Response.errors == false"
+
+tags:
+  - V2
+
+policies:
+  logger: DEBUG
