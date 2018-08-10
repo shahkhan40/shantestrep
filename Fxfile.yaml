@@ -41,7 +41,7 @@ environments:
         authType: BASIC
         username: admin@fxlabs.io
         password: '{{@Vault.FXLabs_QA/Uat-Admin-Pass}}'
-       
+
 
 # Job profiles
 jobs:
@@ -51,12 +51,12 @@ jobs:
       - V2
     regions: FXLabs/US_WEST_1
     cron: '0 0 12 * * ?'
-    issueTracker: 
+    issueTracker:
       name: FXLabs/Dev-IssueTracker
       # e.g. https://github.com/shoukathmd/courseapo
       url: <<changeme>>
       account: Default_GitHub
-    notifications: 
+    notifications:
       - name: FXLabs/Dev-Slack-Notification
         channel: <<changeme>>
         account: Default_Slack
@@ -73,18 +73,18 @@ jobs:
     environment: Dev
     tags:
       - V3
-       - name: Uat
+  - name: Uat
     environment: Uat
     tags:
       - V2
     regions: FXLabs/US_WEST_1
     cron: '0 0 12 * * ?'
-    issueTracker: 
+    issueTracker:
       name: FXLabs/Dev-IssueTracker
       # e.g. https://github.com/shoukathmd/courseapo
       url: <<changeme>>
       account: Default_GitHub
-    notifications: 
+    notifications:
       - name: FXLabs_QA/TESTSHASLACK
         channel: #QAENGINEERING
         account: aslack
