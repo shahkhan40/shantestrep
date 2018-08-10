@@ -1,0 +1,62 @@
+---
+# Validates run creation with valid data.
+
+authors:
+  -Asiya
+
+type: SUITE
+
+init:
+  - job_create_init
+
+endpoint: /api/v1/runs/job/{{@job_create_init_Response.data.id}}
+method: POST
+auth: Default
+
+# Auth required for this endpoint.
+
+# Required-fields: region,tags,env,suites
+# Unique Constraints Fields: Jobid
+# Fields-Constraints
+# @Response --> { env }
+testCases:
+  - id: 1
+    body: '{
+        "jobid": ""{{@Job_create_init_Response.data}}",
+        "region": "FXLabs_QA/US_WEST_1",
+        "tags": "v2",
+        "environment": "Stg",
+		    "suites": ""
+     }'
+  - id: 2
+    body: '{
+        "jobid": ""{{@Job_create_init_Response.data}}",
+        "region": "FXLabs_QA/US_WEST_1",
+        "tags": "v2",
+        "environment": "Uat",
+		    "suites": ""
+	}'
+   -id: 3
+    body: '{
+        "jobid": ""{{@Job_create_init_Response.data}}",
+        "region": "FXLabs_QA/US_WEST_1",
+        "tags": "v2",
+        "environment": "Sandbox",
+		    "suites": ""
+	}'
+
+
+assertions:
+  - "@StatusCode == 200"
+  - "@Response.errors == false"
+  - "@Response.data.environment == @Request.environment"
+
+
+cleanup:
+  - run_delete
+
+tags:
+  - V2
+
+policies:
+  logger: DEBUG
