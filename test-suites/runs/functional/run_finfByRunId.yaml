@@ -1,5 +1,5 @@
 ---
-# validates runs findByJobId
+# validates runs findByRunId
 
 authors:
   - Asiya Shaji
@@ -7,10 +7,10 @@ authors:
 type: SUITE
 
 init:
-  - job_create_init
+  - run_create_init
 
 
-endpoint: /api/v1/runs/job/{{@Response.data.id}}
+endpoint: api/v1/runs/{{@Response.data.id}}
 
 method: GET
 auth: Default

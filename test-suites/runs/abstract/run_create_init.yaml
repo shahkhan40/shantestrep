@@ -1,0 +1,45 @@
+---
+# Validates run creation with valid data.
+
+authors:
+  - Asiya Shaji
+
+type: ABSTRACT
+
+init:
+  - job_create_init
+
+
+endpoint: /api/v1/runs
+method: POST
+auth: Default
+
+# Auth required for this endpoint.
+
+# Try using random chars for unique constriants fields.
+# Required-fields: env,bot region,test suite,category)
+# @Response --> {env}
+testCases:
+  - id: 1
+    body: '{
+    "environment: "Default",
+		"botRegion": "FXLabs/US_WEST_1",
+		"category": "",
+		"testsuite": "",
+		"job": "{{@job_create_init_Response.data}}"
+     }'
+
+  assertions:
+  - "@StatusCode == 200"
+  - "@Response.errors == false"
+  - "@Response.data.environment == @Request.enviroment"
+
+
+cleanup:
+  - job-delete
+
+tags:
+  - V2
+
+policies:
+  logger: DEBUG
