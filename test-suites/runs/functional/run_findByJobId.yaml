@@ -1,0 +1,27 @@
+---
+# validates runs findByJobId
+
+authors:
+  - Asiya Shaji
+
+type: SUITE
+
+init:
+  - job_create_init
+
+
+endpoint: runs/job/{{@Response.data.id}}
+
+method: GET
+auth: Default
+
+assertions:
+  - "@StatusCode == 200"
+  - "@Response.errors == false"
+  - "@Response.data != EMPTY"
+
+severity: Major
+category: Functional
+
+tags:
+  - V2
