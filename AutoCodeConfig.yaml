@@ -1,21 +1,28 @@
 ---
 genPolicy: "Create"
-openAPISpec: " /api/v1/projects"
+openAPISpec: "http://13.56.210.25/v2/api-docs"
 generators:
+- type: "no_params"
+  assertions:
+  - "@StatusCode == 200"
+  severity: "Major"
+  database: null
+  inactive: false
+  matches: null
 - type: "anonymous_invalid"
   assertions:
   - "@StatusCode != 200"
   severity: "Critical"
   database: null
   inactive: false
-  autoCodeGeneratorMatches: null
+  matches: null
 - type: "auth_invalid"
   assertions:
   - "@StatusCode != 200"
   severity: "Critical"
   database: null
-  inactive: true
-  autoCodeGeneratorMatches: null
+  inactive: false
+  matches: null
 - type: "DDOS"
   assertions:
   - "@StatusCode != 200"
@@ -24,8 +31,16 @@ generators:
   - "@StatusCode != 500"
   severity: "Critical"
   database: null
-  inactive: true
-  autoCodeGeneratorMatches: null
+  inactive: false
+  matches:
+  - name: "pageSize, page_size, maxResults, max_results"
+    value: null
+    methods: null
+    denyRoles: null
+    pathPatterns: null
+    resourceSamples: null
+    queryParams: null
+    bodyProperties: null
 - type: "XSS_Injection"
   assertions:
   - "@StatusCode != 200"
@@ -34,8 +49,8 @@ generators:
   - "@StatusCode != 500"
   severity: "Critical"
   database: null
-  inactive: true
-  autoCodeGeneratorMatches: null
+  inactive: false
+  matches: null
 - type: "sql_injection_timebound"
   assertions:
   - "@ResponseTime < 7000"
@@ -46,8 +61,8 @@ generators:
   database:
     name: "MySQL"
     version: "5.7"
-  inactive: true
-  autoCodeGeneratorMatches: null
+  inactive: false
+  matches: []
 - type: "log_Forging"
   assertions:
   - "@StatusCode != 200"
@@ -57,14 +72,46 @@ generators:
   severity: "Critical"
   database: null
   inactive: false
-  autoCodeGeneratorMatches: null
+  matches: null
 - type: "rbac"
   assertions:
   - "@StatusCode == 403"
   severity: "Critical"
   database: null
   inactive: false
-  autoCodeGeneratorMatches: null
+  matches:
+  - name: "Admin access"
+    value: null
+    methods: "Post, Put, Delete"
+    denyRoles: "Writer, Reader"
+    pathPatterns: "/api/v1/orgs/**, /api/v1/accounts/**"
+    resourceSamples: null
+    queryParams: null
+    bodyProperties: null
+  - name: "Writer access"
+    value: null
+    methods: "Post, Put, Delete"
+    denyRoles: "Reader"
+    pathPatterns: "/api/v1/projects/**, /api/v1/regions/**"
+    resourceSamples: null
+    queryParams: null
+    bodyProperties: null
+  - name: "Collaborator access"
+    value: null
+    methods: "Post, Delete"
+    denyRoles: "Collaborator"
+    pathPatterns: "/api/v1/projects/**"
+    resourceSamples: null
+    queryParams: null
+    bodyProperties: null
+  - name: "Reader access"
+    value: null
+    methods: "Get, Post, Put, Delete"
+    denyRoles: "Other"
+    pathPatterns: "/api/v1/**"
+    resourceSamples: null
+    queryParams: null
+    bodyProperties: null
 - type: "invalid_datatype"
   assertions:
   - "@StatusCode != 200"
@@ -74,7 +121,7 @@ generators:
   severity: "Critical"
   database: null
   inactive: false
-  autoCodeGeneratorMatches: null
+  matches: null
 - type: "special_chars "
   assertions:
   - "@StatusCode != 200"
@@ -84,7 +131,7 @@ generators:
   severity: "Critical"
   database: null
   inactive: false
-  autoCodeGeneratorMatches: null
+  matches: null
 - type: "null_value"
   assertions:
   - "@StatusCode != 200"
@@ -94,7 +141,7 @@ generators:
   severity: "Critical"
   database: null
   inactive: false
-  autoCodeGeneratorMatches: null
+  matches: null
 - type: "empty_value"
   assertions:
   - "@StatusCode != 200"
@@ -104,7 +151,7 @@ generators:
   severity: "Critical"
   database: null
   inactive: false
-  autoCodeGeneratorMatches: null
+  matches: null
 - type: "negative_number"
   assertions:
   - "@StatusCode != 200"
@@ -113,8 +160,8 @@ generators:
   - "@StatusCode != 500"
   severity: "Critical"
   database: null
-  inactive: true
-  autoCodeGeneratorMatches: null
+  inactive: false
+  matches: null
 - type: "create"
   assertions:
   - "@StatusCode != 200"
@@ -124,4 +171,4 @@ generators:
   severity: "Critical"
   database: null
   inactive: false
-  autoCodeGeneratorMatches: null
+  matches: null
