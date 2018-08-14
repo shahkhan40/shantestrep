@@ -26,9 +26,9 @@ testCases:
     body: '{
         "name": "Test-JB-{{@Random | 6}}",
         "environment: "Stg",
-		    "botRegion": "FXLabs/US_WEST_1",
-		    "cron": "string",
-		    "project": "{{@project_create_init_Response.data}}"
+        "botRegion": "FXLabs/US_WEST_1",
+         "cron": "string",
+         "project": "{{@project_create_init_Response.data}}"
      }'
 
   assertions:
