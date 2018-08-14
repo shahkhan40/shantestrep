@@ -1,0 +1,42 @@
+---
+# Validates jobs  listings with params.
+
+authors:
+  - Asiya Shaji
+
+type: ABSTRACT
+
+init:
+  - project_create_init
+  - job_create_init_abstract
+
+endpoint: /jobs/{{@job_create_init_abstract_Response.data.id}}
+
+method: PUT
+
+testCases:
+  - id: 1
+
+      body: '{
+          "id": "{{@job_create_init_abstract_Response.data.id}}",
+          "org": {
+            "id": "{{@job_create_init_abstract_Response.data.org.id}}"
+          },
+        "name": "Test-JB-{{@Random | 6}}",
+        "environment: "Stg",
+		    "botRegion": "FXLabs/US_WEST_1",
+		    "cron": "string",
+		    "project": {
+          "id": "{{@project_create_init_Response.data}}"
+        },
+     }'
+assertions:
+  - "@StatusCode == 200"
+  - "@Response.errors == false"
+  - "@Response.data != EMPTY"
+
+severity: Major
+category: Functional
+
+tags:
+  - V2
