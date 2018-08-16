@@ -7,9 +7,9 @@ authors:
 type: SUITE
 
 init:
-  - job_create_init_abstract
+  - job_create_init
 
-endpoint: /api/v1/runs/job/{{@job_create_init_abstract_Response.data.id}}
+endpoint: /api/v1/runs/job/{{@job_create_init_Response.data.id}}
 method: POST
 auth: Default
 
@@ -22,7 +22,7 @@ auth: Default
 testCases:
   - id: 1
     body: '{
-        "jobid": ""{{@Job_create_init_abstract_Response.data}}",
+        "jobid": ""{{@Job_create_init_Response.data}}",
         "region": "FXLabs_QA/US_WEST_1",
         "tags": "v2",
         "environment": "Stg",
@@ -30,7 +30,7 @@ testCases:
      }'
   - id: 2
     body: '{
-        "jobid": ""{{@Job_create_init_abstract_Response.data}}",
+        "jobid": ""{{@Job_create_init_Response.data}}",
         "region": "FXLabs_QA/US_WEST_1",
         "tags": "v2",
         "environment": "Uat",
@@ -38,7 +38,7 @@ testCases:
 	}'
    -id: 3
     body: '{
-        "jobid": ""{{@Job_create_init_abstract_Response.data}}",
+        "jobid": ""{{@Job_create_init_Response.data}}",
         "region": "FXLabs_QA/US_WEST_1",
         "tags": "v2",
         "environment": "Sandbox",
