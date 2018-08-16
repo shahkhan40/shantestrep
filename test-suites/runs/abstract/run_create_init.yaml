@@ -7,7 +7,7 @@ authors:
 type: ABSTRACT
 
 init:
-  - job_create_init
+  - job_create_init_abstract
 
 
 endpoint: /api/v1/runs
@@ -26,7 +26,7 @@ testCases:
 		"botRegion": "FXLabs/US_WEST_1",
 		"category": "",
 		"testsuite": "",
-		"job": "{{@job_create_init_Response.data}}"
+		"job": "{{@job_create_init_abstract_Response.data}}"
      }'
 
   assertions:
