@@ -1,0 +1,22 @@
+---
+parent: "api_v1_events_orgevents"
+name: "ApiV1EventsOrgeventsGetNoParams"
+description: null
+type: "SUITE"
+endpoint: "/api/v1/events/orgevents"
+method: "GET"
+auth: "Default"
+headers:
+- "Accept: application/json"
+- "Content-Type: application/json"
+testCases: []
+assertions:
+- "@StatusCode == 200"
+tags:
+- "V1"
+authors:
+- "FX Bot"
+category: "SimpleGET"
+severity: "Major"
+inactive: false
+policies: null

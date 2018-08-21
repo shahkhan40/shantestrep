@@ -104,9 +104,6 @@
   "resource" : "TestSuitesDeletedDto-Update",
   "sample" : "{\n  'deletedFileNames' : [ ],\n  'projectId' : null\n}"
 }, {
-  "resource" : "TestSuite-Create",
-  "sample" : "{\n  'assertions' : [ ],\n  'auth' : null,\n  'authors' : [ ],\n  'category' : 'RBAC',\n  'cleanup' : [ ],\n  'createdBy' : null,\n  'createdDate' : null,\n  'description' : null,\n  'endpoint' : null,\n  'headers' : [ ],\n  'id' : null,\n  'inactive' : null,\n  'init' : [ ],\n  'method' : 'TRACE',\n  'modifiedBy' : null,\n  'modifiedDate' : null,\n  'name' : null,\n  'parent' : null,\n  'policies' : {\n    'cleanupExec' : null,\n    'initExec' : null,\n    'logger' : null,\n    'repeat' : null,\n    'repeatDelay' : null,\n    'repeatModule' : null,\n    'repeatOnFailure' : null,\n    'timeoutSeconds' : null\n  },\n  'project' : {\n    'createdBy' : null,\n    'createdDate' : null,\n    'id' : null,\n    'inactive' : null,\n    'modifiedBy' : null,\n    'modifiedDate' : null,\n    'name' : null,\n    'org' : {\n      'createdBy' : null,\n      'createdDate' : null,\n      'id' : null,\n      'inactive' : null,\n      'modifiedBy' : null,\n      'modifiedDate' : null,\n      'name' : null,\n      'version' : null\n    },\n    'version' : null\n  },\n  'props' : null,\n  'publishToMarketplace' : null,\n  'severity' : 'Trivial',\n  'tags' : [ ],\n  'testCases' : [ ],\n  'type' : 'Dataset',\n  'version' : null\n}"
-}, {
   "resource" : "Users-Create",
   "sample" : "{\n  'accountNonExpired' : null,\n  'accountNonLocked' : null,\n  'company' : null,\n  'createdBy' : null,\n  'createdDate' : null,\n  'credentialsNonExpired' : null,\n  'email' : null,\n  'enabled' : null,\n  'id' : null,\n  'inactive' : null,\n  'jobTitle' : null,\n  'location' : null,\n  'modifiedBy' : null,\n  'modifiedDate' : null,\n  'name' : null,\n  'password' : null,\n  'privileges' : [ ],\n  'username' : null,\n  'version' : null\n}"
 }, {
