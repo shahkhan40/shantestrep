@@ -25,10 +25,8 @@ generators:
   matches: []
 - type: "DDOS"
   assertions:
-  - "@StatusCode != 200"
   - "@StatusCode != 401"
   - "@StatusCode != 404"
-  - "@StatusCode != 500"
   severity: "Critical"
   database: null
   inactive: false
@@ -54,9 +52,7 @@ generators:
 - type: "sql_injection_timebound"
   assertions:
   - "@ResponseTime < 7000"
-  - "@StatusCode != 401"
   - "@StatusCode != 404"
-  - "@StatusCode != 500"
   severity: "Critical"
   database:
     name: "MySQL"
@@ -114,10 +110,8 @@ generators:
     bodyProperties: null
 - type: "invalid_datatype"
   assertions:
-  - "@StatusCode != 200"
   - "@StatusCode != 401"
   - "@StatusCode != 404"
-  - "@StatusCode != 500"
   severity: "Critical"
   database: null
   inactive: false
@@ -154,10 +148,8 @@ generators:
   matches: []
 - type: "negative_number"
   assertions:
-  - "@StatusCode != 200"
   - "@StatusCode != 401"
   - "@StatusCode != 404"
-  - "@StatusCode != 500"
   severity: "Critical"
   database: null
   inactive: false
