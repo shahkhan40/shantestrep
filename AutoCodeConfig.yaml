@@ -1,14 +1,7 @@
 ---
 genPolicy: "Create"
-openAPISpec: " /api/v1/projects"
+openAPISpec: "https://ip/v2/api-docs"
 generators:
-- type: "no_params"
-  assertions:
-  - "@StatusCode == 200"
-  severity: "Major"
-  database: null
-  inactive: false
-  matches: []
 - type: "anonymous_invalid"
   assertions:
   - "@StatusCode != 200"
