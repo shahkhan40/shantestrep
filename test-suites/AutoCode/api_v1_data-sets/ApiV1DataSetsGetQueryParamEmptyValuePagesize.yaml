@@ -1,0 +1,25 @@
+---
+parent: "api_v1_data-sets"
+name: "ApiV1DataSetsGetQueryParamEmptyValuePagesize"
+description: null
+type: "SUITE"
+endpoint: "/api/v1/data-sets?pageSize="
+method: "GET"
+auth: "Default"
+headers:
+- "Accept: application/json"
+- "Content-Type: application/json"
+testCases: []
+assertions:
+- "@StatusCode != 200"
+- "@StatusCode != 401"
+- "@StatusCode != 404"
+- "@StatusCode != 500"
+tags:
+- "V1"
+authors:
+- "FX Bot"
+category: "Negative"
+severity: "Critical"
+inactive: false
+policies: null
