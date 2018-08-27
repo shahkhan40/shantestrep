@@ -11,7 +11,7 @@ init:
   - project_create_init
   - job_create_init_abstract
 
-endpoint: /jobs/{{@job_create_init_abstract_Response.data.id}}
+endpoint: /jobs
 
 method: POST
 
@@ -23,8 +23,12 @@ testCases:
           "org": {
             "id": "{{@job_create_init_abstract_Response.data.org.id}}"
           },
-        "name": "Test-JB-{{@Random | 6}}",
-        "environment: "Stg",
+        "name": "{{@job_create_init_abstract_Response.data.org.id}}",
+        "environment: "{
+	
+	"id":{@job_create_init_abstract_Response.data.org.id}
+	
+	}",
 		    "botRegion": "FXLabs/US_WEST_1",
 		    "cron": "string",
 		    "project": {
