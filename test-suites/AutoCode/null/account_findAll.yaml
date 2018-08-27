@@ -1,0 +1,22 @@
+---
+parent: null
+name: "account_findAll"
+description: null
+type: "SUITE"
+endpoint: "/accounts?page=0&pageSize=10"
+method: "GET"
+auth: null
+headers: []
+testCases: []
+assertions:
+- "@StatusCode == 200"
+- "@Response.errors == true"
+- "@Response.data != EMPTY"
+tags:
+- "V2"
+authors:
+- "Mohammed Shoukath Ali"
+category: "Functional"
+severity: "Major"
+inactive: false
+policies: null
