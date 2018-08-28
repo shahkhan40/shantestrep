@@ -1,0 +1,25 @@
+---
+parent: "api_v1_projects_projectid_env"
+name: "ApiV1ProjectsProjectidEnvGetQueryParamNegativeNumberPage"
+description: null
+type: "SUITE"
+endpoint: "/api/v1/projects/{{@Random}}/env?page=-1"
+method: "GET"
+auth: "Default"
+headers:
+- "Accept: application/json"
+- "Content-Type: application/json"
+testCases: []
+assertions:
+- "@StatusCode != 200"
+- "@StatusCode != 401"
+- "@StatusCode != 404"
+- "@StatusCode != 500"
+tags:
+- "V1"
+authors:
+- "FX Bot"
+category: "Functional"
+severity: "Critical"
+inactive: false
+policies: null
