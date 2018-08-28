@@ -1,32 +1,27 @@
 ---
 genPolicy: "Create"
-openAPISpec: "http://cloud.fxlabs.io/api/v1/"
+openAPISpec: "http://13.56.210.25/v2/api-docs"
 generators:
-- type: "no_params"
-  assertions:
-  - "@StatusCode == 200"
-  severity: "Major"
-  database: null
-  inactive: false
-  matches: null
 - type: "anonymous_invalid"
   assertions:
   - "@StatusCode != 200"
   severity: "Critical"
   database: null
   inactive: false
-  matches: null
+  matches: []
 - type: "auth_invalid"
   assertions:
   - "@StatusCode != 200"
   severity: "Critical"
   database: null
   inactive: false
-  matches: null
-- type: "DDOS"
+  matches: []
+- type: "ddos"
   assertions:
+  - "@StatusCode != 200"
   - "@StatusCode != 401"
   - "@StatusCode != 404"
+  - "@StatusCode != 500"
   severity: "Critical"
   database: null
   inactive: false
@@ -48,11 +43,13 @@ generators:
   severity: "Critical"
   database: null
   inactive: false
-  matches: null
-- type: "sql_injection_timebound"
+  matches: []
+- type: "sql_injection"
   assertions:
-  - "@ResponseTime < 7000"
+  - "@ResponseTime >= 5000"
+  - "@StatusCode != 401"
   - "@StatusCode != 404"
+  - "@StatusCode != 500"
   severity: "Critical"
   database:
     name: "MySQL"
@@ -68,7 +65,7 @@ generators:
   severity: "Critical"
   database: null
   inactive: false
-  matches: null
+  matches: []
 - type: "rbac"
   assertions:
   - "@StatusCode == 403"
@@ -110,12 +107,14 @@ generators:
     bodyProperties: null
 - type: "invalid_datatype"
   assertions:
+  - "@StatusCode != 200"
   - "@StatusCode != 401"
   - "@StatusCode != 404"
+  - "@StatusCode != 500"
   severity: "Critical"
   database: null
   inactive: false
-  matches: null
+  matches: []
 - type: "special_chars "
   assertions:
   - "@StatusCode != 200"
@@ -125,7 +124,7 @@ generators:
   severity: "Critical"
   database: null
   inactive: false
-  matches: null
+  matches: []
 - type: "null_value"
   assertions:
   - "@StatusCode != 200"
@@ -135,7 +134,7 @@ generators:
   severity: "Critical"
   database: null
   inactive: false
-  matches: null
+  matches: []
 - type: "empty_value"
   assertions:
   - "@StatusCode != 200"
@@ -145,15 +144,7 @@ generators:
   severity: "Critical"
   database: null
   inactive: false
-  matches: null
-- type: "negative_number"
-  assertions:
-  - "@StatusCode != 401"
-  - "@StatusCode != 404"
-  severity: "Critical"
-  database: null
-  inactive: false
-  matches: null
+  matches: []
 - type: "create"
   assertions:
   - "@StatusCode != 200"
@@ -163,4 +154,4 @@ generators:
   severity: "Critical"
   database: null
   inactive: false
-  matches: null
+  matches: []
