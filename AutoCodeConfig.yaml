@@ -2,45 +2,27 @@
 genPolicy: "Create"
 openAPISpec: "http://cloud.fxlabs.io/v2/api-docs"
 generators:
-- type: "negative_number"
-  assertions:
-  - "@StatusCode != 401"
-  - "@StatusCode != 404"
-  severity: "Critical"
-  database: null
-  inactive: false
-  matches: []
-- type: "create"
-  assertions:
-  - "@StatusCode != 200"
-  - "@StatusCode != 401"
-  - "@StatusCode != 404"
-  - "@StatusCode != 500"
-  severity: "Critical"
-  database: null
-  inactive: false
-  matches: []
 - type: "no_params"
   assertions:
   - "@StatusCode == 200"
   severity: "Major"
   database: null
   inactive: false
-  matches: []
+  matches: null
 - type: "anonymous_invalid"
   assertions:
   - "@StatusCode != 200"
   severity: "Critical"
   database: null
   inactive: false
-  matches: []
+  matches: null
 - type: "auth_invalid"
   assertions:
   - "@StatusCode != 200"
   severity: "Critical"
   database: null
   inactive: false
-  matches: []
+  matches: null
 - type: "DDOS"
   assertions:
   - "@StatusCode != 401"
@@ -66,7 +48,7 @@ generators:
   severity: "Critical"
   database: null
   inactive: false
-  matches: []
+  matches: null
 - type: "sql_injection_timebound"
   assertions:
   - "@ResponseTime < 7000"
@@ -86,7 +68,7 @@ generators:
   severity: "Critical"
   database: null
   inactive: false
-  matches: []
+  matches: null
 - type: "rbac"
   assertions:
   - "@StatusCode == 403"
@@ -94,14 +76,6 @@ generators:
   database: null
   inactive: false
   matches:
-  - name: "Reader access"
-    value: null
-    methods: "Get, Post, Put, Delete"
-    denyRoles: "Other"
-    pathPatterns: "/api/v1/**"
-    resourceSamples: null
-    queryParams: null
-    bodyProperties: null
   - name: "Admin access"
     value: null
     methods: "Post, Put, Delete"
@@ -126,6 +100,14 @@ generators:
     resourceSamples: null
     queryParams: null
     bodyProperties: null
+  - name: "Reader access"
+    value: null
+    methods: "Get, Post, Put, Delete"
+    denyRoles: "Other"
+    pathPatterns: "/api/v1/**"
+    resourceSamples: null
+    queryParams: null
+    bodyProperties: null
 - type: "invalid_datatype"
   assertions:
   - "@StatusCode != 401"
@@ -133,7 +115,7 @@ generators:
   severity: "Critical"
   database: null
   inactive: false
-  matches: []
+  matches: null
 - type: "special_chars "
   assertions:
   - "@StatusCode != 200"
@@ -143,7 +125,7 @@ generators:
   severity: "Critical"
   database: null
   inactive: false
-  matches: []
+  matches: null
 - type: "null_value"
   assertions:
   - "@StatusCode != 200"
@@ -153,7 +135,7 @@ generators:
   severity: "Critical"
   database: null
   inactive: false
-  matches: []
+  matches: null
 - type: "empty_value"
   assertions:
   - "@StatusCode != 200"
@@ -163,4 +145,22 @@ generators:
   severity: "Critical"
   database: null
   inactive: false
-  matches: []
+  matches: null
+- type: "negative_number"
+  assertions:
+  - "@StatusCode != 401"
+  - "@StatusCode != 404"
+  severity: "Critical"
+  database: null
+  inactive: false
+  matches: null
+- type: "create"
+  assertions:
+  - "@StatusCode != 200"
+  - "@StatusCode != 401"
+  - "@StatusCode != 404"
+  - "@StatusCode != 500"
+  severity: "Critical"
+  database: null
+  inactive: false
+  matches: null
