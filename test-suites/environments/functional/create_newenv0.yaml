@@ -1,0 +1,39 @@
+
+---
+# Validates enviornment creation with valid data.
+
+authors:
+  - shahanawaz
+
+init:
+- project_create_github_abstract
+
+endpoint: /envs
+method: POST
+auth: Basic
+
+#
+testCases:
+  - id: 1
+    body: '{
+       
+       "name":"randomtest",
+      "baseUrl":"https://cloud.fxlabs.io/api/v1",
+      "projectId":"project_create_github_abstract_Response.data.id"
+      }'
+          
+     assertions:
+  - "@StatusCode == 200"
+  - "@Response.errors == false"
+  - "@Response.data.name == @Request.name"
+  - "@Response.data.url == @Request.url"
+
+
+severity: Major
+category: Functional
+
+tags:
+  - V2
+
+policies:
+  logger: DEBUG
