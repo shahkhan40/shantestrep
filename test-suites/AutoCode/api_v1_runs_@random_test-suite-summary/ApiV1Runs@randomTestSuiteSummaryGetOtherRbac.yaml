@@ -1,0 +1,24 @@
+---
+parent: "api_v1_runs_@random_test-suite-summary"
+name: "ApiV1Runs@randomTestSuiteSummaryGetOtherRbac"
+description: null
+type: "SUITE"
+endpoint: "/api/v1/runs/{{@Random}}/test-suite-summary"
+method: "GET"
+auth: "Other"
+headers:
+- "Accept: application/json"
+- "Content-Type: application/json"
+testCases: []
+assertions:
+- "@StatusCode == 403"
+tags:
+- "V1"
+authors:
+- "FX Bot"
+init: []
+cleanup: []
+category: "RBAC"
+severity: "Critical"
+inactive: false
+policies: null

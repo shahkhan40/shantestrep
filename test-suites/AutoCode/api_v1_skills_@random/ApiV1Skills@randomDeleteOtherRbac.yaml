@@ -1,0 +1,24 @@
+---
+parent: "api_v1_skills_@random"
+name: "ApiV1Skills@randomDeleteOtherRbac"
+description: null
+type: "SUITE"
+endpoint: "/api/v1/skills/{{@Random}}"
+method: "DELETE"
+auth: "Other"
+headers:
+- "Accept: application/json"
+- "Content-Type: application/json"
+testCases: []
+assertions:
+- "@StatusCode == 403"
+tags:
+- "V1"
+authors:
+- "FX Bot"
+init: []
+cleanup: []
+category: "RBAC"
+severity: "Critical"
+inactive: false
+policies: null

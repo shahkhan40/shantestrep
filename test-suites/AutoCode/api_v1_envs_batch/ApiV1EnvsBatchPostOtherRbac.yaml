@@ -1,0 +1,24 @@
+---
+parent: "api_v1_envs_batch"
+name: "ApiV1EnvsBatchPostOtherRbac"
+description: null
+type: "SUITE"
+endpoint: "/api/v1/envs/batch"
+method: "POST"
+auth: "Other"
+headers:
+- "Accept: application/json"
+- "Content-Type: application/json"
+testCases: []
+assertions:
+- "@StatusCode == 403"
+tags:
+- "V1"
+authors:
+- "FX Bot"
+init: []
+cleanup: []
+category: "RBAC"
+severity: "Critical"
+inactive: false
+policies: null

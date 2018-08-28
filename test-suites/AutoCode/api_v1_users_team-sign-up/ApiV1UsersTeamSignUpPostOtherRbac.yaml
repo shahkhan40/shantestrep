@@ -1,0 +1,24 @@
+---
+parent: "api_v1_users_team-sign-up"
+name: "ApiV1UsersTeamSignUpPostOtherRbac"
+description: null
+type: "SUITE"
+endpoint: "/api/v1/users/team-sign-up"
+method: "POST"
+auth: "Other"
+headers:
+- "Accept: application/json"
+- "Content-Type: application/json"
+testCases: []
+assertions:
+- "@StatusCode == 403"
+tags:
+- "V1"
+authors:
+- "FX Bot"
+init: []
+cleanup: []
+category: "RBAC"
+severity: "Critical"
+inactive: false
+policies: null

@@ -1,0 +1,24 @@
+---
+parent: "api_v1_dashboard_bots_@random_savings"
+name: "ApiV1DashboardBots@randomSavingsGetOtherRbac"
+description: null
+type: "SUITE"
+endpoint: "/api/v1/dashboard/bots/{{@Random}}/savings"
+method: "GET"
+auth: "Other"
+headers:
+- "Accept: application/json"
+- "Content-Type: application/json"
+testCases: []
+assertions:
+- "@StatusCode == 403"
+tags:
+- "V1"
+authors:
+- "FX Bot"
+init: []
+cleanup: []
+category: "RBAC"
+severity: "Critical"
+inactive: false
+policies: null
