@@ -23,10 +23,10 @@ testCases:
           "org": {
             "id": "{{@job_create_init_abstract_Response.data.org.id}}"
           },
-        "name": "{{@job_create_init_abstract_Response.data.org.id}}",
+        "name": "{{@job_create_init_abstract_Response.data.org.name}}",
         "environment: "{
 	
-	"id":{@job_create_init_abstract_Response.data.org.id}
+	"id":{@env_create_init_abstract_Response.data.id}
 	
 	}",
 		    "botRegion": "FXLabs/US_WEST_1",
