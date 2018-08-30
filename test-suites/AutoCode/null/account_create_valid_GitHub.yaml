@@ -5,7 +5,7 @@ description: null
 type: "SUITE"
 endpoint: "/accounts"
 method: "POST"
-auth: "Basic"
+auth: "Default"
 headers: []
 testCases:
 - id: 1
