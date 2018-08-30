@@ -1,0 +1,31 @@
+---
+parent: null
+name: "issue_tracker_delete"
+description: null
+type: "ABSTRACT"
+endpoint: "/issue-trackers/issue-tracker-bot/{{@Response.data.id}}"
+method: "DELETE"
+auth: "Default"
+headers: []
+testCases: []
+assertions:
+- "@StatusCode == 200"
+- "@Response.errors == false"
+tags:
+- "V3"
+authors:
+- "Mohammed Luqman Shareef"
+init: []
+cleanup: []
+category: "Functional"
+severity: "Major"
+inactive: false
+policies:
+  initExec: "Request"
+  cleanupExec: "Request"
+  logger: "DEBUG"
+  timeoutSeconds: 300
+  repeatOnFailure: 0
+  repeat: 0
+  repeatModule: null
+  repeatDelay: 0
