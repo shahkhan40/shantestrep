@@ -16,12 +16,10 @@ generators:
   database: null
   inactive: false
   matches: []
-- type: "DDOS"
+- type: "ddos"
   assertions:
   - "@StatusCode != 200"
-  - "@StatusCode != 401"
-  - "@StatusCode != 404"
-  - "@StatusCode != 500"
+  - "@StatusCode != 401\n@StatusCode != 404\n@StatusCode != 500"
   severity: "Critical"
   database: null
   inactive: false
@@ -37,19 +35,15 @@ generators:
 - type: "XSS_Injection"
   assertions:
   - "@StatusCode != 200"
-  - "@StatusCode != 401"
-  - "@StatusCode != 404"
-  - "@StatusCode != 500"
+  - "@StatusCode != 401\n@StatusCode != 404\n@StatusCode != 500"
   severity: "Critical"
   database: null
   inactive: false
   matches: []
-- type: "sql_injection_timebound"
+- type: "sql_injection"
   assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 401"
-  - "@StatusCode != 404"
-  - "@StatusCode != 500"
+  - "@ResponseTime >= 5000"
+  - "@StatusCode != 401\n@StatusCode != 404\n@StatusCode != 500"
   severity: "Critical"
   database:
     name: "MySQL"
@@ -59,9 +53,7 @@ generators:
 - type: "log_Forging"
   assertions:
   - "@StatusCode != 200"
-  - "@StatusCode != 401"
-  - "@StatusCode != 404"
-  - "@StatusCode != 500"
+  - "@StatusCode != 401\n@StatusCode != 404\n@StatusCode != 500"
   severity: "Critical"
   database: null
   inactive: false
@@ -108,19 +100,15 @@ generators:
 - type: "invalid_datatype"
   assertions:
   - "@StatusCode != 200"
-  - "@StatusCode != 401"
-  - "@StatusCode != 404"
-  - "@StatusCode != 500"
+  - "@StatusCode != 401\n@StatusCode != 404\n@StatusCode != 500"
   severity: "Critical"
   database: null
   inactive: false
   matches: []
 - type: "special_chars "
   assertions:
-  - "@StatusCode != 404"
-  - "@StatusCode != 500"
   - "@StatusCode != 200"
-  - "@StatusCode != 401"
+  - "@StatusCode != 401\n@StatusCode != 404\n@StatusCode != 500"
   severity: "Critical"
   database: null
   inactive: false
@@ -128,9 +116,7 @@ generators:
 - type: "null_value"
   assertions:
   - "@StatusCode != 200"
-  - "@StatusCode != 401"
-  - "@StatusCode != 404"
-  - "@StatusCode != 500"
+  - "@StatusCode != 401\n@StatusCode != 404\n@StatusCode != 500"
   severity: "Critical"
   database: null
   inactive: false
@@ -138,19 +124,7 @@ generators:
 - type: "empty_value"
   assertions:
   - "@StatusCode != 200"
-  - "@StatusCode != 401"
-  - "@StatusCode != 404"
-  - "@StatusCode != 500"
-  severity: "Critical"
-  database: null
-  inactive: false
-  matches: []
-- type: "negative_number"
-  assertions:
-  - "@StatusCode != 200"
-  - "@StatusCode != 401"
-  - "@StatusCode != 404"
-  - "@StatusCode != 500"
+  - "@StatusCode != 401\n@StatusCode != 404\n@StatusCode != 500"
   severity: "Critical"
   database: null
   inactive: false
@@ -158,17 +132,8 @@ generators:
 - type: "create"
   assertions:
   - "@StatusCode != 200"
-  - "@StatusCode != 401"
-  - "@StatusCode != 404"
-  - "@StatusCode != 500"
+  - "@StatusCode != 401\n@StatusCode != 404\n@StatusCode != 500"
   severity: "Critical"
-  database: null
-  inactive: false
-  matches: []
-- type: "no_params"
-  assertions:
-  - "@StatusCode == 200"
-  severity: "Major"
   database: null
   inactive: false
   matches: []
