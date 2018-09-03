@@ -5,7 +5,6 @@ authors:
   - shahnawazali
 
 init:
-  - org_create_init
 
 endpoint: /orgs
 method: POST
