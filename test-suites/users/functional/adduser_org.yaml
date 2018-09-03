@@ -1,0 +1,45 @@
+---
+# add users to org.
+
+authors:
+- shahanawaz ali
+
+type: Functional
+
+init:
+ - create_organization
+
+Request Method: POST
+
+endpoint: orgs/{{@create_organization_Response.org.id}}/users/add-member
+method: POST
+
+{
+"name":"testuser",
+"email":"kt@test.com",
+"password":"ringer@40",
+"confirmPassword":"ringer@40",
+"orgRole":"USER",
+"orgId":"create_organization_Response.org.id"
+}
+
+assertions:
+  - "@StatusCode == 200"
+  - "@Response.errors == false"
+  - "@Response.data.name == @Request.name"
+  - "@Response.data.billingemail == @Request.billingemail"
+  - "@Response.data.username == @Request.username"
+  - "@Response.data.company == @Request.company"
+ 
+
+cleanup:
+  - org_delete
+
+severity: Major
+category: Functional
+
+tags:
+  - V2
+
+policies:
+  logger: DEBUG
