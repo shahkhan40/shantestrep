@@ -10,7 +10,7 @@ init:
  - create_organization
 
 
-endpoint: api/v1/orgs/{{@job_create_organization_Response.data.id}}
+endpoint: api/v1/orgs/{{@create_organization_Response.data.id}}
 method: GET
 
 assertions:
