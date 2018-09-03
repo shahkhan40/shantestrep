@@ -1,0 +1,44 @@
+---
+# create user with role USER.
+
+authors:
+- shahanawaz ali
+
+type: Functional
+
+init:
+ - create_organization
+
+Request Method: POST
+
+endpoint: orgs/{{@create_organization_Response.org.id}}/users/add-member
+method: POST
+
+{
+"name":"testuser",
+"email":"kt@test.com",
+"password":"ringer@40",
+"confirmPassword":"ringer@40",
+"orgRole":"USER",
+"orgId":"create_organization_Response.org.id"
+}
+
+assertions:
+  - "@StatusCode == 200"
+  - "@Response.errors == false"
+  - "@Response.data.name == @Request.name"
+  - "@Response.data.email == @Request.email"
+  - "@Response.data.orgRoleorgRole == @Request.orgRole"
+  - "@Response.org.orgId == @Request.orgId"
+ 
+
+cleanup:
+  - user_delete
+
+severity: Major
+category: Functional
+
+tags:
+  - V2
+
+policies:
