@@ -1,0 +1,52 @@
+---
+# Validates organization created successfully
+
+authors:
+  - shahnawazali
+
+init:
+  - org_create_init
+
+endpoint: /orgs
+method: POST
+auth: Default
+
+# Auth required for this endpoint.
+
+# Try using random chars for unique constriants fields.
+# Required-fields: name, company,billingemail
+# Unique Constraints Fields: name
+# Fields-Constraints
+# name: Min 1 char, unique per org_id
+# description: optional
+# @Response --> {id, name, description etc}
+testCases:
+
+    body: '{
+               "name": "shahanawaz",
+                "billingemail": "shan@fxlabs.io",
+                "username": "shah",
+                "company": fxlabsco,
+     }'
+  
+
+assertions:
+  - "@StatusCode == 200"
+  - "@Response.errors == false"
+  - "@Response.data.name == @Request.name"
+  - "@Response.data.billingemail == @Request.billingemail"
+  - "@Response.data.username == @Request.username"
+  - "@Response.data.company == @Request.company"
+ 
+
+cleanup:
+  - org_delete
+
+severity: Major
+category: Functional
+
+tags:
+  - V2
+
+policies:
+  logger: DEBUG
