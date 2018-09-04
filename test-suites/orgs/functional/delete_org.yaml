@@ -1,1 +1,27 @@
 
+---
+# get org by id.
+
+authors:
+- shahanawaz ali
+
+type: Functional
+
+init:
+ - create_organization
+
+
+endpoint: api/v1/orgs/{{@create_organization_Response.data.org.id}}
+method: Delete
+
+assertions:
+- "@StatusCode == 200"
+- "@Response.errors == false"
+- "@Response.data != EMPTY"
+
+severity: Major
+category: Functional
+
+tags:
+- V2
+© 2018 GitHub, Inc.
