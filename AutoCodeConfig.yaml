@@ -2,14 +2,14 @@
 genPolicy: "Create"
 openAPISpec: "http://13.56.210.25/v2/api-docs"
 generators:
-- type: "anonymous_invalid"
+- type: "auth_invalid"
   assertions:
   - "@StatusCode != 200"
   severity: "Critical"
   database: null
   inactive: false
   matches: []
-- type: "auth_invalid"
+- type: "anonymous_invalid"
   assertions:
   - "@StatusCode != 200"
   severity: "Critical"
