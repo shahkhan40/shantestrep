@@ -4,7 +4,7 @@
 authors:
 - shahanawaz ali
 
-type: Functional
+type: SUITE
 
 init:
  - job_create_init_abstract
