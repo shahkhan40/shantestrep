@@ -4,8 +4,6 @@
 authors:
 - shahanawaz ali
 
-type: SUITE
-
 init:
  - create_organization
 
