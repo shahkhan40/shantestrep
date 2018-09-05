@@ -4,8 +4,6 @@
 authors:
   - shahnawazali
 
-init:
-
 endpoint: /orgs
 method: POST
 auth: Default
