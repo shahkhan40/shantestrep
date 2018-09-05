@@ -4,13 +4,13 @@
 authors:
 - shahanawaz ali
 
-type: Functional
+type: SUITE
 
 init:
  - project_create_github_abstract
 
 
-endpoint: api/v1/jobs/{{@jproject_create_github_abstract_Response.data.id}}
+endpoint: /jobs/{{@jproject_create_github_abstract_Response.data.id}}
 method: GET
 
 assertions:
