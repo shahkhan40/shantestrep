@@ -32,11 +32,29 @@ auth: Default
 # Optional Represents request headers
 # Note: These two headers are automatically set ('Content-Type: application/json', 'Accept: application/json')
 headers:
-  #- 'Content-Type: application/json'
-
+#- 'Content-Type: application/json'
 # One ore more test cases when using POST, PUT, & DELETE methods.
 # Every test-case has unique id and a body (json) properties.
 # Data-Injection in-build keywords (@Random, @RandomAlphabetic, @RandomAlphanumeric, @RandomNumeric, @Date, @RandomUUID, @Vault)
+
+testCases:
+  - id: 1
+    body: '{
+                "name": "shahanalikhan",
+                "billingEmail": "shankhan@fxlabs.io",
+                "username": "shahkh37",
+                "company": "fxlabscols"
+                "id": "create_org_Response.data.id"
+                
+     }'
+
+assertions:
+  - "@StatusCode == 200"
+  - "@Response.errors == false"
+  - "@Response.data.name == @Request.name"
+  - "@Response.data.billingemail == @Request.billingemail"
+  - "@Response.data.username == @Request.username"
+  - "@Response.data.company == @Request.company"
 
 
 
@@ -58,7 +76,6 @@ assertions:
 - "@Response.errors == false"
 - "@Response.data != EMPTY" 
 # JSONPath example
-
 
 # Optional - Executes one or more abstract suites per request or per suite.
 cleanup:
