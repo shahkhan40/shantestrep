@@ -1,0 +1,30 @@
+---
+parent: null
+name: "create_org"
+description: null
+type: "SUITE"
+endpoint: "/orgs"
+method: "POST"
+auth: "Default"
+headers: null
+testCases:
+- id: 1
+  body: "{ \"name\": \"shahanawazkhan\", \"billingEmail\": \"shankhan@fxlabs.io\"\
+    , \"username\": \"shahkh\", \"company\": \"fxlabscol\"\n}"
+  inactive: false
+assertions:
+- "@StatusCode == 200"
+- "@Response.errors == false"
+- "@Response.data.name == @Request.name"
+- "@Response.data.billingEmail == @Request.billingEmail"
+- "@Response.data.company == @Request.company"
+tags:
+- "V2"
+authors: null
+init: null
+cleanup:
+- "org_delete"
+category: "Functional"
+severity: "Major"
+inactive: false
+policies: null
