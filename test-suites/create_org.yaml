@@ -44,7 +44,7 @@ testCases:
   - id: 1
     body: '{
                 "name": "shahanawazkhan",
-                "billingemail": "shankhan@fxlabs.io",
+                "billingEmail": "shankhan@fxlabs.io",
                 "username": "shahkh",
                 "company": "fxlabscol"
                 
@@ -69,8 +69,8 @@ assertions:
   - "@StatusCode == 200"
   - "@Response.errors == false"
   - "@Response.data.name == @Request.name"
-  - "@Response.data.billingemail == @Request.billingemail"
-  - "@Response.data.account.id == @Request.account.id" # JSONPath example
+  - "@Response.data.billingEmail == @Request.billingEmail"
+  - "@Response.data.company == @Request.company" # JSONPath example
 
 
 # Optional - Executes one or more abstract suites per request or per suite.
