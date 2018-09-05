@@ -19,7 +19,6 @@ auth: Default
 # name: Min 1 char, unique per org_id
 # description: optional
 # @Response --> {id, name, description etc}
-testCases:
 
     body: '{
                "name": "shahanawaz",
@@ -46,6 +45,3 @@ category: Functional
 
 tags:
   - V2
-
-policies:
-  logger: DEBUG
