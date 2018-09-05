@@ -4,13 +4,13 @@
 authors:
 - shahanawaz ali
 
-type: Functional
+type: SUITE
 
 init:
  - create_organization
 
 
-endpoint: api/v1/orgs/{{@create_organization_Response.data.id}}
+endpoint: /orgs/{{@create_organization_Response.data.id}}
 method: GET
 
 assertions:
@@ -23,4 +23,4 @@ category: Functional
 
 tags:
 - V2
-© 2018 GitHub, Inc.
+
