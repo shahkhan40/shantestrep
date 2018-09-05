@@ -42,8 +42,8 @@ testCases:
     body: '{
                 "name": "shahanalikhan",
                 "billingEmail": "shankhan@fxlabs.io",
-                "username": "shahkh37",
-                "company": "fxlabscols"
+                "username": "shahkh38",
+                "company": "fxlabscols1"
              
                 
      }'
@@ -71,10 +71,7 @@ assertions:
 ## Transformation keywords (trim, trimToNull, trimToEmpty, truncate, strip, indexOf, indexOfIgnoreCase, lastIndexOf, left, right, substringBefore, substringAfter, substringBeforeLast, substringAfterLast
   # substringBetween, removeStart, removeStartIgnoreCase, removeEnd, removeEndIgnoreCase, remove, removeIgnoreCase, removeAll, removeFirst, removePattern, chomp, chop, repeat, rightPad, leftPad, upperCase, lowerCase, capitalize, uncapitalize, reverse)
 
-assertions:
-- "@StatusCode == 200"
-- "@Response.errors == false"
-- "@Response.data != EMPTY" 
+
 # JSONPath example
 
 # Optional - Executes one or more abstract suites per request or per suite.
