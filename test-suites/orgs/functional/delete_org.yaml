@@ -5,13 +5,11 @@
 authors:
 - shahanawaz ali
 
-type: Functional
-
 init:
  - create_organization
 
 
-endpoint: api/v1/orgs/{{@create_organization_Response.data.org.id}}
+endpoint: /orgs/{{@create_organization_Response.data.org.id}}
 method: Delete
 
 assertions:
