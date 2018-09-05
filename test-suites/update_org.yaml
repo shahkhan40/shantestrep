@@ -13,7 +13,7 @@ authors:
 
 # Suite type - SUITE or ABSTRACT
 #   ABSTRACT - is not directly executed but is injected into other suite's 'init' & 'cleanup' sections.
-type: SUITE
+type: ABSTRACT
 
 # Optional - one or more Abstract suites
 init:
