@@ -14,11 +14,10 @@ auth: Default
                "name": "shahanawaz",
                 "billingemail": "shan@fxlabs.io",
                 "username": "shah",
-                "company": fxlabsco,
+                "company": "fxlabsco"
                 
                 }'
   
-
 assertions:
   - "@StatusCode == 200"
   - "@Response.errors == false"
@@ -36,3 +35,6 @@ category: Functional
 
 tags:
   - V2
+
+policies:
+  logger: DEBUG
