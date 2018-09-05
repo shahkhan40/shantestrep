@@ -8,6 +8,7 @@ endpoint: /orgs
 method: POST
 auth: Default
 
+testCases:
     body: '{
                "name": "shahanawaz",
                 "billingemail": "shan@fxlabs.io",
