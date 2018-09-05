@@ -10,7 +10,7 @@ init:
  - job_create_init_abstract
 
 
-endpoint: api/v1/jobs/{{@job_create_init_abstract_Response.data.id}}
+endpoint: /jobs/{{@job_create_init_abstract_Response.data.id}}
 method: GET
 
 assertions:
