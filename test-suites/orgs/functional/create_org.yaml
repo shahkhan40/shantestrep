@@ -10,7 +10,7 @@ auth: Default
 
 testCases:
     body: '{
-              "name": "shahanawaz",
+                "name": "shahanawaz",
                 "billingemail": "shan@fxlabs.io",
                 "username": "shah",
                 "company": "fxlabsco"
