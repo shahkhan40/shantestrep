@@ -6,7 +6,7 @@ authors:
 - shahanawaz ali
 
 init:
- - create_organization
+ - create_org
 
 
 endpoint: /orgs/{{@create_organization_Response.data.org.id}}
