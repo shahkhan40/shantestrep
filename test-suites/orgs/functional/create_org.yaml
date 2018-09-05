@@ -3,6 +3,8 @@
 
 authors:
   - shahnawazali
+  
+type: SUITE
 
 endpoint: /orgs
 method: POST
