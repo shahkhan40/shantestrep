@@ -45,7 +45,7 @@ testCases:
     body: '{
                 "name": "shahanawazkhan",
                 "billingEmail": "shankhan@fxlabs.io",
-                "username": "shahkh34",
+                "username": "shahkh35",
                 "company": "fxlabscol"
                 
      }'
