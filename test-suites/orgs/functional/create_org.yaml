@@ -16,6 +16,7 @@ testCases:
                 "billingemail": "shan@fxlabs.io",
                 "username": "shah",
                 "company": "fxlabsco"
+                
                  }'
   
 assertions:
