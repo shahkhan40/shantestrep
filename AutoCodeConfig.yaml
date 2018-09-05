@@ -1,11 +1,29 @@
 ---
 genPolicy: "Create"
-openAPISpec: "http://13.56.210.25/v2/api-docs"
+openAPISpec: " http://13.56.210.25/v2/api-docs"
 generators:
-- type: "auth_invalid"
+- type: "negative_number"
+  assertions:
+  - "@StatusCode != 401"
+  - "@StatusCode != 404"
+  severity: "Critical"
+  database: null
+  inactive: false
+  matches: []
+- type: "create"
   assertions:
   - "@StatusCode != 200"
+  - "@StatusCode != 401"
+  - "@StatusCode != 404"
+  - "@StatusCode != 500"
   severity: "Critical"
+  database: null
+  inactive: false
+  matches: []
+- type: "no_params"
+  assertions:
+  - "@StatusCode == 200"
+  severity: "Major"
   database: null
   inactive: false
   matches: []
@@ -16,12 +34,17 @@ generators:
   database: null
   inactive: false
   matches: []
-- type: "ddos"
+- type: "auth_invalid"
   assertions:
   - "@StatusCode != 200"
+  severity: "Critical"
+  database: null
+  inactive: false
+  matches: []
+- type: "DDOS"
+  assertions:
   - "@StatusCode != 401"
   - "@StatusCode != 404"
-  - "@StatusCode != 500"
   severity: "Critical"
   database: null
   inactive: false
@@ -44,12 +67,10 @@ generators:
   database: null
   inactive: false
   matches: []
-- type: "sql_injection"
+- type: "sql_injection_timebound"
   assertions:
-  - "@ResponseTime >= 5000"
-  - "@StatusCode != 401"
+  - "@ResponseTime < 7000"
   - "@StatusCode != 404"
-  - "@StatusCode != 500"
   severity: "Critical"
   database:
     name: "MySQL"
@@ -107,10 +128,8 @@ generators:
     bodyProperties: null
 - type: "invalid_datatype"
   assertions:
-  - "@StatusCode != 200"
   - "@StatusCode != 401"
   - "@StatusCode != 404"
-  - "@StatusCode != 500"
   severity: "Critical"
   database: null
   inactive: false
@@ -136,16 +155,6 @@ generators:
   inactive: false
   matches: []
 - type: "empty_value"
-  assertions:
-  - "@StatusCode != 200"
-  - "@StatusCode != 401"
-  - "@StatusCode != 404"
-  - "@StatusCode != 500"
-  severity: "Critical"
-  database: null
-  inactive: false
-  matches: []
-- type: "create"
   assertions:
   - "@StatusCode != 200"
   - "@StatusCode != 401"
