@@ -43,10 +43,10 @@ headers:
 testCases:
   - id: 1
     body: '{
-                "name": "shahanawaz",
-                "billingemail": "shan@fxlabs.io",
-                "username": "shah",
-                "company": "fxlabsco"
+                "name": "shahanawazkhan",
+                "billingemail": "shankhan@fxlabs.io",
+                "username": "shahkh",
+                "company": "fxlabscol"
                 
      }'
  
