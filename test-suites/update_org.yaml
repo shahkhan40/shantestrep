@@ -23,7 +23,7 @@ init:
 endpoint: /orgs/{{@create_org_Response.data.id}}
 
 # Mandatory - Represents the API http method (GET, PUT, POST, DELETE etc)
-method: GET
+method: PUT
 
 # Optional - What authentication to use when calling the endpoint. 'Anonymous' means no authentication is used. There is always a 'Default' auth type.
 # For more advance test-cases you can create a new auth type on your env and refer it's name here. e.g. 'Admin' etc.
