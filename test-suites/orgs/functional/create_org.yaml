@@ -10,22 +10,13 @@ endpoint: /orgs
 method: POST
 auth: Default
 
-# Auth required for this endpoint.
-
-# Try using random chars for unique constriants fields.
-# Required-fields: name, company,billingemail
-# Unique Constraints Fields: name
-# Fields-Constraints
-# name: Min 1 char, unique per org_id
-# description: optional
-# @Response --> {id, name, description etc}
-
     body: '{
                "name": "shahanawaz",
                 "billingemail": "shan@fxlabs.io",
                 "username": "shah",
                 "company": fxlabsco,
-     }'
+                
+                }'
   
 
 assertions:
