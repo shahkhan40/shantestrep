@@ -9,8 +9,15 @@ auth: "Default"
 headers: null
 testCases:
 - id: 1
-  body: "{ \"name\": \"shahanalikhan\", \"billingEmail\": \"shankhan@fxlabs.io\",\
-    \ \"username\": \"shahkh38\", \"company\": \"fxlabscols1\"\n\n}"
+  body: "{ { \"requestId\" : \"None\", \"requestTime\" : \"2018-09-06T08:56:05.003+0000\"\
+    , \"errors\" : false, \"messages\" : [ ], \"data\" : { \"id\" : \"8a8080e665add8350165ae187c8a235e\"\
+    , \"createdBy\" : \"8a80808a657aacf801657ab17ca30000\", \"createdDate\" : \"2018-09-06T08:56:05.002+0000\"\
+    , \"modifiedBy\" : \"8a80808a657aacf801657ab17ca30000\", \"modifiedDate\" : \"\
+    2018-09-06T08:56:05.002+0000\", \"version\" : null, \"inactive\" : false, \"name\"\
+    \ : \"shahan9khan\", \"description\" : null, \"orgType\" : \"ENTERPRISE\", \"\
+    billingEmail\" : \"shankhan@fxlabs.io\", \"company\" : \"fxlabscol\", \"location\"\
+    \ : null, \"orgPlan\" : \"ENTERPRISE\" }, \"totalPages\" : 0, \"totalElements\"\
+    \ : 0 }\n}"
   inactive: false
 assertions:
 - "@StatusCode == 200"
