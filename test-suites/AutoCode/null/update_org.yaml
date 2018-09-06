@@ -1,0 +1,32 @@
+---
+parent: null
+name: "update_org"
+description: null
+type: "SUITE"
+endpoint: "/orgs/{{@create_org_Response.data.id}}"
+method: "PUT"
+auth: "Default"
+headers: null
+testCases:
+- id: 1
+  body: "{ \"name\": \"shahanalikhan\", \"billingEmail\": \"shankhan@fxlabs.io\",\
+    \ \"username\": \"shahkh38\", \"company\": \"fxlabscols1\"\n\n}"
+  inactive: false
+assertions:
+- "@StatusCode == 200"
+- "@Response.errors == false"
+- "@Response.data.name == @Request.name"
+- "@Response.data.billingemail == @Request.billingemail"
+- "@Response.data.username == @Request.username"
+- "@Response.data.company == @Request.company"
+tags:
+- "V2"
+authors:
+- "shahnawaz"
+init:
+- "create_org"
+cleanup: null
+category: "Functional"
+severity: "Major"
+inactive: false
+policies: null
