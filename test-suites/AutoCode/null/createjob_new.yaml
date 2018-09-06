@@ -12,7 +12,7 @@ testCases:
   body: "{ \"  \"id\": \"{{@job_create_init_abstract_Response.data.id}}\", \"org\"\
     : { \"id\": \"{{@job_create_init_abstract_Response.data.org.id}}\" }, \"name\"\
     : \"{{@job_create_init_abstract_Response.data.org.name}}\", \"environment: \"\
-    {\n\"id\":\"{{@create_env_Response.data.id}}\"\n}\", \"botRegion\": \"FXLabs/US_WEST_1\"\
+    {\n\"id\":\"{{@create_newenv_Response.data.id}}\"\n}\", \"botRegion\": \"FXLabs/US_WEST_1\"\
     , \"cron\": \"string\", \"project\": { \"id\": \"{{project_create_github_abstract_Response.data}}\"\
     \ }, }"
   inactive: false
