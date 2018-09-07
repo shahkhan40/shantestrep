@@ -9,8 +9,8 @@ auth: "Default"
 headers: null
 testCases:
 - id: 1
-  body: "{ \"name\": \"shahan10khan\", \"billingEmail\": \"shankhan@fxlabs.io\", \"\
-    username\": \"shahkh91\", \"company\": \"fxlabscol\"\n}"
+  body: "{ \"name\": \"shahan11khan\", \"billingEmail\": \"shankhan34@fxlabs.io\"\
+    , \"username\": \"shahkh92\", \"company\": \"fxlabscol\"\n}"
   inactive: false
 assertions:
 - "@StatusCode == 200"
