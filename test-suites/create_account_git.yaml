@@ -22,7 +22,7 @@ init:
   #- InitAbstractSuite2
 
 # Mandatory - API endpoint path.
-endpoint: /projects
+endpoint: /accounts
 
 # Mandatory - Represents the API http method (GET, PUT, POST, DELETE etc)
 method: POST
