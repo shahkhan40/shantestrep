@@ -10,7 +10,7 @@ headers: null
 testCases:
 - id: 1
   body: "{ \"name\": \"shahan11khan\", \"billingEmail\": \"shankhan34@fxlabs.io\"\
-    , \"username\": \"shahkh92\", \"company\": \"fxlabscol\"\n}"
+    , \"username\": \"shahkh92\", \"company\": \"fxlabscol\",\"orgType\": \"ENTERPRISE\"\n}"
   inactive: false
 assertions:
 - "@StatusCode == 200"
