@@ -1,7 +1,14 @@
 ---
 genPolicy: "Create"
-openAPISpec: "http://13.56.210.25/v2/api-docs"
+openAPISpec: "https://github.com/fxlabsinc/FX_Test-Automation"
 generators:
+- type: "no_params"
+  assertions:
+  - "@StatusCode == 200"
+  severity: "Major"
+  database: null
+  inactive: false
+  matches: []
 - type: "anonymous_invalid"
   assertions:
   - "@StatusCode != 200"
@@ -18,10 +25,8 @@ generators:
   matches: []
 - type: "DDOS"
   assertions:
-  - "@StatusCode != 200"
   - "@StatusCode != 401"
   - "@StatusCode != 404"
-  - "@StatusCode != 500"
   severity: "Critical"
   database: null
   inactive: false
@@ -47,9 +52,7 @@ generators:
 - type: "sql_injection_timebound"
   assertions:
   - "@ResponseTime < 7000"
-  - "@StatusCode != 401"
   - "@StatusCode != 404"
-  - "@StatusCode != 500"
   severity: "Critical"
   database:
     name: "MySQL"
@@ -107,20 +110,18 @@ generators:
     bodyProperties: null
 - type: "invalid_datatype"
   assertions:
-  - "@StatusCode != 200"
   - "@StatusCode != 401"
   - "@StatusCode != 404"
-  - "@StatusCode != 500"
   severity: "Critical"
   database: null
   inactive: false
   matches: []
 - type: "special_chars "
   assertions:
-  - "@StatusCode != 404"
-  - "@StatusCode != 500"
   - "@StatusCode != 200"
   - "@StatusCode != 401"
+  - "@StatusCode != 404"
+  - "@StatusCode != 500"
   severity: "Critical"
   database: null
   inactive: false
@@ -147,10 +148,8 @@ generators:
   matches: []
 - type: "negative_number"
   assertions:
-  - "@StatusCode != 200"
   - "@StatusCode != 401"
   - "@StatusCode != 404"
-  - "@StatusCode != 500"
   severity: "Critical"
   database: null
   inactive: false
@@ -162,13 +161,6 @@ generators:
   - "@StatusCode != 404"
   - "@StatusCode != 500"
   severity: "Critical"
-  database: null
-  inactive: false
-  matches: []
-- type: "no_params"
-  assertions:
-  - "@StatusCode == 200"
-  severity: "Major"
   database: null
   inactive: false
   matches: []
