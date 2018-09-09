@@ -2,13 +2,6 @@
 genPolicy: "Create"
 openAPISpec: "http://13.56.210.25/v2/api-docs"
 generators:
-- type: "no_params"
-  assertions:
-  - "@StatusCode == 200"
-  severity: "Major"
-  database: null
-  inactive: false
-  matches: []
 - type: "anonymous_invalid"
   assertions:
   - "@StatusCode != 200"
@@ -23,10 +16,12 @@ generators:
   database: null
   inactive: false
   matches: []
-- type: "DDOS"
+- type: "ddos"
   assertions:
+  - "@StatusCode != 200"
   - "@StatusCode != 401"
   - "@StatusCode != 404"
+  - "@StatusCode != 500"
   severity: "Critical"
   database: null
   inactive: false
@@ -49,10 +44,12 @@ generators:
   database: null
   inactive: false
   matches: []
-- type: "sql_injection_timebound"
+- type: "sql_injection"
   assertions:
-  - "@ResponseTime < 7000"
+  - "@ResponseTime >= 5000"
+  - "@StatusCode != 401"
   - "@StatusCode != 404"
+  - "@StatusCode != 500"
   severity: "Critical"
   database:
     name: "MySQL"
@@ -76,6 +73,14 @@ generators:
   database: null
   inactive: false
   matches:
+  - name: "Admin access"
+    value: null
+    methods: "Post, Put, Delete"
+    denyRoles: "Writer, Reader"
+    pathPatterns: "/api/v1/orgs/**, /api/v1/accounts/**"
+    resourceSamples: null
+    queryParams: null
+    bodyProperties: null
   - name: "Writer access"
     value: null
     methods: "Post, Put, Delete"
@@ -100,18 +105,12 @@ generators:
     resourceSamples: null
     queryParams: null
     bodyProperties: null
-  - name: "Admin access"
-    value: null
-    methods: "Post, Put, Delete"
-    denyRoles: "Writer, Reader"
-    pathPatterns: "/api/v1/orgs/**, /api/v1/accounts/**"
-    resourceSamples: null
-    queryParams: null
-    bodyProperties: null
 - type: "invalid_datatype"
   assertions:
+  - "@StatusCode != 200"
   - "@StatusCode != 401"
   - "@StatusCode != 404"
+  - "@StatusCode != 500"
   severity: "Critical"
   database: null
   inactive: false
@@ -138,18 +137,10 @@ generators:
   matches: []
 - type: "empty_value"
   assertions:
-  - "@StatusCode != 404"
-  - "@StatusCode != 500"
   - "@StatusCode != 200"
   - "@StatusCode != 401"
-  severity: "Critical"
-  database: null
-  inactive: false
-  matches: []
-- type: "negative_number"
-  assertions:
-  - "@StatusCode != 401"
   - "@StatusCode != 404"
+  - "@StatusCode != 500"
   severity: "Critical"
   database: null
   inactive: false
