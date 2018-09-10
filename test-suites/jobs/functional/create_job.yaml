@@ -10,6 +10,7 @@ type: ABSTRACT
 init:
   - project_create_github_abstract
   - job_create_init_abstract
+  - create_newenv
 
 endpoint: /jobs
 
@@ -26,7 +27,7 @@ testCases:
         "name": "{{@job_create_init_abstract_Response.data.org.name}}",
         "environment: "{
 	
-	"id":{@env_create_init_abstract_Response.data.id}
+	"id":{@create_newenv_Response.data.id}
 	
 	}",
 		    "botRegion": "FXLabs/US_WEST_1",
