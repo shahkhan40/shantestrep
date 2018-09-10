@@ -2,14 +2,6 @@
 genPolicy: "Create"
 openAPISpec: "http://13.56.210.25/v2/api-docs"
 generators:
-- type: "negative_number"
-  assertions:
-  - "@StatusCode != 401"
-  - "@StatusCode != 404"
-  severity: "Critical"
-  database: null
-  inactive: false
-  matches: []
 - type: "no_params"
   assertions:
   - "@StatusCode == 200"
@@ -150,6 +142,14 @@ generators:
   - "@StatusCode != 401"
   - "@StatusCode != 404"
   - "@StatusCode != 500"
+  severity: "Critical"
+  database: null
+  inactive: false
+  matches: []
+- type: "negative_number"
+  assertions:
+  - "@StatusCode != 401"
+  - "@StatusCode != 404"
   severity: "Critical"
   database: null
   inactive: false
