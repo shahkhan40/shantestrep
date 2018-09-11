@@ -6,7 +6,7 @@ authors:
   - shahanawaz
 
 init:
-- project_create_github_abstract
+
 
 endpoint: /envs
 method: POST
