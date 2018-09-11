@@ -1,6 +1,6 @@
 ---
 genPolicy: "Create"
-openAPISpec: "http://13.56.210.25/v2/api-docs"
+openAPISpec: " http://13.56.210.25/v2/api-docs"
 generators:
 - type: "no_params"
   assertions:
@@ -76,6 +76,14 @@ generators:
   database: null
   inactive: false
   matches:
+  - name: "Admin access"
+    value: null
+    methods: "Post, Put, Delete"
+    denyRoles: "Writer, Reader"
+    pathPatterns: "/api/v1/orgs/**, /api/v1/accounts/**"
+    resourceSamples: null
+    queryParams: null
+    bodyProperties: null
   - name: "Writer access"
     value: null
     methods: "Post, Put, Delete"
@@ -97,14 +105,6 @@ generators:
     methods: "Get, Post, Put, Delete"
     denyRoles: "Other"
     pathPatterns: "/api/v1/**"
-    resourceSamples: null
-    queryParams: null
-    bodyProperties: null
-  - name: "Admin access"
-    value: null
-    methods: "Post, Put, Delete"
-    denyRoles: "Writer, Reader"
-    pathPatterns: "/api/v1/orgs/**, /api/v1/accounts/**"
     resourceSamples: null
     queryParams: null
     bodyProperties: null
@@ -138,10 +138,10 @@ generators:
   matches: []
 - type: "empty_value"
   assertions:
-  - "@StatusCode != 404"
-  - "@StatusCode != 500"
   - "@StatusCode != 200"
   - "@StatusCode != 401"
+  - "@StatusCode != 404"
+  - "@StatusCode != 500"
   severity: "Critical"
   database: null
   inactive: false
@@ -164,19 +164,3 @@ generators:
   database: null
   inactive: false
   matches: []
-- type: "sla"
-  assertions:
-  - "@StatusCode == 200"
-  - "@StatusCode != 404"
-  severity: "Major"
-  database: null
-  inactive: false
-  matches:
-  - name: null
-    value: "1000"
-    methods: "Get"
-    denyRoles: null
-    pathPatterns: "/**"
-    resourceSamples: null
-    queryParams: null
-    bodyProperties: null
