@@ -7,7 +7,7 @@ generators:
   - "@StatusCode == 200"
   severity: "Major"
   database: null
-  inactive: true
+  inactive: false
   matches: []
 - type: "sla"
   assertions:
