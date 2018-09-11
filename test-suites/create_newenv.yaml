@@ -1,0 +1,32 @@
+---
+parent: null
+name: "create_newenv"
+description: null
+type: "SUITE"
+endpoint: "/envs"
+method: "POST"
+auth: "Default"
+headers: null
+testCases:
+- id: 1
+  body: "{ { {\"auths\":[{\"name\":\"Default\",\"authType\":\"Basic\",\"username\"\
+    :\"FXLabsQA//kshahanawaz@gmail.com\",\"password\":\"admin123$\"}],\"name\":\"\
+    prod\",\"baseUrl\":\"https://13.56.210.25/api/v1\", \"projectId\":\"8a8081ea65c3a41c0165c6eb83eb39cc\"\
+    } }"
+  inactive: false
+assertions:
+- "@StatusCode == 200"
+- "@Response.errors == false"
+- "@Response.data.name == @Request.name"
+- "@Response.data.url == @Request.url"
+tags:
+- "V2"
+authors:
+- "shahnawaz"
+init:
+- "project_create_github_abstract"
+cleanup: null
+category: "Functional"
+severity: "Major"
+inactive: false
+policies: null
