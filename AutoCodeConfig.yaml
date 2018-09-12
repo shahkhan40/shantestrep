@@ -2,29 +2,6 @@
 genPolicy: "Create"
 openAPISpec: "http://13.56.210.25/v2/api-docs"
 generators:
-- type: "no_params"
-  assertions:
-  - "@StatusCode == 200"
-  severity: "Major"
-  database: null
-  inactive: false
-  matches: []
-- type: "sla"
-  assertions:
-  - "@StatusCode == 200"
-  - "@StatusCode != 404"
-  severity: "Major"
-  database: null
-  inactive: false
-  matches:
-  - name: null
-    value: "1000"
-    methods: "Get"
-    denyRoles: null
-    pathPatterns: "/**"
-    resourceSamples: null
-    queryParams: null
-    bodyProperties: null
 - type: "anonymous_invalid"
   assertions:
   - "@StatusCode != 200"
@@ -179,4 +156,27 @@ generators:
   severity: "Critical"
   database: null
   inactive: false
+  matches: []
+- type: "sla"
+  assertions:
+  - "@StatusCode == 200"
+  - "@StatusCode != 404"
+  severity: "Major"
+  database: null
+  inactive: false
+  matches:
+  - name: null
+    value: "1000"
+    methods: "Get"
+    denyRoles: null
+    pathPatterns: "/**"
+    resourceSamples: null
+    queryParams: null
+    bodyProperties: null
+- type: "no_params"
+  assertions:
+  - "@StatusCode == 200"
+  severity: "Major"
+  database: null
+  inactive: true
   matches: []
