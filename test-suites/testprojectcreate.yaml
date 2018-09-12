@@ -18,7 +18,7 @@ type: SUITE
 
 # Optional - one or more Abstract suites
 init:
-  - GitHub_create_init
+  - account_create_valid_GitHub
   #- InitAbstractSuite2
 
 # Mandatory - API endpoint path.
@@ -43,7 +43,7 @@ headers:
 testCases:
   - id: 1
     body: '{
-       "credsRequired":false,"account":{"GitHub_create_init_Response.data.id"},
+       "credsRequired":false,"account":{"account_create_valid_GitHub_Response.data.id"},
 "name":"testproject457","url":"https://github.com/fxlabsinc/FX_Test-Automation.git",
 "openAPISpec":"http://13.56.210.25/v2/api-docs"
      }'
@@ -101,5 +101,3 @@ policies:
   #initExec: Request
   # Control if cleanup scripts are executed once for test-case or once per script (Request, Suite)
   #cleanupExec: Request
-
-
