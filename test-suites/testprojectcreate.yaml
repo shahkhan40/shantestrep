@@ -43,7 +43,7 @@ headers:
 testCases:
   - id: 1
     body: '{
-       "credsRequired":false,"account":{"account_create_valid_GitHub_Response.data.id"},
+       "credsRequired":false,"account":{"account_create_valid_GitHub_Response.data"},
 "name":"testproject457","url":"https://github.com/fxlabsinc/FX_Test-Automation.git",
 "openAPISpec":"http://13.56.210.25/v2/api-docs"
      }'
