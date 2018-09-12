@@ -5,10 +5,6 @@ authors:
 
 type: ABSTRACT
 
-init:
-  - project_create_init
-
-
 endpoint: /jobs
 method: POST
 auth: Default
