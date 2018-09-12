@@ -18,7 +18,7 @@ type: SUITE
 
 # Optional - one or more Abstract suites
 init:
-  #- InitAbstractSuite1
+  - GitHub_create_init
   #- InitAbstractSuite2
 
 # Mandatory - API endpoint path.
@@ -43,7 +43,7 @@ headers:
 testCases:
   - id: 1
     body: '{
-       "credsRequired":false,"account":{"id":"8a80809265803f430165804f70a50a5b"},
+       "credsRequired":false,"account":{"GitHub_create_init_Response.data.id"},
 "name":"testproject4590","url":"https://github.com/fxlabsinc/FX_Test-Automation.git",
 "openAPISpec":"http://13.56.210.25/v2/api-docs"
      }'
