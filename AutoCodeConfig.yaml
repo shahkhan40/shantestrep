@@ -25,13 +25,6 @@ generators:
     resourceSamples: null
     queryParams: null
     bodyProperties: null
-- type: "anonymous_invalid"
-  assertions:
-  - "@StatusCode != 200"
-  severity: "Critical"
-  database: null
-  inactive: true
-  matches: []
 - type: "auth_invalid"
   assertions:
   - "@StatusCode != 200"
@@ -131,6 +124,13 @@ generators:
   severity: "Critical"
   database: null
   inactive: true
+  matches: []
+- type: "anonymous_invalid"
+  assertions:
+  - "@StatusCode != 200"
+  severity: "Critical"
+  database: null
+  inactive: false
   matches: []
 - type: "special_chars "
   assertions:
