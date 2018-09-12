@@ -43,15 +43,11 @@ headers:
 testCases:
   - id: 1
     body: '{
-        "name": "{{@Faker.fullname}}",
-        "description": "desc"
+         "credsRequired":false,"account":{"id":"8a80809265803f430165804f70a50a5b"},
+"name":"testproject457","url":"https://github.com/fxlabsinc/FX_Test-Automation.git",
+"openAPISpec":"http://13.56.210.25/v2/api-docs"
      }'
-  - id: 2
-    body: '{
-        "name": "{{@Faker.fullname}}",
-        "description": "desc"
-     }'
-
+ 
 
 # Assertions - One or more.
 # All needs to be true for the test-case to pass.
