@@ -41,6 +41,12 @@ environments:
         authType: BASIC
         username: admin@fxlabs.io
         password: '{{@Vault.FXLabs_QA/Uat-Admin-Pass}}'
+            # app access credentials
+    auths:
+      - name: Default
+        authType: BASIC
+        username: admin@fxlabs.io
+        password: '{{@Vault.FXLabs_QA/prod-admin-Pass}}'
 
 
 # Job profiles
@@ -92,3 +98,4 @@ jobs:
         # enter your email
         to: <<changeme>>
         account: Default_Email
+        
