@@ -3,14 +3,14 @@ parent: null
 name: "update_org"
 description: null
 type: "SUITE"
-endpoint: "/orgs/{{@create_org_Response.data.id}}"
+endpoint: "/orgs"
 method: "PUT"
 auth: "Default"
 headers: null
 testCases:
 - id: 1
   body: "{ \"name\" : \"shahan11khan\", \"description\" : null, \"orgType\" : \"ENTERPRISE\", \"\
-    billingEmail\" : \"shankhan@fxlabs.io\", \"company\" : \"fxlabscols\" }"
+    billingEmail\" : \"shankhan@fxlabs.io\", \"company\" : \"fxlabscols\" ,\"id\" : \"create_org_Response.data.id\" }"
  
 assertions:
 - "@StatusCode == 200"
