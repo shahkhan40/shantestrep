@@ -1,13 +1,13 @@
 ---
 genPolicy: "Create"
-openAPISpec: "https://cloud.fxlabs.io/v2/api-docs"
+openAPISpec: "http://cloud.fxlabs.io/v2/api-docs"
 generators:
 - type: "no_params"
   assertions:
   - "@StatusCode == 200"
   severity: "Major"
   database: null
-  inactive: true
+  inactive: false
   matches: []
 - type: "sla"
   assertions:
@@ -15,7 +15,7 @@ generators:
   - "@StatusCode != 404"
   severity: "Major"
   database: null
-  inactive: true
+  inactive: false
   matches:
   - name: null
     value: "1000"
@@ -30,14 +30,14 @@ generators:
   - "@StatusCode != 200"
   severity: "Critical"
   database: null
-  inactive: true
+  inactive: false
   matches: []
 - type: "auth_invalid"
   assertions:
   - "@StatusCode != 200"
   severity: "Critical"
   database: null
-  inactive: true
+  inactive: false
   matches: []
 - type: "DDOS"
   assertions:
@@ -45,7 +45,7 @@ generators:
   - "@StatusCode != 404"
   severity: "Critical"
   database: null
-  inactive: true
+  inactive: false
   matches:
   - name: "pageSize, page_size, maxResults, max_results"
     value: null
@@ -63,7 +63,7 @@ generators:
   - "@StatusCode != 500"
   severity: "Critical"
   database: null
-  inactive: true
+  inactive: false
   matches: []
 - type: "sql_injection_timebound"
   assertions:
@@ -73,7 +73,7 @@ generators:
   database:
     name: "MySQL"
     version: "5.7"
-  inactive: true
+  inactive: false
   matches: []
 - type: "log_Forging"
   assertions:
@@ -83,14 +83,14 @@ generators:
   - "@StatusCode != 500"
   severity: "Critical"
   database: null
-  inactive: true
+  inactive: false
   matches: []
 - type: "rbac"
   assertions:
   - "@StatusCode == 403"
   severity: "Critical"
   database: null
-  inactive: true
+  inactive: false
   matches:
   - name: "Admin access"
     value: null
@@ -130,7 +130,7 @@ generators:
   - "@StatusCode != 404"
   severity: "Critical"
   database: null
-  inactive: true
+  inactive: false
   matches: []
 - type: "special_chars "
   assertions:
@@ -140,7 +140,7 @@ generators:
   - "@StatusCode != 500"
   severity: "Critical"
   database: null
-  inactive: true
+  inactive: false
   matches: []
 - type: "null_value"
   assertions:
@@ -150,7 +150,7 @@ generators:
   - "@StatusCode != 500"
   severity: "Critical"
   database: null
-  inactive: true
+  inactive: false
   matches: []
 - type: "empty_value"
   assertions:
@@ -160,7 +160,7 @@ generators:
   - "@StatusCode != 500"
   severity: "Critical"
   database: null
-  inactive: true
+  inactive: false
   matches: []
 - type: "negative_number"
   assertions:
@@ -168,7 +168,7 @@ generators:
   - "@StatusCode != 404"
   severity: "Critical"
   database: null
-  inactive: true
+  inactive: false
   matches: []
 - type: "create"
   assertions:
@@ -178,5 +178,5 @@ generators:
   - "@StatusCode != 500"
   severity: "Critical"
   database: null
-  inactive: true
+  inactive: false
   matches: []
