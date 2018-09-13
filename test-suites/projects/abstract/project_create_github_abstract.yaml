@@ -38,9 +38,6 @@ assertions:
   - "@Response.data.genPolicy == @Request.genPolicy"
   - "@Response.data.description == @Request.description"
 
-cleanup:
-  - project_delete
-
 tags:
   - V2
 
