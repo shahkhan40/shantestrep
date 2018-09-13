@@ -3,8 +3,8 @@ parent: null
 name: "create_job"
 description: null
 type: "SUITE"
-endpoint: "/jobs"
-method: "POST"
+endpoint: "/envs"
+method: "GET"
 auth: "Default"
 headers: null
 testCases:
@@ -24,7 +24,6 @@ tags:
 authors:
 - "shahnawaz"
 init:
-- "GitHub_create_init"
 - "project_create_github_abstract"
 cleanup: null
 category: "Functional"
