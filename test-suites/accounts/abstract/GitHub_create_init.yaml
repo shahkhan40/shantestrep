@@ -27,6 +27,3 @@ assertions:
   - "@Response.data.accountType == @Request.accountType"
   - "@Response.data.accessKey == @Request.accessKey"
   - "@Response.data.secretKey == EMPTY"
-
-cleanup:
-  - account_delete
