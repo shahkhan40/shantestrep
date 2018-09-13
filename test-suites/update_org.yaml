@@ -9,7 +9,7 @@ auth: "Default"
 headers: null
 testCases:
 - id: 1
-  body: "{ \"name\" : \"shahan11khan\", \"description\" : null, \"orgType\" : \"ENTERPRISE\", \"\
+  body: "{ \"name\" : \"shahan1788khan\", \"description\" : null, \"orgType\" : \"ENTERPRISE\", \"\
     billingEmail\" : \"shankhan@fxlabs.io\", \"company\" : \"fxlabscols\" ,\"id\" : \"create_org_Response.data.id\" }"
  
 assertions:
