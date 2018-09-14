@@ -4,7 +4,7 @@ name: "create_job"
 description: null
 type: "SUITE"
 endpoint: "/jobs"
-method: "GET"
+method: "POST"
 auth: "Default"
 headers: null
 testCases:
