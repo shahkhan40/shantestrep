@@ -49,7 +49,7 @@ testCases:
     "id": "8a8081ea65c3a41c0165d67ac1900f9c"
   },
    "project": {
-          "id": "{{project_create_github_abstract_Response.data.id}}"
+          "id": "{{project_create_github_abstract_Response.data}}"
         },
     "name": "testjob25",
      "url": "https://github.com/fxlabsinc/FX_Test-Automation"
