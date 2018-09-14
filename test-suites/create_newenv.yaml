@@ -10,8 +10,8 @@ headers: null
 testCases:
 - id: 1
   body: "{ { {\"auths\":[{\"name\":\"Default\",\"authType\":\"Basic\",\"username\"\
-    :\"FXLabsQA//kshahanawaz@gmail.com\",\"password\":\"admin123$\"}],\"name\":\"\
-    prod\",\"baseUrl\":\"https://13.56.210.25/api/v1\", \"projectId\":\"8a8081ea65c3a41c0165c6eb83eb39cc\"\
+    :\"FXLabsQA//admin@fxlabs.io\",\"password\":\"admin123$\"}],\"name\":\"\
+    prod\",\"baseUrl\":\"https://13.56.210.25/api/v1\", \"projectId\":\"project_create_github_abstract_Response.data.id\"\
     } }"
   inactive: false
 assertions:
