@@ -1,23 +1,14 @@
 ---
 genPolicy: "Create"
-openAPISpec: " http://cloud.fxlabs.io/v2/api-docs"
+openAPISpec: "http://cloud.fxlabs.io/api/v1/"
 generators:
-- type: "sla"
+- type: "no_params"
   assertions:
   - "@StatusCode == 200"
-  - "@StatusCode != 404"
   severity: "Major"
   database: null
   inactive: false
-  matches:
-  - name: null
-    value: "1000"
-    methods: "Get"
-    denyRoles: null
-    pathPatterns: "/**"
-    resourceSamples: null
-    queryParams: null
-    bodyProperties: null
+  matches: []
 - type: "anonymous_invalid"
   assertions:
   - "@StatusCode != 200"
@@ -117,13 +108,6 @@ generators:
     resourceSamples: null
     queryParams: null
     bodyProperties: null
-- type: "no_params"
-  assertions:
-  - "@StatusCode == 200"
-  severity: "Major"
-  database: null
-  inactive: false
-  matches: []
 - type: "invalid_datatype"
   assertions:
   - "@StatusCode != 401"
