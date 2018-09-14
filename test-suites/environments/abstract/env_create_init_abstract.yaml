@@ -1,1 +1,41 @@
 
+---
+# Validates  new enviornment  creation.
+
+authors:
+  - shahanawaz
+
+SUITE: ABSTRACT
+
+
+endpoint: /envs
+method: POST
+auth: Basic
+
+#
+testCases:
+  - id: 1
+ body: '{
+    { 
+    "auths":[{"name":"Default","authType":"Basic","username":"FXLabsQA//admin@fxlabs.io","password":"admin123$"}],
+    "name":"UATP","baseUrl":"https://13.56.210.25/api/v1",
+    "projectId":"project_create_github_abstract_Response.data.id"
+  }
+      }'
+          
+     assertions:
+  - "@StatusCode == 200"
+  - "@Response.errors == false"
+  - "@Response.data.name == @Request.name"
+  - "@Response.data.url == @Request.url"
+
+
+severity: Major
+category: Functional
+
+tags:
+  - V2
+
+policies:
+  logger: DEBUG
+
