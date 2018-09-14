@@ -2,12 +2,50 @@
 genPolicy: "Create"
 openAPISpec: "http://13.56.210.25/v2/api-docs"
 generators:
+- type: "null_value"
+  assertions:
+  - "@StatusCode != 200"
+  - "@StatusCode != 401"
+  - "@StatusCode != 404"
+  - "@StatusCode != 500"
+  severity: null
+  database: null
+  inactive: false
+  matches: []
+- type: "empty_value"
+  assertions:
+  - "@StatusCode != 200"
+  - "@StatusCode != 401"
+  - "@StatusCode != 404"
+  - "@StatusCode != 500"
+  severity: null
+  database: null
+  inactive: false
+  matches: []
+- type: "negative_number"
+  assertions:
+  - "@StatusCode != 401"
+  - "@StatusCode != 404"
+  severity: null
+  database: null
+  inactive: false
+  matches: []
+- type: "create"
+  assertions:
+  - "@StatusCode != 200"
+  - "@StatusCode != 401"
+  - "@StatusCode != 404"
+  - "@StatusCode != 500"
+  severity: null
+  database: null
+  inactive: false
+  matches: []
 - type: "no_params"
   assertions:
   - "@StatusCode == 200"
   severity: null
   database: null
-  inactive: true
+  inactive: false
   matches: []
 - type: "sla"
   assertions:
@@ -15,7 +53,7 @@ generators:
   - "@StatusCode != 404"
   severity: null
   database: null
-  inactive: true
+  inactive: false
   matches:
   - name: null
     value: "1000"
@@ -25,65 +63,26 @@ generators:
     resourceSamples: null
     queryParams: null
     bodyProperties: null
+- type: "anonymous_invalid"
+  assertions:
+  - "@StatusCode != 200"
+  severity: null
+  database: null
+  inactive: false
+  matches: []
 - type: "auth_invalid"
   assertions:
   - "@StatusCode != 200"
   severity: null
   database: null
-  inactive: true
-  matches: []
-- type: "DDOS"
-  assertions:
-  - "@StatusCode != 401"
-  - "@StatusCode != 404"
-  severity: null
-  database: null
-  inactive: true
-  matches:
-  - name: "pageSize, page_size, maxResults, max_results"
-    value: null
-    methods: null
-    denyRoles: null
-    pathPatterns: null
-    resourceSamples: null
-    queryParams: null
-    bodyProperties: null
-- type: "XSS_Injection"
-  assertions:
-  - "@StatusCode != 200"
-  - "@StatusCode != 401"
-  - "@StatusCode != 404"
-  - "@StatusCode != 500"
-  severity: null
-  database: null
-  inactive: true
-  matches: []
-- type: "sql_injection_timebound"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  severity: null
-  database:
-    name: "MySQL"
-    version: "5.7"
-  inactive: true
-  matches: []
-- type: "log_Forging"
-  assertions:
-  - "@StatusCode != 200"
-  - "@StatusCode != 401"
-  - "@StatusCode != 404"
-  - "@StatusCode != 500"
-  severity: null
-  database: null
-  inactive: true
+  inactive: false
   matches: []
 - type: "rbac"
   assertions:
   - "@StatusCode == 403"
   severity: null
   database: null
-  inactive: true
+  inactive: false
   matches:
   - name: "Admin access"
     value: null
@@ -117,13 +116,60 @@ generators:
     resourceSamples: null
     queryParams: null
     bodyProperties: null
+- type: "DDOS"
+  assertions:
+  - "@StatusCode != 401"
+  - "@StatusCode != 404"
+  severity: null
+  database: null
+  inactive: false
+  matches:
+  - name: "pageSize, page_size, maxResults, max_results"
+    value: null
+    methods: null
+    denyRoles: null
+    pathPatterns: null
+    resourceSamples: null
+    queryParams: null
+    bodyProperties: null
+- type: "sql_injection_timebound"
+  assertions:
+  - "@ResponseTime > 7000"
+  - "@ResponseTime < 10000"
+  - "@StatusCode != 404"
+  severity: null
+  database:
+    name: "MySQL"
+    version: "5.7"
+  inactive: false
+  matches: []
+- type: "XSS_Injection"
+  assertions:
+  - "@StatusCode != 200"
+  - "@StatusCode != 401"
+  - "@StatusCode != 404"
+  - "@StatusCode != 500"
+  severity: null
+  database: null
+  inactive: false
+  matches: []
+- type: "log_Forging"
+  assertions:
+  - "@StatusCode != 200"
+  - "@StatusCode != 401"
+  - "@StatusCode != 404"
+  - "@StatusCode != 500"
+  severity: null
+  database: null
+  inactive: false
+  matches: []
 - type: "invalid_datatype"
   assertions:
   - "@StatusCode != 401"
   - "@StatusCode != 404"
   severity: null
   database: null
-  inactive: true
+  inactive: false
   matches: []
 - type: "special_chars "
   assertions:
@@ -133,50 +179,5 @@ generators:
   - "@StatusCode != 500"
   severity: null
   database: null
-  inactive: true
-  matches: []
-- type: "null_value"
-  assertions:
-  - "@StatusCode != 200"
-  - "@StatusCode != 401"
-  - "@StatusCode != 404"
-  - "@StatusCode != 500"
-  severity: null
-  database: null
-  inactive: true
-  matches: []
-- type: "empty_value"
-  assertions:
-  - "@StatusCode != 200"
-  - "@StatusCode != 401"
-  - "@StatusCode != 404"
-  - "@StatusCode != 500"
-  severity: null
-  database: null
-  inactive: true
-  matches: []
-- type: "anonymous_invalid"
-  assertions:
-  - "@StatusCode != 200"
-  severity: null
-  database: null
   inactive: false
-  matches: []
-- type: "negative_number"
-  assertions:
-  - "@StatusCode != 401"
-  - "@StatusCode != 404"
-  severity: null
-  database: null
-  inactive: true
-  matches: []
-- type: "create"
-  assertions:
-  - "@StatusCode != 200"
-  - "@StatusCode != 401"
-  - "@StatusCode != 404"
-  - "@StatusCode != 500"
-  severity: null
-  database: null
-  inactive: true
   matches: []
