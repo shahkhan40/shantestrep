@@ -2,6 +2,13 @@
 genPolicy: "Create"
 openAPISpec: "http://13.56.210.25/v2/api-docs"
 generators:
+- type: "no_params"
+  assertions:
+  - "@StatusCode == 200"
+  severity: null
+  database: null
+  inactive: false
+  matches: []
 - type: "anonymous_invalid"
   assertions:
   - "@StatusCode != 200"
@@ -69,14 +76,6 @@ generators:
   database: null
   inactive: false
   matches:
-  - name: "Admin access"
-    value: null
-    methods: "Post, Put, Delete"
-    denyRoles: "Writer, Reader"
-    pathPatterns: "/api/v1/orgs/**, /api/v1/accounts/**"
-    resourceSamples: null
-    queryParams: null
-    bodyProperties: null
   - name: "Writer access"
     value: null
     methods: "Post, Put, Delete"
@@ -98,6 +97,14 @@ generators:
     methods: "Get, Post, Put, Delete"
     denyRoles: "Other"
     pathPatterns: "/api/v1/**"
+    resourceSamples: null
+    queryParams: null
+    bodyProperties: null
+  - name: "Admin access"
+    value: null
+    methods: "Post, Put, Delete"
+    denyRoles: "Writer, Reader"
+    pathPatterns: "/api/v1/orgs/**, /api/v1/accounts/**"
     resourceSamples: null
     queryParams: null
     bodyProperties: null
@@ -131,10 +138,10 @@ generators:
   matches: []
 - type: "empty_value"
   assertions:
-  - "@StatusCode != 200"
-  - "@StatusCode != 401"
   - "@StatusCode != 404"
   - "@StatusCode != 500"
+  - "@StatusCode != 200"
+  - "@StatusCode != 401"
   severity: null
   database: null
   inactive: false
@@ -173,10 +180,3 @@ generators:
     resourceSamples: null
     queryParams: null
     bodyProperties: null
-- type: "no_params"
-  assertions:
-  - "@StatusCode == 200"
-  severity: null
-  database: null
-  inactive: true
-  matches: []
