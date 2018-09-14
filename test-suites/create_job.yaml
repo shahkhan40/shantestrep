@@ -3,7 +3,7 @@ parent: null
 name: "create_job"
 description: null
 type: "SUITE"
-endpoint: "/envs"
+endpoint: "/jobs"
 method: "GET"
 auth: "Default"
 headers: null
