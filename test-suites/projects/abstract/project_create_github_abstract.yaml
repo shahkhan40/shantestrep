@@ -6,6 +6,9 @@ authors:
 
 type: ABSTRACT
 
+init:
+  - Git_create_init
+
 endpoint: /projects
 method: POST
 auth: Default
