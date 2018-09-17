@@ -104,7 +104,7 @@ generators:
   database:
     name: "MySQL"
     version: "5.7"
-  inactive: false
+  inactive: true
   matches: []
 - type: "XSS_Injection"
   assertions:
@@ -112,9 +112,10 @@ generators:
   - "@StatusCode != 401"
   - "@StatusCode != 404"
   - "@StatusCode != 500"
+  - "@StatusCode != 301"
   severity: null
   database: null
-  inactive: true
+  inactive: false
   matches: []
 - type: "log_Forging"
   assertions:
