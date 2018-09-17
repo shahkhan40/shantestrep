@@ -14,12 +14,10 @@ headers:
 - "Content-Type: application/json"
 testCases: []
 assertions:
-- "@StatusCode != 200"
 - "@StatusCode != 401"
 - "@StatusCode != 404"
-- "@StatusCode != 500"
 cleanup: []
-severity: "Critical"
+severity: "Major"
 category: "DDOS"
 tags:
 - "V1"

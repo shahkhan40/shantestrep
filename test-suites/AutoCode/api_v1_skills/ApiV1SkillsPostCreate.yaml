@@ -21,8 +21,8 @@ testCases:
     \ : null,\n    'id' : null,\n    'inactive' : null,\n    'modifiedBy' : null,\n\
     \    'modifiedDate' : null,\n    'name' : null,\n    'version' : null\n  },\n\
     \  'prop1' : null,\n  'prop2' : null,\n  'prop3' : null,\n  'prop4' : null,\n\
-    \  'prop5' : null,\n  'secretKey' : null,\n  'skillType' : 'ANALYTICS',\n  'version'\
-    \ : null\n}"
+    \  'prop5' : null,\n  'secretKey' : null,\n  'skillType' : 'NOTIFICATION',\n \
+    \ 'version' : null\n}"
   inactive: false
 assertions:
 - "@StatusCode != 200"
@@ -30,7 +30,7 @@ assertions:
 - "@StatusCode != 404"
 - "@StatusCode != 500"
 cleanup: []
-severity: "Critical"
+severity: "Major"
 category: "Functional"
 tags:
 - "V1"

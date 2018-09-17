@@ -27,7 +27,7 @@ assertions:
 - "@StatusCode != 404"
 - "@StatusCode != 500"
 cleanup: []
-severity: "Critical"
+severity: "Major"
 category: "Functional"
 tags:
 - "V1"

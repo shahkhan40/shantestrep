@@ -16,7 +16,7 @@ testCases: []
 assertions:
 - "@StatusCode != 200"
 cleanup: []
-severity: "Critical"
+severity: "Major"
 category: "UnSecured"
 tags:
 - "V1"

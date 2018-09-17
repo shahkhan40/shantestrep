@@ -16,7 +16,7 @@ testCases: []
 assertions:
 - "@StatusCode == 403"
 cleanup: []
-severity: "Critical"
+severity: "Major"
 category: "RBAC"
 tags:
 - "V1"
