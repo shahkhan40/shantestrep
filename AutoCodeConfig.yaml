@@ -18,7 +18,7 @@ generators:
   inactive: true
   matches:
   - name: null
-    value: "1000,2000"
+    value: "2000"
     methods: "Get"
     denyRoles: null
     pathPatterns: "/**"
