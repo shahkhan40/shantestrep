@@ -8,7 +8,7 @@ init:
 - create_org
 
 endpoint: /orgs/{{@create_organization_Response.data.org.id}}
-method: Put
+method: PUT
 auth: Default
 
 # Auth required for this endpoint.
