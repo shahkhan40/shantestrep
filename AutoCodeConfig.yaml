@@ -2,6 +2,47 @@
 genPolicy: "Create"
 openAPISpec: "http://13.56.210.25/v2/api-docs"
 generators:
+- type: "empty_value"
+  assertions:
+  - "@StatusCode != 200"
+  - "@StatusCode != 401"
+  - "@StatusCode != 404"
+  - "@StatusCode != 500"
+  severity: null
+  database: null
+  inactive: false
+  matches: []
+- type: "sql_injection_timebound"
+  assertions:
+  - "@ResponseTime > 7000"
+  - "@ResponseTime < 10000"
+  - "@StatusCode != 404"
+  severity: null
+  database:
+    name: "MySQL"
+    version: "5.7"
+  inactive: true
+  matches: []
+- type: "XSS_Injection"
+  assertions:
+  - "@StatusCode != 200"
+  - "@StatusCode != 401"
+  - "@StatusCode != 404"
+  - "@StatusCode != 500"
+  severity: null
+  database: null
+  inactive: true
+  matches: []
+- type: "log_Forging"
+  assertions:
+  - "@StatusCode != 200"
+  - "@StatusCode != 401"
+  - "@StatusCode != 404"
+  - "@StatusCode != 500"
+  severity: null
+  database: null
+  inactive: true
+  matches: []
 - type: "no_params"
   assertions:
   - "@StatusCode == 200"
@@ -9,22 +50,6 @@ generators:
   database: null
   inactive: true
   matches: []
-- type: "sla"
-  assertions:
-  - "@StatusCode == 200"
-  - "@StatusCode != 404"
-  severity: null
-  database: null
-  inactive: false
-  matches:
-  - name: null
-    value: "2000"
-    methods: "Get"
-    denyRoles: null
-    pathPatterns: "/**"
-    resourceSamples: null
-    queryParams: null
-    bodyProperties: null
 - type: "anonymous_invalid"
   assertions:
   - "@StatusCode != 200"
@@ -94,37 +119,6 @@ generators:
     resourceSamples: null
     queryParams: null
     bodyProperties: null
-- type: "sql_injection_timebound"
-  assertions:
-  - "@ResponseTime > 7000"
-  - "@ResponseTime < 10000"
-  - "@StatusCode != 404"
-  severity: null
-  database:
-    name: "MySQL"
-    version: "5.7"
-  inactive: true
-  matches: []
-- type: "XSS_Injection"
-  assertions:
-  - "@StatusCode != 200"
-  - "@StatusCode != 401"
-  - "@StatusCode != 404"
-  - "@StatusCode != 500"
-  severity: null
-  database: null
-  inactive: true
-  matches: []
-- type: "log_Forging"
-  assertions:
-  - "@StatusCode != 200"
-  - "@StatusCode != 401"
-  - "@StatusCode != 404"
-  - "@StatusCode != 500"
-  severity: null
-  database: null
-  inactive: true
-  matches: []
 - type: "invalid_datatype"
   assertions:
   - "@StatusCode != 401"
@@ -153,16 +147,6 @@ generators:
   database: null
   inactive: true
   matches: []
-- type: "empty_value"
-  assertions:
-  - "@StatusCode != 200"
-  - "@StatusCode != 401"
-  - "@StatusCode != 404"
-  - "@StatusCode != 500"
-  severity: null
-  database: null
-  inactive: false
-  matches: []
 - type: "negative_number"
   assertions:
   - "@StatusCode != 401"
@@ -181,3 +165,19 @@ generators:
   database: null
   inactive: true
   matches: []
+- type: "sla"
+  assertions:
+  - "@StatusCode == 200"
+  - "@StatusCode != 404"
+  severity: null
+  database: null
+  inactive: false
+  matches:
+  - name: null
+    value: "2000"
+    methods: "Get"
+    denyRoles: null
+    pathPatterns: "/**"
+    resourceSamples: null
+    queryParams: null
+    bodyProperties: null
