@@ -113,7 +113,7 @@ generators:
   - "@StatusCode != 500"
   severity: null
   database: null
-  inactive: false
+  inactive: true
   matches: []
 - type: "log_Forging"
   assertions:
@@ -123,7 +123,7 @@ generators:
   - "@StatusCode != 500"
   severity: null
   database: null
-  inactive: false
+  inactive: true
   matches: []
 - type: "invalid_datatype"
   assertions:
