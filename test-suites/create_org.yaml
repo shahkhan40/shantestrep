@@ -9,7 +9,7 @@ auth: "Default"
 headers: null
 testCases:
 - id: 1
-  body: "{ \"name\": \"shahan201khan\", \"billingEmail\": \"shankhan34@fxlabs.io\"\
+  body: "{ \"name\": \"shahan2044khan\", \"billingEmail\": \"shankhan34@fxlabs.io\"\
     , \"username\": \"shahkh92\", \"company\": \"fxlabscol\",\"orgType\": \"ENTERPRISE\"\n}"
   inactive: false
 assertions:
