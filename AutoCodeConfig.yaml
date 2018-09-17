@@ -1,26 +1,78 @@
 ---
 genPolicy: "Create"
-openAPISpec: "http://13.56.210.25/v2/api-docs"
+openAPISpec: "https://cloud.fxlabs.io/v2/api-docs"
 generators:
-- type: "empty_value"
+- type: "no_params"
+  assertions:
+  - "@StatusCode == 200"
+  severity: "Major"
+  database: null
+  inactive: true
+  matches: []
+- type: "sla"
+  assertions:
+  - "@StatusCode == 200"
+  - "@StatusCode != 404"
+  severity: "Major"
+  database: null
+  inactive: true
+  matches:
+  - name: null
+    value: "1000"
+    methods: "Get"
+    denyRoles: null
+    pathPatterns: "/**"
+    resourceSamples: null
+    queryParams: null
+    bodyProperties: null
+- type: "anonymous_invalid"
   assertions:
   - "@StatusCode != 200"
+  severity: "Critical"
+  database: null
+  inactive: true
+  matches: []
+- type: "auth_invalid"
+  assertions:
+  - "@StatusCode != 200"
+  severity: "Critical"
+  database: null
+  inactive: true
+  matches: []
+- type: "DDOS"
+  assertions:
   - "@StatusCode != 401"
   - "@StatusCode != 404"
-  - "@StatusCode != 500"
-  severity: null
+  severity: "Critical"
   database: null
-  inactive: false
-  matches: []
+  inactive: true
+  matches:
+  - name: "pageSize, page_size, maxResults, max_results"
+    value: null
+    methods: null
+    denyRoles: null
+    pathPatterns: null
+    resourceSamples: null
+    queryParams: null
+    bodyProperties: null
 - type: "XSS_Injection"
   assertions:
   - "@StatusCode != 200"
   - "@StatusCode != 401"
   - "@StatusCode != 404"
   - "@StatusCode != 500"
-  - "@StatusCode != 301"
-  severity: null
+  severity: "Critical"
   database: null
+  inactive: true
+  matches: []
+- type: "sql_injection_timebound"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  severity: "Critical"
+  database:
+    name: "MySQL"
+    version: "5.7"
   inactive: true
   matches: []
 - type: "log_Forging"
@@ -29,35 +81,14 @@ generators:
   - "@StatusCode != 401"
   - "@StatusCode != 404"
   - "@StatusCode != 500"
-  severity: null
-  database: null
-  inactive: true
-  matches: []
-- type: "no_params"
-  assertions:
-  - "@StatusCode == 200"
-  severity: null
-  database: null
-  inactive: true
-  matches: []
-- type: "anonymous_invalid"
-  assertions:
-  - "@StatusCode != 200"
-  severity: null
-  database: null
-  inactive: true
-  matches: []
-- type: "auth_invalid"
-  assertions:
-  - "@StatusCode != 200"
-  severity: null
+  severity: "Critical"
   database: null
   inactive: true
   matches: []
 - type: "rbac"
   assertions:
   - "@StatusCode == 403"
-  severity: null
+  severity: "Critical"
   database: null
   inactive: true
   matches:
@@ -93,27 +124,11 @@ generators:
     resourceSamples: null
     queryParams: null
     bodyProperties: null
-- type: "DDOS"
-  assertions:
-  - "@StatusCode != 401"
-  - "@StatusCode != 404"
-  severity: null
-  database: null
-  inactive: true
-  matches:
-  - name: "pageSize, page_size, maxResults, max_results"
-    value: null
-    methods: null
-    denyRoles: null
-    pathPatterns: null
-    resourceSamples: null
-    queryParams: null
-    bodyProperties: null
 - type: "invalid_datatype"
   assertions:
   - "@StatusCode != 401"
   - "@StatusCode != 404"
-  severity: null
+  severity: "Critical"
   database: null
   inactive: true
   matches: []
@@ -123,7 +138,7 @@ generators:
   - "@StatusCode != 401"
   - "@StatusCode != 404"
   - "@StatusCode != 500"
-  severity: null
+  severity: "Critical"
   database: null
   inactive: true
   matches: []
@@ -133,7 +148,17 @@ generators:
   - "@StatusCode != 401"
   - "@StatusCode != 404"
   - "@StatusCode != 500"
-  severity: null
+  severity: "Critical"
+  database: null
+  inactive: true
+  matches: []
+- type: "empty_value"
+  assertions:
+  - "@StatusCode != 200"
+  - "@StatusCode != 401"
+  - "@StatusCode != 404"
+  - "@StatusCode != 500"
+  severity: "Critical"
   database: null
   inactive: true
   matches: []
@@ -141,7 +166,7 @@ generators:
   assertions:
   - "@StatusCode != 401"
   - "@StatusCode != 404"
-  severity: null
+  severity: "Critical"
   database: null
   inactive: true
   matches: []
@@ -151,35 +176,7 @@ generators:
   - "@StatusCode != 401"
   - "@StatusCode != 404"
   - "@StatusCode != 500"
-  severity: null
+  severity: "Critical"
   database: null
   inactive: true
-  matches: []
-- type: "sla"
-  assertions:
-  - "@StatusCode == 200"
-  - "@StatusCode != 404"
-  severity: null
-  database: null
-  inactive: false
-  matches:
-  - name: null
-    value: "2000"
-    methods: "Get"
-    denyRoles: null
-    pathPatterns: "/**"
-    resourceSamples: null
-    queryParams: null
-    bodyProperties: null
-- type: "sql_injection_timebound"
-  assertions:
-  - "@ResponseTime > 7000"
-  - "@ResponseTime > 5000"
-  - "@ResponseTime < 10000"
-  - "@StatusCode != 404"
-  severity: null
-  database:
-    name: "MySQL"
-    version: "5.7"
-  inactive: false
   matches: []
