@@ -8,7 +8,7 @@ generators:
   severity: null
   database: null
   inactive: false
-  matches: null
+  matches: []
 - type: "sla"
   assertions:
   - "@StatusCode == 200"
@@ -31,14 +31,14 @@ generators:
   severity: null
   database: null
   inactive: false
-  matches: null
+  matches: []
 - type: "auth_invalid"
   assertions:
   - "@StatusCode != 200"
   severity: null
   database: null
   inactive: false
-  matches: null
+  matches: []
 - type: "rbac"
   assertions:
   - "@StatusCode == 403"
@@ -103,7 +103,7 @@ generators:
   database:
     name: "MySQL"
     version: "5.7"
-  inactive: false
+  inactive: true
   matches: []
 - type: "XSS_Injection"
   assertions:
@@ -114,7 +114,7 @@ generators:
   severity: null
   database: null
   inactive: false
-  matches: null
+  matches: []
 - type: "log_Forging"
   assertions:
   - "@StatusCode != 200"
@@ -124,7 +124,7 @@ generators:
   severity: null
   database: null
   inactive: false
-  matches: null
+  matches: []
 - type: "invalid_datatype"
   assertions:
   - "@StatusCode != 401"
@@ -132,7 +132,7 @@ generators:
   severity: null
   database: null
   inactive: false
-  matches: null
+  matches: []
 - type: "special_chars "
   assertions:
   - "@StatusCode != 200"
@@ -142,7 +142,7 @@ generators:
   severity: null
   database: null
   inactive: false
-  matches: null
+  matches: []
 - type: "null_value"
   assertions:
   - "@StatusCode != 200"
@@ -152,7 +152,7 @@ generators:
   severity: null
   database: null
   inactive: false
-  matches: null
+  matches: []
 - type: "empty_value"
   assertions:
   - "@StatusCode != 200"
@@ -162,7 +162,7 @@ generators:
   severity: null
   database: null
   inactive: false
-  matches: null
+  matches: []
 - type: "negative_number"
   assertions:
   - "@StatusCode != 401"
@@ -170,7 +170,7 @@ generators:
   severity: null
   database: null
   inactive: false
-  matches: null
+  matches: []
 - type: "create"
   assertions:
   - "@StatusCode != 200"
@@ -180,4 +180,4 @@ generators:
   severity: null
   database: null
   inactive: false
-  matches: null
+  matches: []
