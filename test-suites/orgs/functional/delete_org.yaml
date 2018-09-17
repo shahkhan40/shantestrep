@@ -10,7 +10,7 @@ init:
 
 
 endpoint: /orgs/{{@create_organization_Response.data.org.id}}
-method: Delete
+method: DELETE
 
 assertions:
 - "@StatusCode == 200"
