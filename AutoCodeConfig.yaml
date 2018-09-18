@@ -1,6 +1,6 @@
 ---
 genPolicy: "Create"
-openAPISpec: "https://cloud.fxlabs.io"
+openAPISpec: "http://cloud.fxlabs.io/v1/api-docs"
 generators:
 - type: "no_params"
   assertions:
