@@ -1,6 +1,6 @@
 ---
 genPolicy: "Create"
-openAPISpec: " http://13.56.210.25/v2/api-docs"
+openAPISpec: "https://github.com/fxlabsinc/FX_Test-Automation"
 generators:
 - type: "no_params"
   assertions:
