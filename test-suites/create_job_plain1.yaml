@@ -19,7 +19,6 @@ type: SUITE
 # Optional - one or more Abstract suites
 init:
  - project_create_github_abstract
- - GitHub_create_init.
 
  
   #- InitAbstractSuite2
@@ -52,14 +51,14 @@ testCases:
   },
    "project": {
           "id": "{{project_create_github_abstract_Response.data}}"
-          
+        },
           "account": {
     
      "name": "khangithub",
-     
+       "accountType": "GitHub"
          },
     
-       "accountType": "GitHub",
+     
     },
     "name": "testjob25",
      "url": "https://github.com/fxlabsinc/FX_Test-Automation"
