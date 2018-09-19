@@ -25,6 +25,7 @@ authors:
 - "shahnawaz"
 init:
 - "project_create_github_abstract"
+- "GitHub_create_init"
 cleanup: null
 category: "Functional"
 severity: "Major"
