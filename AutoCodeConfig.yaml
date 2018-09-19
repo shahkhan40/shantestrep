@@ -128,7 +128,7 @@ generators:
   database:
     name: "MySQL"
     version: "5.7"
-  inactive: true
+  inactive: false
   matches: []
 - type: "log_Forging"
   assertions:
