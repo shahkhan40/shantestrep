@@ -14,7 +14,7 @@ headers:
 - "Content-Type: application/json"
 testCases:
 - id: 1
-  body: "{\n  'accessKey' : null,\n  'accountType' : 'Microsoft_TFS_Git',\n  'allowedRegions'\
+  body: "{\n  'accessKey' : null,\n  'accountType' : 'Email',\n  'allowedRegions'\
     \ : [ ],\n  'createdBy' : null,\n  'createdDate' : null,\n  'id' : null,\n  'inactive'\
     \ : null,\n  'modifiedBy' : null,\n  'modifiedDate' : null,\n  'name' : null,\n\
     \  'org' : {\n    'createdBy' : null,\n    'createdDate' : null,\n    'id' : null,\n\
@@ -24,10 +24,10 @@ testCases:
     \ : null\n}"
   inactive: false
 assertions:
-- "@StatusCode != 200"
-- "@StatusCode != 401"
 - "@StatusCode != 404"
 - "@StatusCode != 500"
+- "@StatusCode != 200"
+- "@StatusCode != 401"
 cleanup: []
 severity: "Major"
 category: "Functional"

@@ -6,7 +6,7 @@ authors:
 - "FX Bot"
 type: "SUITE"
 init: []
-endpoint: "/api/v1/test-suites/search/{{@Random}}?page=CaiCMD"
+endpoint: "/api/v1/test-suites/search/{{@Random}}?page=wFvUGT"
 method: "GET"
 auth: "Default"
 headers:

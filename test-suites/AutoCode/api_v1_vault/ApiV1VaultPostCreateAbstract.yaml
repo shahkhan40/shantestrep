@@ -22,10 +22,10 @@ testCases:
     \  'val' : null,\n  'version' : null\n}"
   inactive: false
 assertions:
-- "@StatusCode != 200"
-- "@StatusCode != 401"
 - "@StatusCode != 404"
 - "@StatusCode != 500"
+- "@StatusCode != 200"
+- "@StatusCode != 401"
 cleanup: []
 severity: "Major"
 category: "Functional"
