@@ -3,7 +3,7 @@ parent: null
 name: "create_org"
 description: null
 type: "SUITE"
-endpoint: "/orgs"
+endpoint: "/org"
 method: "POST"
 auth: "Default"
 headers: null
