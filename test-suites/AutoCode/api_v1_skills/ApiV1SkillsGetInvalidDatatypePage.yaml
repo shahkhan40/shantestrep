@@ -6,7 +6,7 @@ authors:
 - "FX Bot"
 type: "SUITE"
 init: []
-endpoint: "/api/v1/skills?page=phA47C"
+endpoint: "/api/v1/skills?page=TokIIo"
 method: "GET"
 auth: "Default"
 headers:

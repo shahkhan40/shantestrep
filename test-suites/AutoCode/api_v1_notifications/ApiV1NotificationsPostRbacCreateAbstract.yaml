@@ -28,7 +28,7 @@ testCases:
     \ : null,\n    'createdDate' : null,\n    'id' : null,\n    'inactive' : null,\n\
     \    'modifiedBy' : null,\n    'modifiedDate' : null,\n    'name' : null,\n  \
     \  'version' : null\n  },\n  'secretKey' : null,\n  'token' : null,\n  'type'\
-    \ : 'SLACK',\n  'version' : null,\n  'visibility' : 'ORG_PUBLIC'\n}"
+    \ : 'EMAIL',\n  'version' : null,\n  'visibility' : 'PRIVATE'\n}"
   inactive: false
 assertions:
 - "@StatusCode != 404"

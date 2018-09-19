@@ -14,7 +14,7 @@ headers:
 - "Content-Type: application/json"
 testCases:
 - id: 1
-  body: "{\n  'account' : {\n    'accessKey' : null,\n    'accountType' : 'Microsoft_VSTS_Git',\n\
+  body: "{\n  'account' : {\n    'accessKey' : null,\n    'accountType' : 'GitLab',\n\
     \    'allowedRegions' : [ ],\n    'createdBy' : null,\n    'createdDate' : null,\n\
     \    'id' : null,\n    'inactive' : null,\n    'modifiedBy' : null,\n    'modifiedDate'\
     \ : null,\n    'name' : null,\n    'org' : {\n      'createdBy' : null,\n    \
@@ -31,8 +31,7 @@ testCases:
     \  'prop5' : null,\n  'skill' : {\n    'createdBy' : null,\n    'createdDate'\
     \ : null,\n    'id' : null,\n    'inactive' : null,\n    'modifiedBy' : null,\n\
     \    'modifiedDate' : null,\n    'name' : null,\n    'version' : null\n  },\n\
-    \  'state' : 'INACTIVE',\n  'version' : null,\n  'visibility' : 'ORG_PUBLIC'\n\
-    }"
+    \  'state' : 'DELETING',\n  'version' : null,\n  'visibility' : 'PRIVATE'\n}"
   inactive: false
 assertions:
 - "@StatusCode != 404"
