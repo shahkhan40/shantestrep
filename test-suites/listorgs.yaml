@@ -61,7 +61,7 @@ assertions:
   - "@StatusCode == 200"
  # - "@ResponseTime <= 1000"
   #- "@ResponseSize <= 1024"
-  #- "@Response.errors == false || @Response.data.errors == false"
+ #- "@Response.errors == false && @Response.data.errors == false"
   #- "@Response.data.name == @Request.name"
   #- "@Response.data.url == @Request.url"
   #- "@Response.data.account.id == @Request.account.id" # JSONPath example
