@@ -3,7 +3,7 @@ parent: null
 name: "update_org"
 description: null
 type: "SUITE"
-endpoint: "/orgs/{{@create_org_Response.data}}"
+endpoint: "/orgs/{{@create_org_Response.data.org.id}}"
 method: "PUT"
 auth: "Default"
 headers: null
