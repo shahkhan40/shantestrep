@@ -51,7 +51,15 @@ testCases:
   },
    "project": {
           "id": "{{project_create_github_abstract_Response.data}}"
-        },
+          
+          "account": {
+    
+     "name": "khangithub",
+     
+         },
+    
+       "accountType": "GitHub",
+    },
     "name": "testjob25",
      "url": "https://github.com/fxlabsinc/FX_Test-Automation"
 
