@@ -19,6 +19,7 @@ type: SUITE
 # Optional - one or more Abstract suites
 init:
  - project_create_github_abstract
+ - GitHub_create_init.
 
  
   #- InitAbstractSuite2
