@@ -15,9 +15,9 @@ testCases:
 assertions:
 - "@StatusCode == 200"
 - "@Response.errors == false"
-- "@Response.data.name == @Request.name"
+- "@Response.data.name == @Request.name && @Response.data.company == @Request.company "
 - "@Response.data.billingEmail == @Request.billingEmail"
-- "@Response.data.company == @Request.company"
+
 tags:
 - "V2"
 authors: null
