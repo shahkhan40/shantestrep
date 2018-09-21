@@ -1,6 +1,6 @@
 ---
 genPolicy: "Create"
-openAPISpec: " http://13.56.210.25/v2/api-docs"
+openAPISpec: "http://13.56.210.25/v2/api-docs"
 generators:
 - type: "no_params"
   assertions:
@@ -121,7 +121,8 @@ generators:
   matches: []
 - type: "sql_injection_timebound"
   assertions:
-  - "@ResponseTime < 7000 OR @ResponseTime > 10000"
+  - "@ResponseTime > 7000"
+  - "@ResponseTime < 10000"
   - "@StatusCode != 404"
   severity: null
   database:
