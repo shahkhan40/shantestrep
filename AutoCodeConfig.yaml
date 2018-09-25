@@ -119,16 +119,6 @@ generators:
   database: null
   inactive: false
   matches: []
-- type: "sql_injection_timebound"
-  assertions:
-  - "@ResponseTime < 7000 OR @ResponseTime > 10000"
-  - "@StatusCode != 404"
-  severity: null
-  database:
-    name: "MySQL"
-    version: "5.7"
-  inactive: false
-  matches: []
 - type: "log_Forging"
   assertions:
   - "@StatusCode != 200"
@@ -187,11 +177,22 @@ generators:
   matches: []
 - type: "create"
   assertions:
-  - "@StatusCode != 200"
-  - "@StatusCode != 401"
   - "@StatusCode != 404"
   - "@StatusCode != 500"
+  - "@StatusCode != 200"
+  - "@StatusCode != 401"
   severity: null
   database: null
+  inactive: false
+  matches: []
+- type: "sql_injection_timebound"
+  assertions:
+  - "@ResponseTime > 7000"
+  - "@ResponseTime < 10000"
+  - "@StatusCode != 404"
+  severity: null
+  database:
+    name: "MySQL"
+    version: "5.7"
   inactive: false
   matches: []
