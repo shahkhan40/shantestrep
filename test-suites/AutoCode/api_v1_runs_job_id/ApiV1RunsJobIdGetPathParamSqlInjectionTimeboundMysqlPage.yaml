@@ -14,8 +14,7 @@ headers:
 - "Content-Type: application/json"
 testCases: []
 assertions:
-- "@ResponseTime > 7000"
-- "@ResponseTime < 10000"
+- "@ResponseTime < 7000 OR @ResponseTime > 10000"
 - "@StatusCode != 404"
 cleanup: []
 severity: "Major"

@@ -6,7 +6,7 @@ authors:
 - "FX Bot"
 type: "SUITE"
 init: []
-endpoint: "/api/v1/dashboard/count-jobs?pageSize=wQpARY"
+endpoint: "/api/v1/dashboard/count-jobs?pageSize=L4so7F"
 method: "GET"
 auth: "Default"
 headers:

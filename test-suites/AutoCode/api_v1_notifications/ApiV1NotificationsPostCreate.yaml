@@ -15,7 +15,7 @@ headers:
 testCases:
 - id: 1
   body: "{\n  'accessKey' : null,\n  'account' : {\n    'accessKey' : null,\n    'accountType'\
-    \ : 'GitHub',\n    'allowedRegions' : [ ],\n    'createdBy' : null,\n    'createdDate'\
+    \ : 'BitBucket',\n    'allowedRegions' : [ ],\n    'createdBy' : null,\n    'createdDate'\
     \ : null,\n    'id' : null,\n    'inactive' : null,\n    'modifiedBy' : null,\n\
     \    'modifiedDate' : null,\n    'name' : null,\n    'org' : {\n      'createdBy'\
     \ : null,\n      'createdDate' : null,\n      'id' : null,\n      'inactive' :\
@@ -28,13 +28,13 @@ testCases:
     \ : null,\n    'id' : null,\n    'inactive' : null,\n    'modifiedBy' : null,\n\
     \    'modifiedDate' : null,\n    'name' : null,\n    'version' : null\n  },\n\
     \  'secretKey' : null,\n  'token' : null,\n  'type' : 'EMAIL',\n  'version' :\
-    \ null,\n  'visibility' : 'ORG_PUBLIC'\n}"
+    \ null,\n  'visibility' : 'PUBLIC'\n}"
   inactive: false
 assertions:
-- "@StatusCode != 404"
-- "@StatusCode != 500"
 - "@StatusCode != 200"
 - "@StatusCode != 401"
+- "@StatusCode != 404"
+- "@StatusCode != 500"
 cleanup: []
 severity: "Major"
 category: "Functional"

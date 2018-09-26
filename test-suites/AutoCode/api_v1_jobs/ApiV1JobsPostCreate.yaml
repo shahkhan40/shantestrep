@@ -21,23 +21,23 @@ testCases:
     \ : null,\n    'modifiedBy' : null,\n    'modifiedDate' : null,\n    'name' :\
     \ null,\n    'projectId' : null,\n    'refId' : null,\n    'version' : null\n\
     \  },\n  'id' : null,\n  'inactive' : null,\n  'issueTracker' : {\n    'account'\
-    \ : null,\n    'accountType' : 'Microsoft_VSTS_Git',\n    'id' : null,\n    'name'\
-    \ : null,\n    'projectKey' : null,\n    'url' : null\n  },\n  'issueTrackerToDo'\
-    \ : null,\n  'modifiedBy' : null,\n  'modifiedDate' : null,\n  'name' : null,\n\
-    \  'nextFire' : null,\n  'notificationToDo' : null,\n  'notifications' : [ ],\n\
-    \  'openIssues' : null,\n  'project' : {\n    'createdBy' : null,\n    'createdDate'\
-    \ : null,\n    'id' : null,\n    'inactive' : null,\n    'modifiedBy' : null,\n\
-    \    'modifiedDate' : null,\n    'name' : null,\n    'org' : {\n      'createdBy'\
-    \ : null,\n      'createdDate' : null,\n      'id' : null,\n      'inactive' :\
-    \ null,\n      'modifiedBy' : null,\n      'modifiedDate' : null,\n      'name'\
-    \ : null,\n      'version' : null\n    },\n    'version' : null\n  },\n  'refId'\
-    \ : null,\n  'regions' : null,\n  'tags' : [ ],\n  'version' : null\n}"
+    \ : null,\n    'accountType' : 'BitBucket',\n    'id' : null,\n    'name' : null,\n\
+    \    'projectKey' : null,\n    'url' : null\n  },\n  'issueTrackerToDo' : null,\n\
+    \  'modifiedBy' : null,\n  'modifiedDate' : null,\n  'name' : null,\n  'nextFire'\
+    \ : null,\n  'notificationToDo' : null,\n  'notifications' : [ ],\n  'openIssues'\
+    \ : null,\n  'project' : {\n    'createdBy' : null,\n    'createdDate' : null,\n\
+    \    'id' : null,\n    'inactive' : null,\n    'modifiedBy' : null,\n    'modifiedDate'\
+    \ : null,\n    'name' : null,\n    'org' : {\n      'createdBy' : null,\n    \
+    \  'createdDate' : null,\n      'id' : null,\n      'inactive' : null,\n     \
+    \ 'modifiedBy' : null,\n      'modifiedDate' : null,\n      'name' : null,\n \
+    \     'version' : null\n    },\n    'version' : null\n  },\n  'refId' : null,\n\
+    \  'regions' : null,\n  'tags' : [ ],\n  'version' : null\n}"
   inactive: false
 assertions:
-- "@StatusCode != 404"
-- "@StatusCode != 500"
 - "@StatusCode != 200"
 - "@StatusCode != 401"
+- "@StatusCode != 404"
+- "@StatusCode != 500"
 cleanup: []
 severity: "Major"
 category: "Functional"

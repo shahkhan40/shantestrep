@@ -17,14 +17,14 @@ testCases:
   body: "{\n  'billingEmail' : null,\n  'company' : null,\n  'createdBy' : null,\n\
     \  'createdDate' : null,\n  'description' : null,\n  'id' : null,\n  'inactive'\
     \ : null,\n  'location' : null,\n  'modifiedBy' : null,\n  'modifiedDate' : null,\n\
-    \  'name' : null,\n  'orgPlan' : 'PRO',\n  'orgType' : 'ENTERPRISE',\n  'version'\
+    \  'name' : null,\n  'orgPlan' : 'PRO',\n  'orgType' : 'PERSONAL',\n  'version'\
     \ : null\n}"
   inactive: false
 assertions:
-- "@StatusCode != 404"
-- "@StatusCode != 500"
 - "@StatusCode != 200"
 - "@StatusCode != 401"
+- "@StatusCode != 404"
+- "@StatusCode != 500"
 cleanup: []
 severity: "Major"
 category: "Functional"
