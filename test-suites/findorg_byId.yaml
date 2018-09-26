@@ -18,11 +18,11 @@ type: SUITE
 
 # Optional - one or more Abstract suites
 init:
- - create_org_abstract
+ - create_org
   #- InitAbstractSuite2
 
 # Mandatory - API endpoint path.
-endpoint: /orgs/{{@create_org_abstract_Response.data.id}}
+endpoint: /orgs/{{@create_org_Response.data.id}}
 
 # Mandatory - Represents the API http method (GET, PUT, POST, DELETE etc)
 method: GET
