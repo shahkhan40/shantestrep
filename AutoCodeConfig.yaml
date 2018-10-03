@@ -1,5 +1,5 @@
 ---
-genPolicy: "None"
+genPolicy: "Create"
 openAPISpec: " http://13.56.210.25/v2/api-docs"
 generators:
 - type: "no_params"
