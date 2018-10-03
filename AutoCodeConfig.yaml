@@ -1,6 +1,6 @@
 ---
-genPolicy: "None"
-openAPISpec: "http://13.56.210.25/v2/api-docs"
+genPolicy: "Create"
+openAPISpec: " http://13.56.210.25/v2/api-docs"
 generators:
 - type: "no_params"
   assertions:
@@ -8,7 +8,7 @@ generators:
   severity: null
   database: null
   inactive: false
-  matches: null
+  matches: []
 - type: "sla"
   assertions:
   - "@StatusCode == 200"
@@ -28,36 +28,27 @@ generators:
     bodyProperties: null
 - type: "anonymous_invalid"
   assertions:
-  - "@StatusCode == 401 OR @StatusCode == 403"
+  - "@StatusCode != 200"
   severity: null
   database: null
   inactive: false
   matches:
   - name: null
     value: null
-    methods: null
+    methods: "Get"
     denyRoles: null
     allowRoles: null
-    pathPatterns: "Get:/api/v1/user-signup/**"
+    pathPatterns: "/api/v1/user-signup/**"
     resourceSamples: null
     queryParams: null
     bodyProperties: null
 - type: "auth_invalid"
   assertions:
-  - "@StatusCode == 401 OR @StatusCode == 403"
+  - "@StatusCode != 200"
   severity: null
   database: null
   inactive: false
-  matches:
-  - name: null
-    value: null
-    methods: null
-    denyRoles: null
-    allowRoles: null
-    pathPatterns: "Get:/api/v1/user-signup/**"
-    resourceSamples: null
-    queryParams: null
-    bodyProperties: null
+  matches: []
 - type: "rbac"
   assertions:
   - "@StatusCode == 403"
@@ -127,7 +118,7 @@ generators:
   severity: null
   database: null
   inactive: false
-  matches: null
+  matches: []
 - type: "sql_injection_timebound"
   assertions:
   - "@ResponseTime < 7000 OR @ResponseTime > 10000"
@@ -147,7 +138,7 @@ generators:
   severity: null
   database: null
   inactive: false
-  matches: null
+  matches: []
 - type: "invalid_datatype"
   assertions:
   - "@StatusCode != 401"
@@ -155,7 +146,7 @@ generators:
   severity: null
   database: null
   inactive: false
-  matches: null
+  matches: []
 - type: "special_chars "
   assertions:
   - "@StatusCode != 200"
@@ -165,7 +156,7 @@ generators:
   severity: null
   database: null
   inactive: false
-  matches: null
+  matches: []
 - type: "null_value"
   assertions:
   - "@StatusCode != 200"
@@ -175,7 +166,7 @@ generators:
   severity: null
   database: null
   inactive: false
-  matches: null
+  matches: []
 - type: "empty_value"
   assertions:
   - "@StatusCode != 200"
@@ -185,7 +176,7 @@ generators:
   severity: null
   database: null
   inactive: false
-  matches: null
+  matches: []
 - type: "negative_number"
   assertions:
   - "@StatusCode != 401"
@@ -193,7 +184,7 @@ generators:
   severity: null
   database: null
   inactive: false
-  matches: null
+  matches: []
 - type: "create"
   assertions:
   - "@StatusCode != 200"
@@ -203,4 +194,4 @@ generators:
   severity: null
   database: null
   inactive: false
-  matches: null
+  matches: []
