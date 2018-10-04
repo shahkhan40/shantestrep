@@ -6,7 +6,7 @@ authors:
 - "FX Bot"
 type: "SUITE"
 init: []
-endpoint: "/api/v1/projects/{{@Random}}/project-checksums?page=4VyQk3"
+endpoint: "/api/v1/projects/{{@Random}}/project-checksums?page=AtoL94"
 method: "GET"
 auth: "Default"
 headers:

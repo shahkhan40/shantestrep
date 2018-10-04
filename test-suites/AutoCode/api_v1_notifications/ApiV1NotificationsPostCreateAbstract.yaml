@@ -15,7 +15,7 @@ headers:
 testCases:
 - id: 1
   body: "{\n  'accessKey' : null,\n  'account' : {\n    'accessKey' : null,\n    'accountType'\
-    \ : 'GitLab',\n    'allowedRegions' : [ ],\n    'createdBy' : null,\n    'createdDate'\
+    \ : 'AWS',\n    'allowedRegions' : [ ],\n    'createdBy' : null,\n    'createdDate'\
     \ : null,\n    'id' : null,\n    'inactive' : null,\n    'modifiedBy' : null,\n\
     \    'modifiedDate' : null,\n    'name' : null,\n    'org' : {\n      'createdBy'\
     \ : null,\n      'createdDate' : null,\n      'id' : null,\n      'inactive' :\
@@ -27,7 +27,7 @@ testCases:
     \ : null,\n  'name' : null,\n  'org' : {\n    'createdBy' : null,\n    'createdDate'\
     \ : null,\n    'id' : null,\n    'inactive' : null,\n    'modifiedBy' : null,\n\
     \    'modifiedDate' : null,\n    'name' : null,\n    'version' : null\n  },\n\
-    \  'secretKey' : null,\n  'token' : null,\n  'type' : 'SLACK',\n  'version' :\
+    \  'secretKey' : null,\n  'token' : null,\n  'type' : 'EMAIL',\n  'version' :\
     \ null,\n  'visibility' : 'PRIVATE'\n}"
   inactive: false
 assertions:
