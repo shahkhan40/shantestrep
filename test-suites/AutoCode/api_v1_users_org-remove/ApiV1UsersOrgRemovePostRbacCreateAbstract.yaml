@@ -18,7 +18,7 @@ testCases:
     \ : null,\n  'modifiedBy' : null,\n  'modifiedDate' : null,\n  'org' : {\n   \
     \ 'createdBy' : null,\n    'createdDate' : null,\n    'id' : null,\n    'inactive'\
     \ : null,\n    'modifiedBy' : null,\n    'modifiedDate' : null,\n    'name' :\
-    \ null,\n    'version' : null\n  },\n  'orgRole' : 'WRITE',\n  'status' : 'REMOVED',\n\
+    \ null,\n    'version' : null\n  },\n  'orgRole' : 'WRITE',\n  'status' : 'INVITED',\n\
     \  'users' : {\n    'company' : null,\n    'createdBy' : null,\n    'createdDate'\
     \ : null,\n    'email' : null,\n    'id' : null,\n    'inactive' : null,\n   \
     \ 'jobTitle' : null,\n    'location' : null,\n    'modifiedBy' : null,\n    'modifiedDate'\

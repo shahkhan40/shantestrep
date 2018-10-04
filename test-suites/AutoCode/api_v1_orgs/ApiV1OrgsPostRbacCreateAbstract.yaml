@@ -17,7 +17,7 @@ testCases:
   body: "{\n  'billingEmail' : null,\n  'company' : null,\n  'createdBy' : null,\n\
     \  'createdDate' : null,\n  'description' : null,\n  'id' : null,\n  'inactive'\
     \ : null,\n  'location' : null,\n  'modifiedBy' : null,\n  'modifiedDate' : null,\n\
-    \  'name' : null,\n  'orgPlan' : 'ENTERPRISE',\n  'orgType' : 'TEAM',\n  'version'\
+    \  'name' : null,\n  'orgPlan' : 'PRO',\n  'orgType' : 'PERSONAL',\n  'version'\
     \ : null\n}"
   inactive: false
 assertions:
