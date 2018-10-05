@@ -58,38 +58,6 @@ generators:
     resourceSamples: null
     queryParams: null
     bodyProperties: null
-- type: "auth_invalid_empty"
-  assertions:
-  - "@StatusCode == 401 OR @StatusCode == 403"
-  severity: null
-  database: null
-  inactive: false
-  matches:
-  - name: null
-    value: null
-    methods: null
-    denyRoles: null
-    allowRoles: null
-    pathPatterns: ""
-    resourceSamples: null
-    queryParams: null
-    bodyProperties: null
-- type: "auth_invalid_sql"
-  assertions:
-  - "@StatusCode == 401 OR @StatusCode == 403"
-  severity: null
-  database: null
-  inactive: false
-  matches:
-  - name: null
-    value: null
-    methods: null
-    denyRoles: null
-    allowRoles: null
-    pathPatterns: ""
-    resourceSamples: null
-    queryParams: null
-    bodyProperties: null
 - type: "rbac"
   assertions:
   - "@StatusCode == 403"
@@ -236,3 +204,35 @@ generators:
   database: null
   inactive: false
   matches: []
+- type: "auth_invalid_empty"
+  assertions:
+  - "@StatusCode == 401 OR @StatusCode == 403"
+  severity: null
+  database: null
+  inactive: false
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: ""
+    resourceSamples: null
+    queryParams: null
+    bodyProperties: null
+- type: "auth_invalid_sql"
+  assertions:
+  - "@StatusCode == 401 OR @StatusCode == 403"
+  severity: null
+  database: null
+  inactive: false
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: ""
+    resourceSamples: null
+    queryParams: null
+    bodyProperties: null
