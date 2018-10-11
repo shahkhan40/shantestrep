@@ -1,6 +1,6 @@
 ---
 genPolicy: "None"
-openAPISpec: "http://13.56.210.25/v2/api-docs"
+openAPISpec: " http://13.56.210.25/v2/api-docs"
 generators:
 - type: "no_params"
   assertions:
@@ -204,3 +204,35 @@ generators:
   database: null
   inactive: false
   matches: []
+- type: "auth_invalid_empty"
+  assertions:
+  - "@StatusCode == 401 OR @StatusCode == 403"
+  severity: null
+  database: null
+  inactive: false
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: ""
+    resourceSamples: null
+    queryParams: null
+    bodyProperties: null
+- type: "auth_invalid_sql"
+  assertions:
+  - "@StatusCode == 401 OR @StatusCode == 403"
+  severity: null
+  database: null
+  inactive: false
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: ""
+    resourceSamples: null
+    queryParams: null
+    bodyProperties: null
