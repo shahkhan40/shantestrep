@@ -1,6 +1,6 @@
 ---
 genPolicy: "None"
-openAPISpec: " http://13.56.210.25/v2/api-docs"
+openAPISpec: "http://13.56.210.25/v2/api-docs"
 generators:
 - type: "no_params"
   assertions:
@@ -11,11 +11,21 @@ generators:
   matches: []
 - type: "sla"
   assertions:
-  - "@StatusCode == 200 AND @ResponseTime < 500"
+  - "@StatusCode == 200"
+  - "@StatusCode != 404"
   severity: null
   database: null
   inactive: false
-  matches: []
+  matches:
+  - name: null
+    value: "1000"
+    methods: "Get"
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: "/**"
+    resourceSamples: null
+    queryParams: null
+    bodyProperties: null
 - type: "anonymous_invalid"
   assertions:
   - "@StatusCode == 401 OR @StatusCode == 403"
@@ -44,39 +54,7 @@ generators:
     methods: null
     denyRoles: null
     allowRoles: null
-    pathPatterns: ""
-    resourceSamples: null
-    queryParams: null
-    bodyProperties: null
-- type: "auth_invalid_empty"
-  assertions:
-  - "@StatusCode == 401 OR @StatusCode == 403"
-  severity: null
-  database: null
-  inactive: false
-  matches:
-  - name: null
-    value: null
-    methods: null
-    denyRoles: null
-    allowRoles: null
-    pathPatterns: ""
-    resourceSamples: null
-    queryParams: null
-    bodyProperties: null
-- type: "auth_invalid_sql"
-  assertions:
-  - "@StatusCode == 401 OR @StatusCode == 403"
-  severity: null
-  database: null
-  inactive: false
-  matches:
-  - name: null
-    value: null
-    methods: null
-    denyRoles: null
-    allowRoles: null
-    pathPatterns: ""
+    pathPatterns: "Get:/api/v1/user-signup/**"
     resourceSamples: null
     queryParams: null
     bodyProperties: null
