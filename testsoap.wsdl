@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<definitions name="Tutorial"             
+		targetNamespace=http://Guru99.com/Tutorial.wsdl           
+        xmlns:tns=http://Guru99.com/Tutorial.wsdl            
+        xmlns:xsd1=http://Guru99.com/Tutorial.xsd           
+        xmlns:soap=http://schemas.xmlsoap.org/wsdl/soap/
+        xmlns="http://schemas.xmlsoap.org/wsdl/"> 
+   <types>    
+   		<schema targetNamespace=http://Guru99.com/Tutorial.xsd    
+        xmlns="http://www.w3.org/2000/10/XMLSchema">
+        
+        <element name="TutorialNameRequest">       
+        	<complexType>         
+            	<all>            
+                	<element name="TutorialName" type="string"/>        
+                </all>      
+            </complexType>     
+       </element>    
+       <element name="TutorialIDRequest">       
+       		<complexType>           
+            	<all>           
+                	<element name="TutorialID" type="number"/>         
+                </all>      
+            </complexType>     
+       </element>    
+    </schema>
+ </types>  
+ <message name="GetTutorialNameInput">   
+ 	<part name="body" element="xsd1:TutorialIDRequest"/>  
+ </message> 
+ <message name="GetTutorialNameOutput">  
+ 	<part name="body" element="xsd1:TutorialNameRequest"/>
+ </message> 
+ <portType name="TutorialPortType">  
+ 	<operation name="GetTutorialName">    
+    	<input message="tns:GetTutorialNameInput"/>     
+        <output message="tns:GetTutorialNameOutput"/>   
+    </operation>  
+  </portType> 
+  <binding name="TutorialSoapBinding" type="tns:TutorialPortType">  
+  <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>  
+ 	 <operation name="GetTutorialName">    
+  		<soap:operation soapAction="http://Guru99.com/GetTutorialName"/>   
+        	<input>   
+            	<soap:body use="literal"/>   
+            </input>  
+        <output>      
+   <soap:body use="literal"/>   
+ </output>   
+ </operation>  
+ </binding>  
+ 
+ <service name="TutorialService">   
+ 	<documentation>TutorialService</documentation>  
+    <port name="TutorialPort" binding="tns:TutorialSoapBinding">     
+    	<soap:address location="http://Guru99.com/Tutorial"/>
+    </port>
+ </service>
+</definitions>
