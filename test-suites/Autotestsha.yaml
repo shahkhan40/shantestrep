@@ -1,0 +1,47 @@
+---
+# creates git hub account, project and add enviornment to it
+
+authors:
+  - shahnawaz
+
+init:
+  - GitHub_create_init
+  
+
+
+endpoint: /projects
+method: POST
+auth: Default
+
+testCases:
+  - id: 1
+    body: '{
+        "name": "{{@Random | 3}}",
+        "url": "https://github.com/shahkhan40/shantestrep",
+        "account": "{{@GitHub_create_init_Response.data}}",
+        "genPolicy": "Create",
+        "openAPISpec": "http://13.56.210.25/v1/api-doc",
+        "description": "SD-Test example"
+     }'
+     assertions:
+  - "@StatusCode == 200"
+  - "@Response.errors == false"
+  - "@Response.data.name == @Request.name"
+  - "@Response.data.url == @Request.url"
+  - "@Response.data.account.id == @Request.account.id"
+  - "@Response.data.genPolicy == @Request.genPolicy"
+  - "@Response.data.openAPISpec == @Request.openAPISpec"
+  - "@Response.data.description == @Request.description"
+
+cleanup:
+  - account_delete
+  - project_delete
+
+severity: Major
+category: Functional
+
+tags:
+  - V2
+
+policies:
+  logger: DEBUG
